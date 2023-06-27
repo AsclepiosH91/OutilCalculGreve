@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23a9fe9e-a5b4-4a3d-95d6-e7852d54bda3" name="Changes" comment="Init">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/net/asclepiosh/outilcalculgreve/ui/JourOverviewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/net/asclepiosh/outilcalculgreve/views/JourOverview.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/net/asclepiosh/outilcalculgreve/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/net/asclepiosh/outilcalculgreve/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/net/asclepiosh/outilcalculgreve/ui/RootLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/net/asclepiosh/outilcalculgreve/ui/RootLayoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/net/asclepiosh/outilcalculgreve/views/RootLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/net/asclepiosh/outilcalculgreve/views/RootLayout.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -45,26 +47,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.27147147",
-    "settings.editor.selected.configurable": "preferences.sourceCode",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Users/Nicolas/GitHub/IdeaProjects/OutilCalculGreve&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.27147147&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\NT236887\Github\IntelliJ\OutilCalculGreve\src\main\java\fr\net\asclepiosh\outilcalculgreve\ui" />
@@ -84,6 +87,9 @@
       <workItem from="1687851331183" duration="5808000" />
       <workItem from="1687859252013" duration="9979000" />
       <workItem from="1687875826728" duration="1331000" />
+      <workItem from="1687887935460" duration="832000" />
+      <workItem from="1687891915454" duration="157000" />
+      <workItem from="1687892723337" duration="2563000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />

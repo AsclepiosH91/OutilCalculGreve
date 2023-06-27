@@ -4,13 +4,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import org.kordamp.ikonli.javafx.*?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.net.asclepiosh.outilcalculgreve.ui.RootLayoutController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.net.asclepiosh.outilcalculgreve.ui.RootLayoutController">
 
     <top>
 
         <MenuBar BorderPane.alignment="CENTER">
             <Menu mnemonicParsing="false" text="Fichier">
-				<MenuItem mnemonicParsing="false" onAction="#mniNew" text="Nouveau...">
+				<MenuItem mnemonicParsing="false" onAction="#mniNew" text="Nouveau">
 					<graphic>
 						<FontIcon iconLiteral="mdi2f-file" selectionEnd="0" />
 					</graphic>
@@ -41,7 +41,7 @@
 			</Menu>
 
 			<Menu mnemonicParsing="false" text="Aide">
-				<MenuItem mnemonicParsing="false" onAction="#mniAbout" text="À propos de l’outil de calcul grèves...">
+				<MenuItem mnemonicParsing="false" onAction="#mniAbout" text="À propos de l’outil">
 					<graphic>
 						<FontIcon iconLiteral="mdi2i-information" selectionEnd="0"/>
 					</graphic>
@@ -53,29 +53,6 @@
 
     </top>
 
-   <bottom>
-		<ToolBar BorderPane.alignment="CENTER">
-			<Pane>
-				<Label text="Coefficients pour le calcul :">
-					<graphic>
-						<FontIcon iconLiteral="mdi2t-table" selectionEnd="0" />
-					</graphic>
-					<padding>
-						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
-					</padding>
-				</Label>
-			</Pane>
-			<Pane HBox.hgrow="ALWAYS" />
-				<Button text="Types de jours" />
-				<Separator />
-				<Button text="RATP &amp; SNCF" />
-				<Separator />
-				<Button text="Redressement" />
-				<Separator />
-				<Button text=" Tarif Contrat" />
-			<Pane HBox.hgrow="ALWAYS" />
 
-		</ToolBar>
-   </bottom>
 
 </BorderPane>

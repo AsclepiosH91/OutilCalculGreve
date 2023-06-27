@@ -1,10 +1,12 @@
 package fr.net.asclepiosh.outilcalculgreve;
 
+import fr.net.asclepiosh.outilcalculgreve.ui.JourOverviewController;
 import fr.net.asclepiosh.outilcalculgreve.ui.RootLayoutController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -47,18 +49,21 @@ public class MainApp extends Application {
 	    //System.out.println(appProperties.getProperty("name"));
 
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("Outil de calcul Grève");
+        this.primaryStage.setTitle("Outil de calcul grève");
 
         Image appIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("icons/RATP.svg.png")));
         primaryStage.getIcons().add(appIcon);
 
         initRootLayout();
 
+	    showJourOverview();
+
     }
 
 
 
-    /**
+
+	/**
      * Initializes the root layout and tries to load the last opened
      * person file.
      */
@@ -90,6 +95,28 @@ public class MainApp extends Application {
 
 
     }
+
+	/**
+	 * Shows the jour overview inside the root layout.
+	 */
+	public void showJourOverview() {
+		try {
+			// Load jour overview.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("views/JourOverview.fxml"));
+			AnchorPane jourOverview = loader.load();
+
+			// Set person overview into the center of root layout.
+			rootLayout.setCenter(jourOverview);
+
+			// Give the controller access to the main app.
+			JourOverviewController controller = loader.getController();
+			controller.setMainApp(this);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 
 
