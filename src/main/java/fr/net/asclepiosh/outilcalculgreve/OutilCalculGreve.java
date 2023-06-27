@@ -1,6 +1,6 @@
 package fr.net.asclepiosh.outilcalculgreve;
 
-public class OutilCalcul {
+public class OutilCalculGreve {
 
     public static void main(final String[] args)
     {

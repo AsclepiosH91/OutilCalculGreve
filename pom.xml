@@ -10,29 +10,94 @@
   <name>OutilCalculGreve</name>
 
   <properties>
+
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <junit.version>5.9.2</junit.version>      </properties>
+
+    <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
+
+    <junit.version>5.9.2</junit.version>
+
+    <jaxb-api.version>2.3.1</jaxb-api.version>
+
+    <jaxb-runtime.version>2.3.7</jaxb-runtime.version>
+
+    <javafx.version>17.0.6</javafx.version>
+
+    <jvm.version>17</jvm.version>
+
+    <staging.dir>${project.build.directory}/staging</staging.dir>
+    <mainClass>fr.net.asclepiosh.outilcalculgreve.OutilCalculGreve</mainClass>
+
+
+
+  </properties>
 
   <dependencies>
+
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
-      <version>17.0.6</version>
+      <version>${javafx.version}</version>
     </dependency>
+
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-fxml</artifactId>
-      <version>17.0.6</version>
+      <version>${javafx.version}</version>
     </dependency>
-            <dependency>
+
+
+
+    <!-- Cross-platform uber-jar dependencies-->
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-graphics</artifactId>
+      <version>${javafx.version}</version>
+      <classifier>win</classifier>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-graphics</artifactId>
+      <version>${javafx.version}</version>
+      <classifier>linux</classifier>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-graphics</artifactId>
+      <version>${javafx.version}</version>
+      <classifier>mac</classifier>
+    </dependency>
+
+    <dependency>
       <groupId>org.controlsfx</groupId>
       <artifactId>controlsfx</artifactId>
       <version>11.1.2</version>
-    </dependency>            <dependency>
+    </dependency>
+    <dependency>
+      <groupId>com.dlsc.formsfx</groupId>
+      <artifactId>formsfx-core</artifactId>
+      <version>11.6.0</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.openjfx</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+	  <dependency>
       <groupId>org.kordamp.ikonli</groupId>
       <artifactId>ikonli-javafx</artifactId>
       <version>12.3.1</version>
-    </dependency>            
+    </dependency>
+
+	  <dependency>
+		  <groupId>org.kordamp.ikonli</groupId>
+		  <artifactId>ikonli-materialdesign2-pack</artifactId>
+		  <version>12.3.1</version>
+	  </dependency>
+
+
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
@@ -44,39 +109,93 @@
       <artifactId>junit-jupiter-engine</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
-    </dependency>              </dependencies>
+    </dependency>
+
+    <!-- JAXB 2.3.0 for jdk9+ -->
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <version>${jaxb-api.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jaxb</groupId>
+      <artifactId>jaxb-runtime</artifactId>
+      <version>${jaxb-runtime.version}</version>
+    </dependency>
+	  <!-- JAXB needs javax.activation module (jdk9+) -->
+    <dependency>
+      <groupId>javax.activation</groupId>
+      <artifactId>javax.activation-api</artifactId>
+      <version>1.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>1.3.2</version>
+    </dependency>
+
+  </dependencies>
+
+
+
+
+
 
   <build>
-        <plugins>
-            <plugin>
+    <finalName>${project.name}</finalName>
+
+	  <resources>
+		  <resource>
+			  <directory>src/main/resources</directory>
+			  <filtering>true</filtering>
+		  </resource>
+	  </resources>
+
+	  <plugins>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.11.0</version>
         <configuration>
-          <source>17</source>
-          <target>17</target>
+          <source>${jvm.version}</source>
+          <target>${jvm.version}</target>
         </configuration>
-            </plugin>
+      </plugin>
+
+      <!-- Création archive executable autonome -->
       <plugin>
-        <groupId>org.openjfx</groupId>
-        <artifactId>javafx-maven-plugin</artifactId>
-        <version>0.0.8</version>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>${maven-assembly-plugin.version}</version>
+        <configuration>
+          <appendAssemblyId>false</appendAssemblyId>
+          <attach>false</attach>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <archive>
+            <manifest>
+              <mainClass>${mainClass}</mainClass>
+            </manifest>
+          </archive>
+          <outputDirectory>${staging.dir}</outputDirectory>
+        </configuration>
         <executions>
           <execution>
-            <!-- Default configuration for running with: mvn clean javafx:run -->
-            <id>default-cli</id>
-            <configuration>
-              <mainClass>fr.net.asclepiosh.outilcalculgreve/fr.net.asclepiosh.outilcalculgreve.HelloApplication</mainClass>
-              <launcher>app</launcher>
-              <jlinkZipName>app</jlinkZipName>
-              <jlinkImageName>app</jlinkImageName>
-              <noManPages>true</noManPages>
-              <stripDebug>true</stripDebug>
-              <noHeaderFiles>true</noHeaderFiles>
-            </configuration>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
-          </plugins>
+    </plugins>
   </build>
+
+
+
+
+
+
+
 </project>
