@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23a9fe9e-a5b4-4a3d-95d6-e7852d54bda3" name="Changes" comment="Added &quot;JourOverview.fxml&quot; ihm" />
+    <list default="true" id="23a9fe9e-a5b4-4a3d-95d6-e7852d54bda3" name="Changes" comment="Added &quot;JourOverview.fxml&quot; ihm">
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/net/asclepiosh/outilcalculgreve/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/net/asclepiosh/outilcalculgreve/MainApp.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +85,7 @@
       <workItem from="1687875826728" duration="1331000" />
       <workItem from="1687887935460" duration="832000" />
       <workItem from="1687891915454" duration="157000" />
-      <workItem from="1687892723337" duration="2924000" />
+      <workItem from="1687892723337" duration="3305000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -101,7 +103,23 @@
       <option name="project" value="LOCAL" />
       <updated>1687896559063</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added &quot;JourOverview.fxml&quot; ihm">
+      <option name="closed" value="true" />
+      <created>1687896760780</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687896760780</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added &quot;JourOverview.fxml&quot; ihm">
+      <option name="closed" value="true" />
+      <created>1687897026813</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687897026813</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
