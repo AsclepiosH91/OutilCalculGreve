@@ -37,14 +37,14 @@ public class MainApp extends Application {
 
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) {
 
 	    //Get App properties
-		appProperties.load(this.getClass().getClassLoader().getResourceAsStream("project.properties"));
+		//appProperties.load(this.getClass().getClassLoader().getResourceAsStream("project.properties"));
 	    // Display app version, artifactID and name
-		System.out.println(appProperties.getProperty("version"));
-	    System.out.println(appProperties.getProperty("artifactId"));
-	    System.out.println(appProperties.getProperty("name"));
+		//System.out.println(appProperties.getProperty("version"));
+	    //System.out.println(appProperties.getProperty("artifactId"));
+	    //System.out.println(appProperties.getProperty("name"));
 
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Outil de calcul Grève");

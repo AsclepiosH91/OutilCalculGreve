@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 
+import java.io.IOException;
 import java.util.Properties;
 
 
@@ -18,9 +19,7 @@ import java.util.Properties;
 public class RootLayoutController {
 
 
-
-
-    // Reference to the main application
+	// Reference to the main application
     private MainApp mainApp;
 
     /**
@@ -54,10 +53,15 @@ public class RootLayoutController {
 	 * Opens an about dialog.
 	 */
 	@FXML
-	public void mniAbout() {
+	public void mniAbout() throws IOException {
+
+		Properties appProperties = new Properties();
+		//Get App properties
+		appProperties.load(this.getClass().getClassLoader().getResourceAsStream("project.properties"));
+
 		Alert alert = new Alert(Alert.AlertType.INFORMATION);
 		alert.setTitle("Outil Calcul Grève");
-		alert.setHeaderText("À propos de l'outil calcul grève\nVersion : ");
+		alert.setHeaderText("À propos de l'outil calcul grève\nVersion : "+ appProperties.getProperty("version"));
 		alert.setContentText("Auteur : Nicolas Torres\nE-mail : nicolas.torres@ratp.fr");
 
 		alert.showAndWait();
