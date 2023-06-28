@@ -12,7 +12,7 @@
       		<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
       			<TableView fx:id="jourTable" layoutX="-25.0" layoutY="29.0" prefHeight="766.0" prefWidth="410.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       				<columns>
-      					<TableColumn fx:id="numberJourColumn" prefWidth="75.0" text="Numéro" />
+      					<TableColumn fx:id="numJourColumn" prefWidth="75.0" text="Numéro" />
       					<TableColumn fx:id="dateJourColumn" prefWidth="75.0" text="Date" />
       					<TableColumn fx:id="typeJourColumn" prefWidth="75.0" text="Type" />
       				</columns>
