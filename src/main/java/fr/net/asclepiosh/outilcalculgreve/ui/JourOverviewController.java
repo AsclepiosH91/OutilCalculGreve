@@ -14,12 +14,12 @@ public class JourOverviewController {
 	@FXML
 	public TableView<Jour> jourTable;
 	@FXML
-	private TableColumn<Jour, String> numJourColumn;
+	private TableColumn<Jour, String> nomJourColumn;
 	@FXML
 	private TableColumn<Jour, String> typeJourColumn;
 
 	@FXML
-	private Label numJourLabel;
+	private Label nomJourLabel;
 	@FXML
 	private Label typeJourLabel;
 
@@ -45,15 +45,14 @@ public class JourOverviewController {
 	@FXML
 	private void initialize() {
 		// Initialize the jour table with the two columns.
-		numJourColumn.setCellValueFactory(cellData -> cellData.getValue().numJourProperty());
+		nomJourColumn.setCellValueFactory(cellData -> cellData.getValue().nomJourProperty());
 		typeJourColumn.setCellValueFactory(cellData -> cellData.getValue().typeJourProperty());
 
 		// Clear person details.
 		showJourDetails(null);
 
 		// Listen for selection changes and show the jour details when changed.
-		jourTable.getSelectionModel().selectedItemProperty().addListener(
-			(observable, oldValue, newValue) -> showJourDetails(newValue));
+		jourTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showJourDetails(newValue));
 
 
 	}
@@ -84,7 +83,7 @@ public class JourOverviewController {
 		if (jour != null) {
 			// Fill the labels with info from the jour object.
 			typeJourLabel.setText(jour.getTypeJour());
-			numJourLabel.setText(Integer.toString(jour.getNumJour()));
+			nomJourLabel.setText(jour.getNomJour());
 
 			// We need to convert the date into a String!
 			dateJourLabel.setText(DateUtil.format(jour.getDateJour()));
@@ -92,7 +91,7 @@ public class JourOverviewController {
 		} else {
 			// Jour is null, remove all the text.
 			typeJourLabel.setText("");
-			numJourLabel.setText("");
+			nomJourLabel.setText("");
 			dateJourLabel.setText("");
 
 		}

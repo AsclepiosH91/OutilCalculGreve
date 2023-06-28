@@ -12,7 +12,7 @@
       		<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
       			<TableView fx:id="jourTable" layoutX="-25.0" layoutY="29.0" prefHeight="766.0" prefWidth="410.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       				<columns>
-      					<TableColumn fx:id="numJourColumn" prefWidth="75.0" text="Numéro" />
+      					<TableColumn fx:id="nomJourColumn" prefWidth="75.0" text="Nom" />
       					<TableColumn fx:id="dateJourColumn" prefWidth="75.0" text="Date" />
       					<TableColumn fx:id="typeJourColumn" prefWidth="75.0" text="Type" />
       				</columns>
@@ -34,10 +34,12 @@
       					<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
 
       				</rowConstraints>
-      				<Label text="Numéro du jour de grève" />
+      				<Label text="Nom du jour de grève" />
       				<Label text="Date du jour de grève" GridPane.rowIndex="1" />
       				<Label text="Type du jour de grève" GridPane.rowIndex="2" />
-
+					<Label fx:id="nomJourLabel" GridPane.columnIndex="1"/>
+					<Label fx:id="dateJourLabel" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+					<Label fx:id="typeJourLabel" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
       			</GridPane>
       			<ButtonBar layoutX="204.0" layoutY="244.0" prefHeight="40.0" prefWidth="490.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0">
       				<buttons>

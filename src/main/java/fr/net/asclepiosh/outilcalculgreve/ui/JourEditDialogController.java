@@ -53,7 +53,7 @@ public class JourEditDialogController {
 		this.jour = jour;
 
 
-		numJourField.setText(Integer.toString(jour.getNumJour()));
+		numJourField.setText(jour.getNomJour());
 		typeJourField.setText(jour.getTypeJour());
 
 		dateJourField.setText(DateUtil.format(jour.getDateJour()));
@@ -74,7 +74,7 @@ public class JourEditDialogController {
 	@FXML
 	private void handleOk() {
 		if (isInputValid()) {
-			jour.setNumJour(Integer.parseInt(numJourField.getText()));
+			jour.setNomJour(numJourField.getText());
 			jour.setTypeJour(typeJourField.getText());
 
 			jour.setDateJour(DateUtil.parse(dateJourField.getText()));

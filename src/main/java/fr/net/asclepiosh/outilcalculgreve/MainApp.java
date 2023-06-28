@@ -38,8 +38,8 @@ public class MainApp extends Application {
 	 */
 	public MainApp() {
 		// Add some sample data
-		jourData.add(new Jour(1, "Johv"));
-		jourData.add(new Jour(2, "Johv"));
+		jourData.add(new Jour("Jour 1", "Johv"));
+		jourData.add(new Jour("Jour 2", "Johv"));
 
 	}
 

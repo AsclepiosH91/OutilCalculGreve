@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23a9fe9e-a5b4-4a3d-95d6-e7852d54bda3" name="Changes" comment="Added JourOverview.fxml&#10;Added JourOverviewController" />
+    <list default="true" id="23a9fe9e-a5b4-4a3d-95d6-e7852d54bda3" name="Changes" comment="Added JourOverview.fxml&#10;Added JourOverviewController">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/net/asclepiosh/outilcalculgreve/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/net/asclepiosh/outilcalculgreve/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/net/asclepiosh/outilcalculgreve/model/Jour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/net/asclepiosh/outilcalculgreve/model/Jour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/net/asclepiosh/outilcalculgreve/ui/JourEditDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/net/asclepiosh/outilcalculgreve/ui/JourEditDialogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/net/asclepiosh/outilcalculgreve/ui/JourOverviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/net/asclepiosh/outilcalculgreve/ui/JourOverviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/net/asclepiosh/outilcalculgreve/views/JourOverview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/net/asclepiosh/outilcalculgreve/views/JourOverview.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,6 +93,7 @@
       <workItem from="1687892723337" duration="3305000" />
       <workItem from="1687951967996" duration="11648000" />
       <workItem from="1687979645617" duration="112000" />
+      <workItem from="1687979938782" duration="1690000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
