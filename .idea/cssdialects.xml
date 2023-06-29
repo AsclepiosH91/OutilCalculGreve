@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CssDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/resources/fr/net/asclepiosh/outilcalculgreve/styles/cupertino-dark.css" dialect="JavaFX" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/fr/net/asclepiosh/outilcalculgreve/styles/dracula.css" dialect="JavaFX" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/fr/net/asclepiosh/outilcalculgreve/styles/nord-dark.css" dialect="JavaFX" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/fr/net/asclepiosh/outilcalculgreve/styles/primer-dark.css" dialect="JavaFX" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/fr/net/asclepiosh/outilcalculgreve/styles/primer-light.css" dialect="JavaFX" />
+  </component>
+</project>
