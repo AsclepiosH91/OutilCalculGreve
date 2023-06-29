@@ -32,6 +32,7 @@ public class Jour {
 		this.nomJour = new SimpleStringProperty(nomJour);
 		this.typeJour = new SimpleStringProperty(typeJour);
 
+
 		// Some initial dummy data, just for convenient testing.
 		this.dateJour = new SimpleObjectProperty<LocalDate>(LocalDate.of(1980, 7, 31));
 	}
