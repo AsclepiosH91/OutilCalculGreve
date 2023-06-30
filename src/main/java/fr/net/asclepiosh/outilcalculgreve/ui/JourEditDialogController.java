@@ -4,6 +4,7 @@ import fr.net.asclepiosh.outilcalculgreve.model.Jour;
 import fr.net.asclepiosh.outilcalculgreve.util.DateUtil;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -19,7 +20,7 @@ public class JourEditDialogController {
 	@FXML
 	private TextField typeJourField;
 	@FXML
-	private TextField dateJourField;
+	private DatePicker dateJourField;
 
 
 	private Stage dialogStage;
@@ -54,9 +55,8 @@ public class JourEditDialogController {
 
 		nomJourField.setText(jour.getNomJour());
 		typeJourField.setText(jour.getTypeJour());
-
-		dateJourField.setText(DateUtil.format(jour.getDateJour()));
-		dateJourField.setPromptText("dd.mm.yyyy");
+		dateJourField.setValue(jour.getDateJour());
+		dateJourField.setPromptText("dd/mm/yyyy");
 	}
 
 	public boolean isOkClicked() {
@@ -73,7 +73,8 @@ public class JourEditDialogController {
 
 			jour.setNomJour(nomJourField.getText());
 			jour.setTypeJour(typeJourField.getText());
-			jour.setDateJour(DateUtil.parse(dateJourField.getText()));
+
+			jour.setDateJour(DateUtil.parse(DateUtil.format(dateJourField.getValue())));
 
 			okClicked = true;
 			dialogStage.close();
@@ -107,11 +108,15 @@ public class JourEditDialogController {
 		}
 
 
-		if (dateJourField.getText() == null || dateJourField.getText().length() == 0) {
+		dateJourField.getValue();
+		if (dateJourField.getValue().toString().length() == 0) {
 			errorMessage += "Date non valide !\n";
 		} else {
-			if (!DateUtil.validDate(dateJourField.getText())) {
-				errorMessage += "Date non valide. Utilisez le format jj.mm.aaaa !\n";
+			if (
+				!DateUtil.validDate(DateUtil.format(dateJourField.getValue()))
+			) {
+				System.out.println(dateJourField.getValue().toString());
+				errorMessage += "Date non valide. Utilisez le format jj/mm/aaaa !\n";
 			}
 		}
 

@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.*?>
 <?import org.kordamp.ikonli.javafx.*?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.net.asclepiosh.outilcalculgreve.ui.RootLayoutController">
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.net.asclepiosh.outilcalculgreve.ui.RootLayoutController">
 
     <top>
 
         <MenuBar BorderPane.alignment="CENTER">
             <Menu mnemonicParsing="false" text="Fichier">
-				<MenuItem mnemonicParsing="false" onAction="#mniNew" text="Nouveau">
+				<MenuItem mnemonicParsing="false" onAction="#handleMniNew" text="Nouveau">
 					<graphic>
 						<FontIcon iconLiteral="mdi2f-file" selectionEnd="0" />
 					</graphic>
 				</MenuItem>
-				<MenuItem mnemonicParsing="false" onAction="#mniOpen" text="Ouvrir...">
+				<MenuItem mnemonicParsing="false" onAction="#handleMniOpen" text="Ouvrir...">
 					<graphic>
 						<FontIcon iconLiteral="mdi2f-folder-open" selectionEnd="0" />
 					</graphic>
 				</MenuItem>
-				<SeparatorMenuItem mnemonicParsing="false" />
+				<SeparatorMenuItem mnemonicParsing="false" onAction="#handleMniSave" />
 				<MenuItem mnemonicParsing="false" text="Enregistrer">
 					<graphic>
 						<FontIcon iconLiteral="mdi2c-content-save" selectionEnd="0" />
 					</graphic></MenuItem>
-				<MenuItem mnemonicParsing="false" text="Enregistrer sous..." />
+				<MenuItem mnemonicParsing="false" onAction="#handleMniSaveAs" text="Enregistrer sous..." />
 				<SeparatorMenuItem mnemonicParsing="false" />
 				<MenuItem mnemonicParsing="false" text="Paramètres">
 					<graphic>
@@ -42,7 +43,7 @@
 			<Menu mnemonicParsing="false" text="Aide">
 				<MenuItem mnemonicParsing="false" onAction="#mniAbout" text="À propos de l’outil">
 					<graphic>
-						<FontIcon iconLiteral="mdi2i-information" selectionEnd="0"/>
+						<FontIcon iconLiteral="mdi2i-information" selectionEnd="0" />
 					</graphic>
 				</MenuItem>
 			</Menu>

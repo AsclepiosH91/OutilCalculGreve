@@ -3,8 +3,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="248.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.net.asclepiosh.outilcalculgreve.ui.JourEditDialogController">
-	<GridPane layoutX="17.0" layoutY="110.0" prefHeight="190.0" prefWidth="360.0" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="5.0">
+<AnchorPane prefHeight="248.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.net.asclepiosh.outilcalculgreve.ui.JourEditDialogController">
+	<GridPane layoutX="17.0" layoutY="110.0" prefHeight="184.0" prefWidth="366.0" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="5.0">
 		<columnConstraints>
 			<ColumnConstraints hgrow="SOMETIMES" maxWidth="290.0" minWidth="10.0" prefWidth="180.0" />
 			<ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="200.0" />
@@ -16,11 +16,11 @@
 
 		</rowConstraints>
 		<Label text="Nom du jour de grève :" GridPane.rowIndex="0" />
-		<Label text="type du jour de grève :" GridPane.rowIndex="1" />
-		<Label text="date du jour de grève :" GridPane.rowIndex="2" />
-		<TextField fx:id="nomJourField" GridPane.columnIndex="1" GridPane.rowIndex="0"  />
+		<Label text="Type du jour de grève :" GridPane.rowIndex="1" />
+		<Label text="Date du jour de grève :" GridPane.rowIndex="2" />
+		<TextField fx:id="nomJourField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 		<TextField fx:id="typeJourField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-		<TextField fx:id="dateJourField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <DatePicker fx:id="dateJourField" prefHeight="26.0" prefWidth="203.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
 	</GridPane>
 	<ButtonBar layoutX="380.0" layoutY="350.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0">

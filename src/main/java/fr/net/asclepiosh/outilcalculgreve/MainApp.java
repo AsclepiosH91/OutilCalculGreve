@@ -1,6 +1,7 @@
 package fr.net.asclepiosh.outilcalculgreve;
 
 import fr.net.asclepiosh.outilcalculgreve.model.Jour;
+import fr.net.asclepiosh.outilcalculgreve.model.JourListWrapper;
 import fr.net.asclepiosh.outilcalculgreve.ui.JourEditDialogController;
 import fr.net.asclepiosh.outilcalculgreve.ui.JourOverviewController;
 import fr.net.asclepiosh.outilcalculgreve.ui.RootLayoutController;
@@ -9,15 +10,21 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Properties;
+import java.util.prefs.Preferences;
 
 public class MainApp extends Application {
 
@@ -89,8 +96,6 @@ public class MainApp extends Application {
     public void initRootLayout() {
         try {
 
-
-
 			// Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("views/RootLayout.fxml"));
@@ -111,6 +116,12 @@ public class MainApp extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+	    // Try to load last opened person file.
+	    File file = getJourFilePath();
+	    if (file != null) {
+		    loadJourDataFromFile(file);
+	    }
 
 
     }
@@ -184,12 +195,107 @@ public class MainApp extends Application {
 	}
 
 
+	/**
+	 * Returns the jour file preference, i.e. the file that was last opened.
+	 * The preference is read from the OS specific registry. If no such
+	 * preference can be found, null is returned.
+	 *
+	 * @return
+	 */
+	public File getJourFilePath() {
+		Preferences prefs = Preferences.userNodeForPackage(MainApp.class);
+		String filePath = prefs.get("filePath", null);
+		if (filePath != null) {
+			return new File(filePath);
+		} else {
+			return null;
+		}
+	}
 
 
 
+	/**
+	 * Sets the file path of the currently loaded file. The path is persisted in
+	 * the OS specific registry.
+	 *
+	 * @param file the file or null to remove the path
+	 */
+	public void setJourFilePath(File file) {
+		Preferences prefs = Preferences.userNodeForPackage(MainApp.class);
+		if (file != null) {
+			prefs.put("filePath", file.getPath());
+
+			// Update the stage title.
+			primaryStage.setTitle("Outil Calcul Greve - " + file.getName());
+		} else {
+			prefs.remove("filePath");
+
+			// Update the stage title.
+			primaryStage.setTitle("Outil Calcul Grève");
+		}
+	}
 
 
+	/**
+	 * Loads jour data from the specified file. The current jour data will
+	 * be replaced.
+	 *
+	 * @param file
+	 */
+	public void loadJourDataFromFile(File file) {
+		try {
+			JAXBContext context = JAXBContext.newInstance(JourListWrapper.class);
+			Unmarshaller um = context.createUnmarshaller();
 
+			// Reading XML from the file and unmarshalling.
+			JourListWrapper wrapper = (JourListWrapper) um.unmarshal(file);
+
+			jourData.clear();
+			jourData.addAll(wrapper.getJours());
+
+			// Save the file path to the registry.
+			setJourFilePath(file);
+
+		} catch (Exception e) { // catches ANY exception
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setTitle("Erreur");
+			alert.setHeaderText("Impossible de charger les données");
+			alert.setContentText("Impossible de charger les données du fichier :\n" + file.getPath());
+
+			alert.showAndWait();
+		}
+	}
+
+
+	/**
+	 * Saves the current jour data to the specified file.
+	 *
+	 * @param file
+	 */
+	public void saveJourDataToFile(File file) {
+		try {
+			JAXBContext context = JAXBContext.newInstance(JourListWrapper.class);
+			Marshaller m = context.createMarshaller();
+			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+			// Wrapping our jour data.
+			JourListWrapper wrapper = new JourListWrapper();
+			wrapper.setJours(jourData);
+
+			// Marshalling and saving XML to the file.
+			m.marshal(wrapper, file);
+
+			// Save the file path to the registry.
+			setJourFilePath(file);
+		} catch (Exception e) { // catches ANY exception
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setTitle("Erreur");
+			alert.setHeaderText("Impossible d'enregistrer les données");
+			alert.setContentText("Impossible d'enregistrer les données dans le fichier :\n" + file.getPath());
+
+			alert.showAndWait();
+		}
+	}
 
 
 

@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Nicolas Torres
  */
-@XmlRootElement(name = "Jours")
+@XmlRootElement(name = "jours")
 public class JourListWrapper {
 
 	private List<Jour> jours;
