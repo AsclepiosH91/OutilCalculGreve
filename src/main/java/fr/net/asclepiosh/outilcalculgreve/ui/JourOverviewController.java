@@ -114,7 +114,7 @@ public class JourOverviewController {
 	 * details for a new jour.
 	 */
 	@FXML
-	public void handleNewJour(ActionEvent actionEvent) {
+	public void handleNewJour() {
 		Jour tempJour = new Jour();
 		boolean okClicked = mainApp.showJourEditDialog(tempJour);
 		if (okClicked) {
@@ -122,14 +122,39 @@ public class JourOverviewController {
 		}
 	}
 
-	public void handleEditJour(ActionEvent actionEvent) {
-	}
+
+
 
 
 	/**
 	 * Called when the user clicks on the delete button.
 	 */
 	@FXML
+	public void handleEditJour() {
+		Jour selectedPerson = jourTable.getSelectionModel().getSelectedItem();
+		if (selectedPerson != null) {
+			boolean okClicked = mainApp.showJourEditDialog(selectedPerson);
+			if (okClicked) {
+				showJourDetails(selectedPerson);
+			}
+
+		} else {
+			// Nothing selected.
+			Alert alert = new Alert(Alert.AlertType.WARNING);
+			alert.initOwner(mainApp.getPrimaryStage());
+			alert.setTitle("Aucune sélection");
+			alert.setHeaderText("Aucun jour sélectionné");
+			alert.setContentText("Veuillez sélectionner un jour dans la table.");
+
+			alert.showAndWait();
+		}
+
+	}
+
+
+
+
+
 	public void handleDeleteJour() {
 
 		int selectedIndex = jourTable.getSelectionModel().getSelectedIndex();
@@ -148,10 +173,6 @@ public class JourOverviewController {
 		}
 
 	}
-
-
-
-
 
 
 
