@@ -1,8 +1,10 @@
 package fr.net.asclepiosh.outilcalculgreve.model;
 
 
+import fr.net.asclepiosh.outilcalculgreve.util.LocalDateAdapter;
 import javafx.beans.property.*;
 
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 
 /**
@@ -34,7 +36,7 @@ public class Jour {
 
 
 		// Some initial dummy data, just for convenient testing.
-		this.dateJour = new SimpleObjectProperty<LocalDate>(LocalDate.of(1980, 7, 31));
+		this.dateJour = new SimpleObjectProperty<LocalDate>(LocalDate.of(2000, 1, 1));
 	}
 
 
@@ -66,7 +68,7 @@ public class Jour {
 	public StringProperty nomJourProperty() {
 		return nomJour;
 	}
-
+	@XmlJavaTypeAdapter(LocalDateAdapter.class)
 	public LocalDate getDateJour() {
 		return dateJour.get();
 	}

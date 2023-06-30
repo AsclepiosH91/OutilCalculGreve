@@ -9,22 +9,22 @@
 
         <MenuBar BorderPane.alignment="CENTER">
             <Menu mnemonicParsing="false" text="Fichier">
-				<MenuItem mnemonicParsing="false" onAction="#mniNew" text="Nouveau">
+				<MenuItem mnemonicParsing="false" onAction="#handleMniNew" text="Nouveau">
 					<graphic>
 						<FontIcon iconLiteral="mdi2f-file" selectionEnd="0" />
 					</graphic>
 				</MenuItem>
-				<MenuItem mnemonicParsing="false" onAction="#mniOpen" text="Ouvrir...">
+				<MenuItem mnemonicParsing="false" onAction="#handleMniOpen" text="Ouvrir...">
 					<graphic>
 						<FontIcon iconLiteral="mdi2f-folder-open" selectionEnd="0" />
 					</graphic>
 				</MenuItem>
-				<SeparatorMenuItem mnemonicParsing="false" />
+				<SeparatorMenuItem mnemonicParsing="false" onAction="#handleMniSave" />
 				<MenuItem mnemonicParsing="false" text="Enregistrer">
 					<graphic>
 						<FontIcon iconLiteral="mdi2c-content-save" selectionEnd="0" />
 					</graphic></MenuItem>
-				<MenuItem mnemonicParsing="false" text="Enregistrer sous..." />
+				<MenuItem mnemonicParsing="false" onAction="#handleMniSaveAs" text="Enregistrer sous..." />
 				<SeparatorMenuItem mnemonicParsing="false" />
 				<MenuItem mnemonicParsing="false" text="Paramètres">
 					<graphic>

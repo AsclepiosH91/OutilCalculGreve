@@ -4,7 +4,9 @@ import fr.net.asclepiosh.outilcalculgreve.MainApp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.stage.FileChooser;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -32,20 +34,82 @@ public class RootLayoutController {
     }
 
 
-    @FXML
-    private void mniNew() {
+	/**
+	 * Creates an empty Jour set.
+	 */
+	@FXML
+    private void handleMniNew() {
+	    mainApp.getJourData().clear();
+	    mainApp.setJourFilePath(null);
 
     }
 
 
-
+	/**
+	 * Opens a File Chooser to let the user select a Jour set to load.
+	 */
     @FXML
-    private void mniOpen() {
+    private void handleMniOpen() {
+
+	    FileChooser fileChooser = new FileChooser();
+
+	    // Set extension filter
+	    FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
+		    "fichiers XML (*.xml)", "*.xml");
+	    fileChooser.getExtensionFilters().add(extFilter);
+
+	    // Show save file dialog
+	    File file = fileChooser.showOpenDialog(mainApp.getPrimaryStage());
+
+	    if (file != null) {
+		    mainApp.loadJourDataFromFile(file);
+	    }
 
     }
 
 
-	public void mniClose(ActionEvent actionEvent) {
+	/**
+	 * Saves the file to the jour file that is currently open. If there is no
+	 * open file, the "save as" dialog is shown.
+	 */
+	@FXML
+	private void handleMniSave() {
+		File jourFile = mainApp.getJourFilePath();
+		if (jourFile != null) {
+			mainApp.saveJourDataToFile(jourFile);
+		} else {
+			handleMniSaveAs();
+		}
+
+	}
+
+	/**
+	 * Opens a FileChooser to let the user select a file to save to.
+	 */
+	@FXML
+	private void handleMniSaveAs() {
+		FileChooser fileChooser = new FileChooser();
+
+		// Set extension filter
+		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
+			"fichiers XML (*.xml)", "*.xml");
+		fileChooser.getExtensionFilters().add(extFilter);
+
+		// Show save file dialog
+		File file = fileChooser.showSaveDialog(mainApp.getPrimaryStage());
+
+		if (file != null) {
+			// Make sure it has the correct extension
+			if (!file.getPath().endsWith(".xml")) {
+				file = new File(file.getPath() + ".xml");
+			}
+			mainApp.saveJourDataToFile(file);
+		}
+
+	}
+
+
+	public void mniClose() {
 		System.exit(0);
 	}
 
