@@ -34,10 +34,10 @@
       					<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
 
       				</rowConstraints>
-      				<Label text="Nom du jour de grève" />
+      				<Label text="Nom du jour de grève" GridPane.rowIndex="0" />
       				<Label text="Date du jour de grève" GridPane.rowIndex="1" />
       				<Label text="Type du jour de grève" GridPane.rowIndex="2" />
-					<Label fx:id="nomJourLabel" GridPane.columnIndex="1"/>
+					<Label fx:id="nomJourLabel" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
 					<Label fx:id="dateJourLabel" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 					<Label fx:id="typeJourLabel" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
       			</GridPane>

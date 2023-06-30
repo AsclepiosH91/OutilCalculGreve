@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 public class JourEditDialogController {
 
 	@FXML
-	private TextField numJourField;
+	private TextField nomJourField;
 	@FXML
 	private TextField typeJourField;
 	@FXML
@@ -49,19 +49,14 @@ public class JourEditDialogController {
 	 *
 	 * @param jour
 	 */
-	public void setPerson(Jour jour) {
+	public void setJour(Jour jour) {
 		this.jour = jour;
 
-
-		numJourField.setText(jour.getNomJour());
+		nomJourField.setText(jour.getNomJour());
 		typeJourField.setText(jour.getTypeJour());
 
 		dateJourField.setText(DateUtil.format(jour.getDateJour()));
 		dateJourField.setPromptText("dd.mm.yyyy");
-	}
-
-
-	public void setJour(Jour jour) {
 	}
 
 	public boolean isOkClicked() {
@@ -73,10 +68,11 @@ public class JourEditDialogController {
 	 */
 	@FXML
 	private void handleOk() {
-		if (isInputValid()) {
-			jour.setNomJour(numJourField.getText());
-			jour.setTypeJour(typeJourField.getText());
 
+		if (isInputValid()) {
+
+			jour.setNomJour(nomJourField.getText());
+			jour.setTypeJour(typeJourField.getText());
 			jour.setDateJour(DateUtil.parse(dateJourField.getText()));
 
 			okClicked = true;
@@ -106,15 +102,8 @@ public class JourEditDialogController {
 		}
 
 
-		if (numJourField.getText() == null || numJourField.getText().length() == 0) {
-			errorMessage += "Ce n'est pas un numéro de jour valide !\n";
-		} else {
-			// try to parse the number code into an int.
-			try {
-				Integer.parseInt(numJourField.getText());
-			} catch (NumberFormatException e) {
-				errorMessage += "Ce n'est pas un numéro de jour (doit être un entier) !\n";
-			}
+		if (nomJourField.getText() == null || nomJourField.getText().length() == 0) {
+			errorMessage += "Ce n'est pas un nom de jour valide !\n";
 		}
 
 
