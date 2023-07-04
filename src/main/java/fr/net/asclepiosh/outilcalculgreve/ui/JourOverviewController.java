@@ -3,7 +3,6 @@ package fr.net.asclepiosh.outilcalculgreve.ui;
 import fr.net.asclepiosh.outilcalculgreve.MainApp;
 import fr.net.asclepiosh.outilcalculgreve.model.Jour;
 import fr.net.asclepiosh.outilcalculgreve.util.DateUtil;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -17,17 +16,16 @@ public class JourOverviewController {
 
 	@FXML
 	private TableColumn<Jour, String> nomJourColumn;
-
 	@FXML
 	public TableColumn<Jour,  String> dateJourColumn;
 
 	@FXML
-	private TableColumn<Jour, String> typeJourColumn;
+	private TableColumn<Jour, String> transportJourColumn;
 
 	@FXML
 	private Label nomJourLabel;
 	@FXML
-	private Label typeJourLabel;
+	private Label transportJourLabel;
 
 	@FXML
 	private Label dateJourLabel;
@@ -50,12 +48,12 @@ public class JourOverviewController {
 	 */
 	@FXML
 	private void initialize() {
-		// Initialize the jour table with the two columns.
+		// Initialize the jour table with the three columns.
 		nomJourColumn.setCellValueFactory(cellData -> cellData.getValue().nomJourProperty());
 
 		dateJourColumn.setCellValueFactory(cellData -> cellData.getValue().dateJourProperty().asString());
 
-		typeJourColumn.setCellValueFactory(cellData -> cellData.getValue().typeJourProperty());
+		transportJourColumn.setCellValueFactory(cellData -> cellData.getValue().transportJourProperty());
 
 		// Clear person details.
 		showJourDetails(null);
@@ -91,7 +89,7 @@ public class JourOverviewController {
 	private void showJourDetails(Jour jour) {
 		if (jour != null) {
 			// Fill the labels with info from the jour object.
-			typeJourLabel.setText(jour.getTypeJour());
+			transportJourLabel.setText(jour.getTransportJour());
 			nomJourLabel.setText(jour.getNomJour());
 
 			// We need to convert the date into a String!
@@ -99,7 +97,7 @@ public class JourOverviewController {
 
 		} else {
 			// Jour is null, remove all the text.
-			typeJourLabel.setText("");
+			transportJourLabel.setText("");
 			nomJourLabel.setText("");
 			dateJourLabel.setText("");
 

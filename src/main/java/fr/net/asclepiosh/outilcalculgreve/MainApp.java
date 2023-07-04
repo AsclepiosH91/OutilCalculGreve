@@ -45,8 +45,8 @@ public class MainApp extends Application {
 	 */
 	public MainApp() {
 		// Add some sample data
-		//jourData.add(new Jour("Jour 1", "Johv"));
-		//jourData.add(new Jour("Jour 2", "Johv"));
+		jourData.add(new Jour("Jour 1", "RATP"));
+		jourData.add(new Jour("Jour 2", "SNCF"));
 
 	}
 
@@ -253,6 +253,8 @@ public class MainApp extends Application {
 			jourData.clear();
 			jourData.addAll(wrapper.getJours());
 
+
+
 			// Save the file path to the registry.
 			setJourFilePath(file);
 
@@ -296,16 +298,6 @@ public class MainApp extends Application {
 			alert.showAndWait();
 		}
 	}
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -2,11 +2,16 @@ package fr.net.asclepiosh.outilcalculgreve.ui;
 
 import fr.net.asclepiosh.outilcalculgreve.model.Jour;
 import fr.net.asclepiosh.outilcalculgreve.util.DateUtil;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.util.Arrays;
 
 /**
  * Dialog to edit details of a jour.
@@ -17,8 +22,11 @@ public class JourEditDialogController {
 
 	@FXML
 	private TextField nomJourField;
+
+
 	@FXML
-	private TextField typeJourField;
+	private ComboBox<String> transportJourComboBox;
+
 	@FXML
 	private DatePicker dateJourField;
 
@@ -26,6 +34,10 @@ public class JourEditDialogController {
 	private Stage dialogStage;
 	private Jour jour;
 	private boolean okClicked = false;
+
+
+	private final ObservableList<String> transporteursData = FXCollections.observableArrayList();
+
 
 	/**
 	 * Initializes the controller class. This method is automatically called
@@ -51,10 +63,18 @@ public class JourEditDialogController {
 	 * @param jour
 	 */
 	public void setJour(Jour jour) {
+
+		// Add Transporteurs data
+		transporteursData.addAll(Arrays.asList("RATP", "SNCF", "RATP+SNCF"));
+
+		transportJourComboBox.setItems(transporteursData);
+
 		this.jour = jour;
 
 		nomJourField.setText(jour.getNomJour());
-		typeJourField.setText(jour.getTypeJour());
+
+
+		transportJourComboBox.getSelectionModel().selectFirst();;
 		dateJourField.setValue(jour.getDateJour());
 		dateJourField.setPromptText("dd/mm/yyyy");
 	}
@@ -72,7 +92,7 @@ public class JourEditDialogController {
 		if (isInputValid()) {
 
 			jour.setNomJour(nomJourField.getText());
-			jour.setTypeJour(typeJourField.getText());
+			jour.setTransportJour(transportJourComboBox.getValue());
 
 			jour.setDateJour(DateUtil.parse(DateUtil.format(dateJourField.getValue())));
 
@@ -98,7 +118,7 @@ public class JourEditDialogController {
 	private boolean isInputValid() {
 		String errorMessage = "";
 
-		if (typeJourField.getText() == null || typeJourField.getText().length() == 0) {
+		if (transportJourComboBox.getValue() == null || transportJourComboBox.getValue().length() == 0) {
 			errorMessage += "Ce n'est pas un type de jour valide !\n";
 		}
 

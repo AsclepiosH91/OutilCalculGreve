@@ -13,7 +13,7 @@ import java.time.LocalDate;
  * @author Nicolas Torres
  */
 public class Jour {
-	private final StringProperty typeJour;
+	private final StringProperty transportJour;
 	private final StringProperty nomJour;
 	private final ObjectProperty<LocalDate> dateJour;
 
@@ -28,11 +28,11 @@ public class Jour {
 	 * Constructor with some initial data.
 	 *
 	 * @param nomJour
-	 * @param typeJour
+	 * @param transportJour
 	 */
-	public Jour(String nomJour, String typeJour) {
+	public Jour(String nomJour, String transportJour) {
 		this.nomJour = new SimpleStringProperty(nomJour);
-		this.typeJour = new SimpleStringProperty(typeJour);
+		this.transportJour = new SimpleStringProperty(transportJour);
 
 
 		// Some initial dummy data, just for convenient testing.
@@ -40,8 +40,8 @@ public class Jour {
 	}
 
 
-	public void setTypeJour(String typeJour) {
-		this.typeJour.set(typeJour);
+	public void setTransportJour(String transportJour) {
+		this.transportJour.set(transportJour);
 	}
 
 	public void setNomJour(String nomJour) {
@@ -53,12 +53,12 @@ public class Jour {
 	}
 
 
-	public String getTypeJour() {
-		return typeJour.get();
+	public String getTransportJour() {
+		return transportJour.get();
 	}
 
-	public StringProperty typeJourProperty() {
-		return typeJour;
+	public StringProperty transportJourProperty() {
+		return transportJour;
 	}
 
 	public String getNomJour() {
