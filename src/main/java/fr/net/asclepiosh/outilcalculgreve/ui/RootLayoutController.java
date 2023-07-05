@@ -1,7 +1,6 @@
 package fr.net.asclepiosh.outilcalculgreve.ui;
 
 import fr.net.asclepiosh.outilcalculgreve.MainApp;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
@@ -74,7 +73,9 @@ public class RootLayoutController {
 	 */
 	@FXML
 	private void handleMniSave() {
+
 		File jourFile = mainApp.getJourFilePath();
+
 		if (jourFile != null) {
 			mainApp.saveJourDataToFile(jourFile);
 		} else {
@@ -88,6 +89,7 @@ public class RootLayoutController {
 	 */
 	@FXML
 	private void handleMniSaveAs() {
+
 		FileChooser fileChooser = new FileChooser();
 
 		// Set extension filter

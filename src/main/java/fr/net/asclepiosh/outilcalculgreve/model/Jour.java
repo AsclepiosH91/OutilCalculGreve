@@ -36,7 +36,7 @@ public class Jour {
 
 
 		// Some initial dummy data, just for convenient testing.
-		this.dateJour = new SimpleObjectProperty<LocalDate>(LocalDate.of(2000, 1, 1));
+		this.dateJour = new SimpleObjectProperty<LocalDate>(LocalDate.of(2013, 1, 1));
 	}
 
 

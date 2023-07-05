@@ -1,6 +1,9 @@
 package fr.net.asclepiosh.outilcalculgreve.ui;
 
+import com.sun.jdi.connect.Transport;
 import fr.net.asclepiosh.outilcalculgreve.model.Jour;
+import fr.net.asclepiosh.outilcalculgreve.model.Transporteur;
+import fr.net.asclepiosh.outilcalculgreve.model.TransporteurData;
 import fr.net.asclepiosh.outilcalculgreve.util.DateUtil;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,24 +22,22 @@ import java.util.Arrays;
  * @author Nicolas Torres
  **/
 public class JourEditDialogController {
-
 	@FXML
 	private TextField nomJourField;
 
-
 	@FXML
-	private ComboBox<String> transportJourComboBox;
+	private ComboBox<Transporteur> transportJourComboBox;
 
 	@FXML
 	private DatePicker dateJourField;
-
 
 	private Stage dialogStage;
 	private Jour jour;
 	private boolean okClicked = false;
 
 
-	private final ObservableList<String> transporteursData = FXCollections.observableArrayList();
+
+	private final ObservableList<Transporteur> list = TransporteurData.getTransportList();
 
 
 	/**
@@ -64,19 +65,19 @@ public class JourEditDialogController {
 	 */
 	public void setJour(Jour jour) {
 
-		// Add Transporteurs data
-		transporteursData.addAll(Arrays.asList("RATP", "SNCF", "RATP+SNCF"));
-
-		transportJourComboBox.setItems(transporteursData);
-
 		this.jour = jour;
+
+		//jour.getTransportJour()
+
+
+		// Add Transporteurs data
+		transportJourComboBox.setItems(list);
+		//transportJourComboBox.getSelectionModel().select();
 
 		nomJourField.setText(jour.getNomJour());
 
-
-		transportJourComboBox.getSelectionModel().selectFirst();;
 		dateJourField.setValue(jour.getDateJour());
-		dateJourField.setPromptText("dd/mm/yyyy");
+
 	}
 
 	public boolean isOkClicked() {
@@ -92,7 +93,7 @@ public class JourEditDialogController {
 		if (isInputValid()) {
 
 			jour.setNomJour(nomJourField.getText());
-			jour.setTransportJour(transportJourComboBox.getValue());
+			jour.setTransportJour(transportJourComboBox.getValue().getName());
 
 			jour.setDateJour(DateUtil.parse(DateUtil.format(dateJourField.getValue())));
 
@@ -118,8 +119,8 @@ public class JourEditDialogController {
 	private boolean isInputValid() {
 		String errorMessage = "";
 
-		if (transportJourComboBox.getValue() == null || transportJourComboBox.getValue().length() == 0) {
-			errorMessage += "Ce n'est pas un type de jour valide !\n";
+		if (transportJourComboBox.getValue().getName() == null || transportJourComboBox.getValue().getName().length() == 0) {
+			errorMessage += "Ce n'est pas un transporteur valide !\n";
 		}
 
 
