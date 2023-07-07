@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import org.kordamp.ikonli.javafx.*?>
 
 <AnchorPane prefHeight="600" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.net.asclepiosh.outilcalculgreve.ui.JourOverviewController">
    <BorderPane prefHeight="600.0" prefWidth="629.0">
@@ -51,31 +49,6 @@
       		</AnchorPane>
       	</SplitPane>
       </center>
-      <bottom>
-		  <ToolBar BorderPane.alignment="CENTER">
-			  <Pane>
-				  <Label text="Coefficients pour le calcul :">
-					  <graphic>
-						  <FontIcon iconLiteral="mdi2t-table" selectionEnd="0" />
-					  </graphic>
-					  <padding>
-						  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-					  </padding>
-				  </Label>
-			  </Pane>
-			  <Pane HBox.hgrow="ALWAYS" />
-			  <Button text="Types de jours" />
-			  <Separator />
-			  <Button text="RATP &amp; SNCF" />
-			  <Separator />
-			  <Button text="Redressement" />
-			  <Separator />
-			  <Button text=" Tarif Contrat" />
-			  <Pane HBox.hgrow="ALWAYS" />
 
-		  </ToolBar>
-
-
-      </bottom>
    </BorderPane>
 </AnchorPane>

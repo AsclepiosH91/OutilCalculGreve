@@ -27,12 +27,23 @@
 					</graphic></MenuItem>
 				<MenuItem mnemonicParsing="false" onAction="#handleMniSaveAs" text="Enregistrer sous..." />
 				<SeparatorMenuItem mnemonicParsing="false" />
-				<MenuItem mnemonicParsing="false" text="Paramètres">
-					<graphic>
-						<FontIcon iconLiteral="mdi2c-cog" selectionEnd="0" />
-					</graphic>
-				</MenuItem>
-				<SeparatorMenuItem mnemonicParsing="false" />
+            <Menu mnemonicParsing="false" text="Coefficients pour le calcul">
+              	<items>
+                	<MenuItem mnemonicParsing="false" text="Coefficients des types de jours" />
+              	</items>
+				<items>
+                  <MenuItem mnemonicParsing="false" text="Coefficients RATP &amp; SNCF" />
+				</items>
+				<items>
+					<MenuItem mnemonicParsing="false" text="Coefficients de redressement" />
+				</items>
+				<items>
+					<MenuItem mnemonicParsing="false" text="Tarif Contrat" />
+				</items>
+            </Menu>
+
+				<MenuItem mnemonicParsing="false" text="Paramètres PowerBi" />
+            <SeparatorMenuItem mnemonicParsing="false" />
 				<MenuItem mnemonicParsing="false" onAction="#mniClose" text="Fermer">
 					<graphic>
 						<FontIcon iconLiteral="mdi2e-exit-to-app" selectionEnd="0" />

@@ -123,8 +123,9 @@ public class MainApp extends Application {
 		    loadJourDataFromFile(file);
 	    }
 
-
     }
+
+
 
 	/**
 	 * Shows the jour overview inside the root layout.
@@ -158,6 +159,7 @@ public class MainApp extends Application {
 	 * @return true if the user clicked OK, false otherwise.
 	 */
 	public boolean showJourEditDialog(Jour jour) {
+
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();
@@ -188,6 +190,7 @@ public class MainApp extends Application {
 			dialogStage.showAndWait();
 
 			return controller.isOkClicked();
+
 		} catch (IOException e) {
 			e.printStackTrace();
 			return false;
@@ -205,11 +208,8 @@ public class MainApp extends Application {
 	public File getJourFilePath() {
 		Preferences prefs = Preferences.userNodeForPackage(MainApp.class);
 		String filePath = prefs.get("filePath", null);
-		if (filePath != null) {
-			return new File(filePath);
-		} else {
-			return null;
-		}
+
+		return filePath != null ? new File(filePath) : null;
 	}
 
 
@@ -298,7 +298,5 @@ public class MainApp extends Application {
 			alert.showAndWait();
 		}
 	}
-
-
 
 }

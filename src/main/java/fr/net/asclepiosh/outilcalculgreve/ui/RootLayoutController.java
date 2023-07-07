@@ -3,10 +3,13 @@ package fr.net.asclepiosh.outilcalculgreve.ui;
 import fr.net.asclepiosh.outilcalculgreve.MainApp;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Properties;
 
 
@@ -129,6 +132,9 @@ public class RootLayoutController {
 		alert.setTitle("Outil Calcul Grève");
 		alert.setHeaderText("À propos de l'outil calcul grève\nVersion : "+ appProperties.getProperty("version"));
 		alert.setContentText("Auteur : Nicolas Torres\nE-mail : nicolas.torres@ratp.fr");
+
+		Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+		stage.getIcons().add(new Image(Objects.requireNonNull(MainApp.class.getResource("icons/RATP.svg.png")).toString())); // To add an icon
 
 		alert.showAndWait();
 	}
