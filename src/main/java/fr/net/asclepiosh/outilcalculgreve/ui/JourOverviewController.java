@@ -9,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
+import java.time.LocalDate;
+
 public class JourOverviewController {
 
 	@FXML
@@ -113,11 +115,20 @@ public class JourOverviewController {
 	 */
 	@FXML
 	public void handleNewJour() {
+
 		Jour tempJour = new Jour();
+
+		tempJour.setNomJour("Jour XXX");
+		tempJour.setTransportJour("RATP");
+
+		// Set default value of the date to today
+		tempJour.setDateJour(LocalDate.now());
+
 		boolean okClicked = mainApp.showJourEditDialog(tempJour);
 		if (okClicked) {
 			mainApp.getJourData().add(tempJour);
 		}
+
 	}
 
 

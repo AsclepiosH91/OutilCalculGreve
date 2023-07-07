@@ -1,11 +1,9 @@
 package fr.net.asclepiosh.outilcalculgreve.ui;
 
-import com.sun.jdi.connect.Transport;
 import fr.net.asclepiosh.outilcalculgreve.model.Jour;
 import fr.net.asclepiosh.outilcalculgreve.model.Transporteur;
 import fr.net.asclepiosh.outilcalculgreve.model.TransporteurData;
 import fr.net.asclepiosh.outilcalculgreve.util.DateUtil;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -14,7 +12,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.util.Arrays;
+import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  * Dialog to edit details of a jour.
@@ -67,16 +66,22 @@ public class JourEditDialogController {
 
 		this.jour = jour;
 
-		//jour.getTransportJour()
-
-
 		// Add Transporteurs data
 		transportJourComboBox.setItems(list);
-		//transportJourComboBox.getSelectionModel().select();
+
+		int index = switch (jour.getTransportJour()) {
+			case "RATP" -> 0;
+			case "SNCF" -> 1;
+			case "RATP-SNCF" -> 2;
+			default -> 0;
+		};
+
+		transportJourComboBox.getSelectionModel().select(index);
 
 		nomJourField.setText(jour.getNomJour());
 
 		dateJourField.setValue(jour.getDateJour());
+
 
 	}
 
@@ -156,6 +161,5 @@ public class JourEditDialogController {
 			return false;
 		}
 	}
-
 
 }
