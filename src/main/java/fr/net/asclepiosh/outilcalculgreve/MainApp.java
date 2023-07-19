@@ -111,6 +111,7 @@ public class MainApp extends Application {
             RootLayoutController controller = loader.getController();
             controller.setMainApp(this);
 
+	        primaryStage.setResizable(false);
             primaryStage.show();
 
         } catch (IOException e) {
@@ -183,7 +184,7 @@ public class MainApp extends Application {
 
 			// Set the person into the controller.
 			JourEditDialogController controller = loader.getController();
-			controller.setDialogStage(dialogStage);
+			controller.setJourEditDialogStage(dialogStage);
 			controller.setJour(jour);
 
 			// Show the dialog and wait until the user closes it

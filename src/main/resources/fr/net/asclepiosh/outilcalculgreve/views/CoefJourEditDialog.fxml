@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="409.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.net.asclepiosh.outilcalculgreve.ui.CoefJourEditDialogController">
+	<GridPane alignment="TOP_CENTER" hgap="10.0" layoutX="15.0" layoutY="110.0" prefHeight="310.0" prefWidth="430.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+		<columnConstraints>
+			<ColumnConstraints hgrow="SOMETIMES" maxWidth="290.0" minWidth="10.0" prefWidth="185.0" />
+			<ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="110.0" />
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="110.0" />
+		</columnConstraints>
+
+		<rowConstraints>
+
+         <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" />
+		 <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" />
+		 <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" />
+         <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" />
+         <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" />
+         <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" />
+         <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" />
+
+		</rowConstraints>
+
+		<Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="115.0" text="RATP" GridPane.columnIndex="1" GridPane.rowIndex="0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+
+		<Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="115.0" text="SNCF" GridPane.columnIndex="2" GridPane.rowIndex="0">
+			<font>
+				<Font size="18.0" />
+			</font></Label>
+
+		<Label text="Jour ouvré hors vacances scolaire :" GridPane.rowIndex="1" />
+		<Label text="Samedi hors vacances scolaire :" GridPane.rowIndex="2" />
+		<Label text="Dimanche hors vacances scolaire :" GridPane.rowIndex="3" />
+		<Label text="Jour ouvré vacances scolaire :" GridPane.rowIndex="4" />
+		<Label text="Samedi vacances scolaire :" GridPane.rowIndex="5" />
+		<Label text="Dimanche vacances scolaire :" GridPane.rowIndex="6" />
+
+		<TextField fx:id="cJohvRField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+		<TextField fx:id="cSahvRField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+		<TextField fx:id="cDihvRField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+		<TextField fx:id="cJovRField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+		<TextField fx:id="cSavRField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+		<TextField fx:id="cDivRField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+		<TextField fx:id="cJohvSField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+		<TextField fx:id="cSahvSField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+		<TextField fx:id="cDihvSField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+		<TextField fx:id="cJovSField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+		<TextField fx:id="cSavSField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+		<TextField fx:id="cDivSField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+
+	</GridPane>
+	<ButtonBar layoutX="380.0" layoutY="350.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0">
+		<buttons>
+			<Button mnemonicParsing="false" onAction="#handleOk" text="Ok" />
+			<Button mnemonicParsing="false" onAction="#handleCancel" text="Annuler" />
+		</buttons>
+	</ButtonBar>
+</AnchorPane>

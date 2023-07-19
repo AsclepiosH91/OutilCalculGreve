@@ -20,14 +20,17 @@
 						<FontIcon iconLiteral="mdi2f-folder-open" selectionEnd="0" />
 					</graphic>
 				</MenuItem>
-				<SeparatorMenuItem mnemonicParsing="false" onAction="#handleMniSave" />
-				<MenuItem mnemonicParsing="false" text="Enregistrer">
+				<SeparatorMenuItem mnemonicParsing="false" />
+				<MenuItem mnemonicParsing="false" onAction="#handleMniSave" text="Enregistrer">
 					<graphic>
 						<FontIcon iconLiteral="mdi2c-content-save" selectionEnd="0" />
 					</graphic></MenuItem>
 				<MenuItem mnemonicParsing="false" onAction="#handleMniSaveAs" text="Enregistrer sous..." />
 				<SeparatorMenuItem mnemonicParsing="false" />
             <Menu mnemonicParsing="false" text="Coefficients pour le calcul">
+				<graphic>
+					<FontIcon iconLiteral="mdi2t-table-settings" selectionEnd="0" />
+				</graphic>
               	<items>
                 	<MenuItem mnemonicParsing="false" text="Coefficients des types de jours" />
               	</items>
@@ -44,7 +47,7 @@
 
 				<MenuItem mnemonicParsing="false" text="Paramètres PowerBi" />
             <SeparatorMenuItem mnemonicParsing="false" />
-				<MenuItem mnemonicParsing="false" onAction="#mniClose" text="Fermer">
+				<MenuItem mnemonicParsing="false" onAction="#mniClose" text="Quitter">
 					<graphic>
 						<FontIcon iconLiteral="mdi2e-exit-to-app" selectionEnd="0" />
 					</graphic>

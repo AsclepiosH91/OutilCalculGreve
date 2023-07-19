@@ -12,9 +12,6 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.time.LocalDate;
-import java.util.Objects;
-
 /**
  * Dialog to edit details of a jour.
  *
@@ -30,7 +27,7 @@ public class JourEditDialogController {
 	@FXML
 	private DatePicker dateJourField;
 
-	private Stage dialogStage;
+	private Stage jourEditDialogStage;
 	private Jour jour;
 	private boolean okClicked = false;
 
@@ -50,10 +47,10 @@ public class JourEditDialogController {
 	/**
 	 * Sets the stage of this dialog.
 	 *
-	 * @param dialogStage
+	 * @param jourEditDialogStage
 	 */
-	public void setDialogStage(Stage dialogStage) {
-		this.dialogStage = dialogStage;
+	public void setJourEditDialogStage(Stage jourEditDialogStage) {
+		this.jourEditDialogStage = jourEditDialogStage;
 	}
 
 
@@ -103,7 +100,7 @@ public class JourEditDialogController {
 			jour.setDateJour(DateUtil.parse(DateUtil.format(dateJourField.getValue())));
 
 			okClicked = true;
-			dialogStage.close();
+			jourEditDialogStage.close();
 		}
 	}
 
@@ -112,7 +109,7 @@ public class JourEditDialogController {
 	 */
 	@FXML
 	private void handleCancel() {
-		dialogStage.close();
+		jourEditDialogStage.close();
 	}
 
 
@@ -151,7 +148,7 @@ public class JourEditDialogController {
 		} else {
 			// Show the error message.
 			Alert alert = new Alert(Alert.AlertType.ERROR);
-			alert.initOwner(dialogStage);
+			alert.initOwner(jourEditDialogStage);
 			alert.setTitle("Champs non valides");
 			alert.setHeaderText("Corrigez les champs non valides !");
 			alert.setContentText(errorMessage);
