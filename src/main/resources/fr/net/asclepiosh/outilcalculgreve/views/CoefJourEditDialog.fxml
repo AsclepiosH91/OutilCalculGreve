@@ -4,12 +4,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="409.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.net.asclepiosh.outilcalculgreve.ui.CoefJourEditDialogController">
+<AnchorPane prefHeight="392.0" prefWidth="466.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.net.asclepiosh.outilcalculgreve.ui.CoefJourEditDialogController">
 	<GridPane alignment="TOP_CENTER" hgap="10.0" layoutX="15.0" layoutY="110.0" prefHeight="310.0" prefWidth="430.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
 		<columnConstraints>
-			<ColumnConstraints hgrow="SOMETIMES" maxWidth="290.0" minWidth="10.0" prefWidth="185.0" />
-			<ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="110.0" />
-         <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="110.0" />
+			<ColumnConstraints hgrow="SOMETIMES" maxWidth="334.0" minWidth="10.0" prefWidth="248.0" />
+			<ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="108.0" />
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="96.0" />
 		</columnConstraints>
 
 		<rowConstraints>
@@ -24,22 +24,22 @@
 
 		</rowConstraints>
 
-		<Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="115.0" text="RATP" GridPane.columnIndex="1" GridPane.rowIndex="0">
+		<Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="88.0" text="RATP" GridPane.columnIndex="1" GridPane.rowIndex="0">
          <font>
             <Font size="18.0" />
          </font></Label>
 
-		<Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="115.0" text="SNCF" GridPane.columnIndex="2" GridPane.rowIndex="0">
+		<Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="94.0" text="SNCF" GridPane.columnIndex="2" GridPane.rowIndex="0">
 			<font>
 				<Font size="18.0" />
 			</font></Label>
 
-		<Label text="Jour ouvré hors vacances scolaire :" GridPane.rowIndex="1" />
-		<Label text="Samedi hors vacances scolaire :" GridPane.rowIndex="2" />
-		<Label text="Dimanche hors vacances scolaire :" GridPane.rowIndex="3" />
-		<Label text="Jour ouvré vacances scolaire :" GridPane.rowIndex="4" />
-		<Label text="Samedi vacances scolaire :" GridPane.rowIndex="5" />
-		<Label text="Dimanche vacances scolaire :" GridPane.rowIndex="6" />
+		<Label text="Jour ouvré hors vacances scolaire (cJohv) :" GridPane.rowIndex="1" />
+		<Label text="Samedi hors vacances scolaire (cSahv):" GridPane.rowIndex="2" />
+		<Label text="Dimanche hors vacances scolaire (cDihv) :" GridPane.rowIndex="3" />
+		<Label text="Jour ouvré vacances scolaire (cJov) :" GridPane.rowIndex="4" />
+		<Label text="Samedi vacances scolaire (cSav) :" GridPane.rowIndex="5" />
+		<Label text="Dimanche vacances scolaire (cDiv) :" GridPane.rowIndex="6" />
 
 		<TextField fx:id="cJohvRField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 		<TextField fx:id="cSahvRField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />

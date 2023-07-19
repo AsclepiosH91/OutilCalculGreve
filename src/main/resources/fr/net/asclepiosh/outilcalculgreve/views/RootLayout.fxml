@@ -32,7 +32,7 @@
 					<FontIcon iconLiteral="mdi2t-table-settings" selectionEnd="0" />
 				</graphic>
               	<items>
-                	<MenuItem mnemonicParsing="false" onAction="#handleMniCoefJour" text="Coefficients des types de jours" />
+                	<MenuItem mnemonicParsing="false" onAction="#handleMniCoefJour" text="Coefficients Journalier RATP et SNCF" />
               	</items>
 				<items>
                   <MenuItem mnemonicParsing="false" text="Coefficients RATP &amp; SNCF" />

@@ -146,30 +146,30 @@ public class CoefJourEditDialogController {
 		String errorMessage = "";
 
 		if (cJohvRField.getText() == null || cJohvRField.getText().length() == 0 || !StringUtil.isFloat(cJohvRField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cJohvR !\n";
+			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cJohv RATP !\n";
 		if (cSahvRField.getText() == null || cSahvRField.getText().length() == 0 || !StringUtil.isFloat(cSahvRField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cSahvR !\n";
+			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cSahv RATP !\n";
 		if (cDihvRField.getText() == null || cDihvRField.getText().length() == 0 || !StringUtil.isFloat(cDihvRField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cDihvR !\n";
+			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cDihv RATP !\n";
 		if (cJovRField.getText() == null || cJovRField.getText().length() == 0 || !StringUtil.isFloat(cJovRField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cJovR !\n";
+			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cJov RATP !\n";
 		if (cSavRField.getText() == null || cSavRField.getText().length() == 0 || !StringUtil.isFloat(cSavRField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cSavR !\n";
+			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cSav RATP !\n";
 		if (cDivRField.getText() == null || cDivRField.getText().length() == 0 || !StringUtil.isFloat(cDivRField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cDivR !\n";
+			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cDiv RATP !\n";
 
 		if (cJohvSField.getText() == null || cJohvSField.getText().length() == 0 || !StringUtil.isFloat(cJohvSField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cJohvS !\n";
+			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cJohv SNCF !\n";
 		if (cSahvSField.getText() == null || cSahvSField.getText().length() == 0 || !StringUtil.isFloat(cSahvSField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cSahvS !\n";
+			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cSahv SNCF !\n";
 		if (cDihvSField.getText() == null || cDihvSField.getText().length() == 0 || !StringUtil.isFloat(cDihvSField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cDihvS !\n";
+			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cDihv SNCF !\n";
 		if (cJovSField.getText() == null || cJovSField.getText().length() == 0 || !StringUtil.isFloat(cJovSField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cJovS !\n";
+			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cJov SNCF !\n";
 		if (cSavSField.getText() == null || cSavSField.getText().length() == 0 || !StringUtil.isFloat(cSavSField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cSavS !\n";
+			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cSav SNCF !\n";
 		if (cDivSField.getText() == null || cDivSField.getText().length() == 0 || !StringUtil.isFloat(cDivSField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cDivS !\n";
+			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cDiv SNCF !\n";
 
 
 		if (errorMessage.length() == 0) {
