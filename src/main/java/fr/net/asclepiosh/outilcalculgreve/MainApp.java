@@ -70,7 +70,7 @@ public class MainApp extends Application {
 
 
 	/**
-	 * Returns the data as an observable list of Jour.
+	 * Returns the data as an observable list of CoefJour.
 	 * @return
 	 */
 	public ObservableList<CoefJour> getCoefJourData() {
