@@ -50,6 +50,7 @@ public class JourOverviewController {
 	 */
 	@FXML
 	private void initialize() {
+
 		// Initialize the jour table with the three columns.
 		nomJourColumn.setCellValueFactory(cellData -> cellData.getValue().nomJourProperty());
 

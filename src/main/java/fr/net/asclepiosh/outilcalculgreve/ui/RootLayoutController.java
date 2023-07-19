@@ -1,6 +1,9 @@
 package fr.net.asclepiosh.outilcalculgreve.ui;
 
 import fr.net.asclepiosh.outilcalculgreve.MainApp;
+import fr.net.asclepiosh.outilcalculgreve.model.CoefJour;
+import fr.net.asclepiosh.outilcalculgreve.model.Jour;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
@@ -9,6 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Properties;
 
@@ -138,4 +142,32 @@ public class RootLayoutController {
 
 		alert.showAndWait();
 	}
+
+	public void handleMniCoefJour(ActionEvent actionEvent) {
+
+		CoefJour tempCoefJour = new CoefJour();
+
+		tempCoefJour.setcJohvR("1.000");
+		tempCoefJour.setcSahvR("0.850");
+		tempCoefJour.setcDihvR("0.600");
+		tempCoefJour.setcJovR("0.910");
+		tempCoefJour.setcSavR("0.740");
+		tempCoefJour.setcDivR("0.550");
+
+		tempCoefJour.setcJohvS("1.000");
+		tempCoefJour.setcSahvS("0.960");
+		tempCoefJour.setcDihvS("0.740");
+		tempCoefJour.setcJovS("0.940");
+		tempCoefJour.setcSavS("0.840");
+		tempCoefJour.setcDivS("0.670");
+
+
+
+
+		boolean okClicked = mainApp.showCoefJourEditDialog(tempCoefJour);
+		if (okClicked) {
+			mainApp.getCoefJourData().add(tempCoefJour);
+		}
+	}
+
 }

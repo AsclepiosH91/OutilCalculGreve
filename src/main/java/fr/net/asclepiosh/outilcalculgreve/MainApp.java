@@ -1,7 +1,9 @@
 package fr.net.asclepiosh.outilcalculgreve;
 
+import fr.net.asclepiosh.outilcalculgreve.model.CoefJour;
 import fr.net.asclepiosh.outilcalculgreve.model.Jour;
 import fr.net.asclepiosh.outilcalculgreve.model.JourListWrapper;
+import fr.net.asclepiosh.outilcalculgreve.ui.CoefJourEditDialogController;
 import fr.net.asclepiosh.outilcalculgreve.ui.JourEditDialogController;
 import fr.net.asclepiosh.outilcalculgreve.ui.JourOverviewController;
 import fr.net.asclepiosh.outilcalculgreve.ui.RootLayoutController;
@@ -40,6 +42,14 @@ public class MainApp extends Application {
 	 */
 	private final ObservableList<Jour> jourData = FXCollections.observableArrayList();
 
+
+
+	/**
+	 * The data as an observable list of CoefJours.
+	 */
+	private final ObservableList<CoefJour> coefJourData = FXCollections.observableArrayList();
+
+
 	/**
 	 * Constructor
 	 */
@@ -57,6 +67,16 @@ public class MainApp extends Application {
 	public ObservableList<Jour> getJourData() {
 		return jourData;
 	}
+
+
+	/**
+	 * Returns the data as an observable list of Jour.
+	 * @return
+	 */
+	public ObservableList<CoefJour> getCoefJourData() {
+		return coefJourData;
+	}
+
 
 
     // ... THE REST OF THE CLASS ...
@@ -199,6 +219,52 @@ public class MainApp extends Application {
 	}
 
 
+
+	public boolean showCoefJourEditDialog(CoefJour coefJour) {
+
+		try {
+			// Load the fxml file and create a new stage for the popup dialog.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("views/CoefJourEditDialog.fxml"));
+			AnchorPane page = loader.load();
+
+			// Create the dialog Stage.
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Editer les coefficients Journalier RATP et SNCF");
+
+			Image appIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("icons/RATP.svg.png")));
+			dialogStage.getIcons().add(appIcon);
+
+			dialogStage.setResizable(false);
+
+
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the coefJour into the controller.
+			CoefJourEditDialogController controller = loader.getController();
+			controller.setCoefJourEditDialogStage(dialogStage);
+			controller.setJour(coefJour);
+
+			// Show the dialog and wait until the user closes it
+			dialogStage.showAndWait();
+
+			return controller.isOkClicked();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+
+	}
+
+
+
+
+
+
 	/**
 	 * Returns the jour file preference, i.e. the file that was last opened.
 	 * The preference is read from the OS specific registry. If no such
@@ -299,5 +365,6 @@ public class MainApp extends Application {
 			alert.showAndWait();
 		}
 	}
+
 
 }
