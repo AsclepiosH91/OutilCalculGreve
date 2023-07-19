@@ -1,8 +1,6 @@
 package fr.net.asclepiosh.outilcalculgreve.ui;
 
 import fr.net.asclepiosh.outilcalculgreve.model.CoefJour;
-import fr.net.asclepiosh.outilcalculgreve.model.Jour;
-import fr.net.asclepiosh.outilcalculgreve.util.DateUtil;
 import fr.net.asclepiosh.outilcalculgreve.util.StringUtil;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -44,14 +42,9 @@ public class CoefJourEditDialogController {
 
 
 
-
 	private Stage coefJourEditDialogStage;
 	private CoefJour coefJour;
 	private boolean okClicked = false;
-
-
-
-
 
 
 	/**

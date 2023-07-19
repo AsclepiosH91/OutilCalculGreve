@@ -162,8 +162,6 @@ public class RootLayoutController {
 		tempCoefJour.setcDivS("0.670");
 
 
-
-
 		boolean okClicked = mainApp.showCoefJourEditDialog(tempCoefJour);
 		if (okClicked) {
 			mainApp.getCoefJourData().add(tempCoefJour);

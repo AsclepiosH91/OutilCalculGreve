@@ -114,6 +114,7 @@ public class MainApp extends Application {
      * person file.
      */
     public void initRootLayout() {
+
         try {
 
 			// Load root layout from fxml file.
@@ -191,16 +192,7 @@ public class MainApp extends Application {
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Editer un jour de grève");
 
-			Image appIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("icons/RATP.svg.png")));
-			dialogStage.getIcons().add(appIcon);
-
-			dialogStage.setResizable(false);
-
-
-			dialogStage.initModality(Modality.WINDOW_MODAL);
-			dialogStage.initOwner(primaryStage);
-			Scene scene = new Scene(page);
-			dialogStage.setScene(scene);
+			SetStage(page, dialogStage, false);
 
 			// Set the person into the controller.
 			JourEditDialogController controller = loader.getController();
@@ -232,16 +224,7 @@ public class MainApp extends Application {
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Editer les coefficients Journalier RATP et SNCF");
 
-			Image appIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("icons/RATP.svg.png")));
-			dialogStage.getIcons().add(appIcon);
-
-			dialogStage.setResizable(false);
-
-
-			dialogStage.initModality(Modality.WINDOW_MODAL);
-			dialogStage.initOwner(primaryStage);
-			Scene scene = new Scene(page);
-			dialogStage.setScene(scene);
+			SetStage(page, dialogStage, false);
 
 			// Set the coefJour into the controller.
 			CoefJourEditDialogController controller = loader.getController();
@@ -260,9 +243,18 @@ public class MainApp extends Application {
 
 	}
 
+	private void SetStage(AnchorPane page, Stage dialogStage, Boolean isResizable) {
 
+		Image appIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("icons/RATP.svg.png")));
+		dialogStage.getIcons().add(appIcon);
 
+		dialogStage.setResizable(isResizable);
 
+		dialogStage.initModality(Modality.WINDOW_MODAL);
+		dialogStage.initOwner(primaryStage);
+		Scene scene = new Scene(page);
+		dialogStage.setScene(scene);
+	}
 
 
 	/**
@@ -321,7 +313,6 @@ public class MainApp extends Application {
 			jourData.addAll(wrapper.getJours());
 
 
-
 			// Save the file path to the registry.
 			setJourFilePath(file);
 
@@ -356,6 +347,7 @@ public class MainApp extends Application {
 
 			// Save the file path to the registry.
 			setJourFilePath(file);
+
 		} catch (Exception e) { // catches ANY exception
 			Alert alert = new Alert(Alert.AlertType.ERROR);
 			alert.setTitle("Erreur");
