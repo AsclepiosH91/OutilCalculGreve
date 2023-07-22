@@ -10,19 +10,30 @@ import java.util.List;
  *
  * @author Nicolas Torres
  */
-@XmlRootElement(name = "jours")
+@XmlRootElement(name = "joursdegreve")
 public class JourListWrapper {
 
 	private List<Jour> jours;
+	private List<CoefJour> coefJours;
 
 	@XmlElement(name = "jour")
 	public List<Jour> getJours() {
 			return jours;
 		}
-
 	public void setJours(List<Jour> jours) {
 			this.jours = jours;
 		}
+
+
+	@XmlElement(name = "coefjournalier")
+	public List<CoefJour> getCoefJours() {
+		return coefJours;
+	}
+	public void setCoefJours(List<CoefJour> coefJours) {
+		this.coefJours = coefJours;
+	}
+
+
 
 }
 

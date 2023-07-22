@@ -43,7 +43,6 @@ public class MainApp extends Application {
 	private final ObservableList<Jour> jourData = FXCollections.observableArrayList();
 
 
-
 	/**
 	 * The data as an observable list of CoefJours.
 	 */
@@ -54,6 +53,7 @@ public class MainApp extends Application {
 	 * Constructor
 	 */
 	public MainApp() {
+
 		// Add some sample data
 		jourData.add(new Jour("Jour 1", "RATP"));
 		jourData.add(new Jour("Jour 2", "SNCF"));
@@ -92,7 +92,6 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-
 
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Outil de calcul grève");
@@ -159,7 +158,7 @@ public class MainApp extends Application {
 			loader.setLocation(MainApp.class.getResource("views/JourOverview.fxml"));
 			AnchorPane jourOverview = loader.load();
 
-			// Set person overview into the center of root layout.
+			// Set jour overview into the center of root layout.
 			rootLayout.setCenter(jourOverview);
 
 			// Give the controller access to the main app.
@@ -302,15 +301,19 @@ public class MainApp extends Application {
 	 * @param file
 	 */
 	public void loadJourDataFromFile(File file) {
+
 		try {
 			JAXBContext context = JAXBContext.newInstance(JourListWrapper.class);
 			Unmarshaller um = context.createUnmarshaller();
 
 			// Reading XML from the file and unmarshalling.
-			JourListWrapper wrapper = (JourListWrapper) um.unmarshal(file);
+			JourListWrapper myWrapper = (JourListWrapper) um.unmarshal(file);
 
 			jourData.clear();
-			jourData.addAll(wrapper.getJours());
+			jourData.addAll(myWrapper.getJours());
+
+			coefJourData.clear();
+			coefJourData.addAll(myWrapper.getCoefJours());
 
 
 			// Save the file path to the registry.
@@ -335,15 +338,17 @@ public class MainApp extends Application {
 	public void saveJourDataToFile(File file) {
 		try {
 			JAXBContext context = JAXBContext.newInstance(JourListWrapper.class);
-			Marshaller m = context.createMarshaller();
-			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+			Marshaller myMarshaller = context.createMarshaller();
+			myMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
 			// Wrapping our jour data.
-			JourListWrapper wrapper = new JourListWrapper();
-			wrapper.setJours(jourData);
+			JourListWrapper myWrapper = new JourListWrapper();
+			myWrapper.setJours(jourData);
+			myWrapper.setCoefJours(coefJourData);
+
 
 			// Marshalling and saving XML to the file.
-			m.marshal(wrapper, file);
+			myMarshaller.marshal(myWrapper, file);
 
 			// Save the file path to the registry.
 			setJourFilePath(file);

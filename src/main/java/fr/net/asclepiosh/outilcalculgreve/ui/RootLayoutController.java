@@ -45,7 +45,9 @@ public class RootLayoutController {
 	 */
 	@FXML
     private void handleMniNew() {
+
 	    mainApp.getJourData().clear();
+		mainApp.getCoefJourData().clear();
 	    mainApp.setJourFilePath(null);
 
     }
@@ -121,6 +123,7 @@ public class RootLayoutController {
 	public void mniClose() {
 		System.exit(0);
 	}
+
 
 	/**
 	 * Opens an about dialog.
