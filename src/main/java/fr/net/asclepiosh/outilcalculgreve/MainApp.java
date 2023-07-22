@@ -8,6 +8,7 @@ import fr.net.asclepiosh.outilcalculgreve.ui.JourEditDialogController;
 import fr.net.asclepiosh.outilcalculgreve.ui.JourOverviewController;
 import fr.net.asclepiosh.outilcalculgreve.ui.RootLayoutController;
 import javafx.application.Application;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -46,7 +47,7 @@ public class MainApp extends Application {
 	/**
 	 * The data as an observable list of CoefJours.
 	 */
-	private final ObservableList<CoefJour> coefJourData = FXCollections.observableArrayList();
+	private CoefJour coefJourData;
 
 
 	/**
@@ -57,6 +58,8 @@ public class MainApp extends Application {
 		// Add some sample data
 		jourData.add(new Jour("Jour 1", "RATP"));
 		jourData.add(new Jour("Jour 2", "SNCF"));
+
+		initCoef();
 
 	}
 
@@ -73,13 +76,15 @@ public class MainApp extends Application {
 	 * Returns the data as an observable list of CoefJour.
 	 * @return
 	 */
-	public ObservableList<CoefJour> getCoefJourData() {
+	public CoefJour getCoefJourData() {
 		return coefJourData;
 	}
 
+	public void setCoefJourData(final CoefJour coefJourData) {
+		this.coefJourData = coefJourData;
+	}
 
-
-    // ... THE REST OF THE CLASS ...
+	// ... THE REST OF THE CLASS ...
 
     /**
      * Returns the main stage.
@@ -302,6 +307,11 @@ public class MainApp extends Application {
 	 */
 	public void loadJourDataFromFile(File file) {
 
+		if(file == null || !file.exists())
+		{
+			return;
+		}
+
 		try {
 			JAXBContext context = JAXBContext.newInstance(JourListWrapper.class);
 			Unmarshaller um = context.createUnmarshaller();
@@ -312,14 +322,17 @@ public class MainApp extends Application {
 			jourData.clear();
 			jourData.addAll(myWrapper.getJours());
 
-			coefJourData.clear();
-			coefJourData.addAll(myWrapper.getCoefJours());
-
+			initCoef();
+			if(myWrapper.getCoefJours() != null) {
+				coefJourData = myWrapper.getCoefJours();
+			}
 
 			// Save the file path to the registry.
 			setJourFilePath(file);
 
 		} catch (Exception e) { // catches ANY exception
+			e.printStackTrace();
+
 			Alert alert = new Alert(Alert.AlertType.ERROR);
 			alert.setTitle("Erreur");
 			alert.setHeaderText("Impossible de charger les données");
@@ -327,6 +340,26 @@ public class MainApp extends Application {
 
 			alert.showAndWait();
 		}
+	}
+
+	public void initCoef()
+	{
+		// init default values
+		coefJourData = new CoefJour();
+
+		coefJourData.setcJohvR("1.000");
+		coefJourData.setcSahvR("0.850");
+		coefJourData.setcDihvR("0.600");
+		coefJourData.setcJovR("0.910");
+		coefJourData.setcSavR("0.740");
+		coefJourData.setcDivR("0.550");
+
+		coefJourData.setcJohvS("1.000");
+		coefJourData.setcSahvS("0.960");
+		coefJourData.setcDihvS("0.740");
+		coefJourData.setcJovS("0.940");
+		coefJourData.setcSavS("0.840");
+		coefJourData.setcDivS("0.670");
 	}
 
 
@@ -354,6 +387,8 @@ public class MainApp extends Application {
 			setJourFilePath(file);
 
 		} catch (Exception e) { // catches ANY exception
+			e.printStackTrace();
+
 			Alert alert = new Alert(Alert.AlertType.ERROR);
 			alert.setTitle("Erreur");
 			alert.setHeaderText("Impossible d'enregistrer les données");

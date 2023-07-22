@@ -30,7 +30,7 @@ public class RootLayoutController {
 	// Reference to the main application
     private MainApp mainApp;
 
-    /**
+	/**
      * Is called by the main application to give a reference back to itself.
      *
      * @param mainApp
@@ -47,7 +47,7 @@ public class RootLayoutController {
     private void handleMniNew() {
 
 	    mainApp.getJourData().clear();
-		mainApp.getCoefJourData().clear();
+		mainApp.initCoef();
 	    mainApp.setJourFilePath(null);
 
     }
@@ -146,28 +146,14 @@ public class RootLayoutController {
 		alert.showAndWait();
 	}
 
-	public void handleMniCoefJour(ActionEvent actionEvent) {
+	public void handleMniCoefJour(ActionEvent ignored) {
 
-		CoefJour tempCoefJour = new CoefJour();
+		final CoefJour currentCoef = mainApp.getCoefJourData();
+		final CoefJour tmpCoef = new CoefJour(currentCoef);
 
-		tempCoefJour.setcJohvR("1.000");
-		tempCoefJour.setcSahvR("0.850");
-		tempCoefJour.setcDihvR("0.600");
-		tempCoefJour.setcJovR("0.910");
-		tempCoefJour.setcSavR("0.740");
-		tempCoefJour.setcDivR("0.550");
-
-		tempCoefJour.setcJohvS("1.000");
-		tempCoefJour.setcSahvS("0.960");
-		tempCoefJour.setcDihvS("0.740");
-		tempCoefJour.setcJovS("0.940");
-		tempCoefJour.setcSavS("0.840");
-		tempCoefJour.setcDivS("0.670");
-
-
-		boolean okClicked = mainApp.showCoefJourEditDialog(tempCoefJour);
+		boolean okClicked = mainApp.showCoefJourEditDialog(tmpCoef);
 		if (okClicked) {
-			mainApp.getCoefJourData().add(tempCoefJour);
+			mainApp.setCoefJourData(tmpCoef);
 		}
 	}
 

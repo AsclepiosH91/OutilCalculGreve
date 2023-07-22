@@ -93,6 +93,24 @@ public class CoefJour {
 		this.cDivS = new SimpleStringProperty(cDivS);
 	}
 
+	/**
+	 * Copy constructor
+	 * @param orig instance of CoefJour we want to copy
+	 */
+	public CoefJour(final CoefJour orig) {
+		this.cJohvR = orig.cJohvR;
+		this.cSahvR = orig.cSahvR;
+		this.cDihvR = orig.cDihvR;
+		this.cJovR = orig.cJovR;
+		this.cSavR = orig.cSavR;
+		this.cDivR = orig.cDivR;
+		this.cJohvS = orig.cJohvS;
+		this.cSahvS = orig.cSahvS;
+		this.cDihvS = orig.cDihvS;
+		this.cJovS = orig.cJovS;
+		this.cSavS = orig.cSavS;
+		this.cDivS = orig.cDivS;
+	}
 
 	public String getcJohvR() {
 		return cJohvR.get();

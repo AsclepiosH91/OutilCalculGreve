@@ -13,8 +13,10 @@ import java.util.List;
 @XmlRootElement(name = "joursdegreve")
 public class JourListWrapper {
 
+
 	private List<Jour> jours;
-	private List<CoefJour> coefJours;
+
+	private CoefJour coefJours;
 
 	@XmlElement(name = "jour")
 	public List<Jour> getJours() {
@@ -24,16 +26,13 @@ public class JourListWrapper {
 			this.jours = jours;
 		}
 
-
-	@XmlElement(name = "coefjournalier")
-	public List<CoefJour> getCoefJours() {
+	@XmlElement(name = "coefjournalier", required = true)
+	public CoefJour getCoefJours() {
 		return coefJours;
 	}
-	public void setCoefJours(List<CoefJour> coefJours) {
+
+	public void setCoefJours(CoefJour coefJours) {
 		this.coefJours = coefJours;
 	}
-
-
-
 }
 
