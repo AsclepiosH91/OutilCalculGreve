@@ -51,7 +51,7 @@ public class RootLayoutController {
 		mainApp.initCoefTypeForfaitUsage();
 		mainApp.initCoefPartDevolue();
 
-		mainApp.setJourFilePath(null);
+		mainApp.setFilePath(null);
 
     }
 
@@ -73,7 +73,7 @@ public class RootLayoutController {
 	    File file = fileChooser.showOpenDialog(mainApp.getPrimaryStage());
 
 	    if (file != null) {
-		    mainApp.loadJourDataFromFile(file);
+		    mainApp.loadDataFromFile(file);
 	    }
 
     }
@@ -89,7 +89,7 @@ public class RootLayoutController {
 		File jourFile = mainApp.getJourFilePath();
 
 		if (jourFile != null) {
-			mainApp.saveJourDataToFile(jourFile);
+			mainApp.saveDataToFile(jourFile);
 		} else {
 			handleMniSaveAs();
 		}
@@ -117,7 +117,7 @@ public class RootLayoutController {
 			if (!file.getPath().endsWith(".xml")) {
 				file = new File(file.getPath() + ".xml");
 			}
-			mainApp.saveJourDataToFile(file);
+			mainApp.saveDataToFile(file);
 		}
 
 	}

@@ -157,7 +157,7 @@ public class MainApp extends Application {
 	    // Try to load last opened person file.
 	    File file = getJourFilePath();
 	    if (file != null) {
-		    loadJourDataFromFile(file);
+		    loadDataFromFile(file);
 	    }
 
     }
@@ -363,7 +363,7 @@ public class MainApp extends Application {
 	 *
 	 * @param file the file or null to remove the path
 	 */
-	public void setJourFilePath(File file) {
+	public void setFilePath(File file) {
 		Preferences prefs = Preferences.userNodeForPackage(MainApp.class);
 		if (file != null) {
 			prefs.put("filePath", file.getPath());
@@ -385,7 +385,7 @@ public class MainApp extends Application {
 	 *
 	 * @param file
 	 */
-	public void loadJourDataFromFile(File file) {
+	public void loadDataFromFile(File file) {
 
 		if(file == null || !file.exists())
 		{
@@ -420,7 +420,7 @@ public class MainApp extends Application {
 
 
 			// Save the file path to the registry.
-			setJourFilePath(file);
+			setFilePath(file);
 
 		} catch (Exception e) { // catches ANY exception
 			e.printStackTrace();
@@ -441,7 +441,7 @@ public class MainApp extends Application {
 	 *
 	 * @param file
 	 */
-	public void saveJourDataToFile(File file) {
+	public void saveDataToFile(File file) {
 		try {
 			JAXBContext context = JAXBContext.newInstance(DataWrapper.class);
 			Marshaller myMarshaller = context.createMarshaller();
@@ -459,7 +459,7 @@ public class MainApp extends Application {
 			myMarshaller.marshal(myWrapper, file);
 
 			// Save the file path to the registry.
-			setJourFilePath(file);
+			setFilePath(file);
 
 		} catch (Exception e) { // catches ANY exception
 			e.printStackTrace();
