@@ -6,7 +6,7 @@
 <AnchorPane prefHeight="600" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.net.asclepiosh.outilcalculgreve.ui.JourOverviewController">
    <BorderPane prefHeight="600.0" prefWidth="629.0">
       <center>
-      	<SplitPane dividerPositions="0.4" prefHeight="300.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+      	<SplitPane dividerPositions="0.48" prefHeight="300.0" prefWidth="500.0" BorderPane.alignment="CENTER">
       		<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
       			<TableView fx:id="jourTable" layoutX="-25.0" layoutY="29.0" prefHeight="551.0" prefWidth="249.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
       				<columns>

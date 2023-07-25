@@ -1,6 +1,6 @@
 package fr.net.asclepiosh.outilcalculgreve.ui;
 
-import fr.net.asclepiosh.outilcalculgreve.model.CoefJour;
+import fr.net.asclepiosh.outilcalculgreve.model.CoefJournaliers;
 import fr.net.asclepiosh.outilcalculgreve.util.StringUtil;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -13,6 +13,7 @@ import javafx.stage.Stage;
  * @author Nicolas Torres
  **/
 public class CoefJourEditDialogController {
+
 
 	@FXML
 	private TextField cJohvRField;
@@ -43,7 +44,7 @@ public class CoefJourEditDialogController {
 
 
 	private Stage coefJourEditDialogStage;
-	private CoefJour coefJour;
+	private CoefJournaliers coefJournaliersData;
 	private boolean okClicked = false;
 
 
@@ -68,25 +69,25 @@ public class CoefJourEditDialogController {
 	/**
 	 * Sets the jour to be edited in the dialog.
 	 *
-	 * @param coefJour
+	 * @param coefJournaliers
 	 */
-	public void setJour(CoefJour coefJour) {
+	public void setCoefJournaliers(CoefJournaliers coefJournaliers) {
 
-		this.coefJour = coefJour;
+		this.coefJournaliersData = coefJournaliers;
 
-		cJohvRField.setText(coefJour.getcJohvR());
-		cSahvRField.setText(coefJour.getcSahvR());
-		cDihvRField.setText(coefJour.getcDihvR());
-		cJovRField.setText(coefJour.getcJovR());
-		cSavRField.setText(coefJour.getcSavR());
-		cDivRField.setText(coefJour.getcDivR());
+		cJohvRField.setText(coefJournaliers.getcJohvR());
+		cSahvRField.setText(coefJournaliers.getcSahvR());
+		cDihvRField.setText(coefJournaliers.getcDihvR());
+		cJovRField.setText(coefJournaliers.getcJovR());
+		cSavRField.setText(coefJournaliers.getcSavR());
+		cDivRField.setText(coefJournaliers.getcDivR());
 
-		cJohvSField.setText(coefJour.getcJohvS());
-		cSahvSField.setText(coefJour.getcSahvS());
-		cDihvSField.setText(coefJour.getcDihvS());
-		cJovSField.setText(coefJour.getcJovS());
-		cSavSField.setText(coefJour.getcSavS());
-		cDivSField.setText(coefJour.getcDivS());
+		cJohvSField.setText(coefJournaliers.getcJohvS());
+		cSahvSField.setText(coefJournaliers.getcSahvS());
+		cDihvSField.setText(coefJournaliers.getcDihvS());
+		cJovSField.setText(coefJournaliers.getcJovS());
+		cSavSField.setText(coefJournaliers.getcSavS());
+		cDivSField.setText(coefJournaliers.getcDivS());
 
 	}
 
@@ -102,19 +103,19 @@ public class CoefJourEditDialogController {
 
 		if (isInputValid()) {
 
-			coefJour.setcJohvR(cJohvRField.getText());
-			coefJour.setcSahvR(cSahvRField.getText());
-			coefJour.setcDihvR(cDihvRField.getText());
-			coefJour.setcJovR(cJovRField.getText());
-			coefJour.setcSavR(cSavRField.getText());
-			coefJour.setcDivR(cDivRField.getText());
+			coefJournaliersData.setcJohvR(cJohvRField.getText());
+			coefJournaliersData.setcSahvR(cSahvRField.getText());
+			coefJournaliersData.setcDihvR(cDihvRField.getText());
+			coefJournaliersData.setcJovR(cJovRField.getText());
+			coefJournaliersData.setcSavR(cSavRField.getText());
+			coefJournaliersData.setcDivR(cDivRField.getText());
 
-			coefJour.setcJohvS(cJohvSField.getText());
-			coefJour.setcSahvS(cSahvSField.getText());
-			coefJour.setcDihvS(cDihvSField.getText());
-			coefJour.setcJovS(cJovSField.getText());
-			coefJour.setcSavS(cSavSField.getText());
-			coefJour.setcDivS(cDivSField.getText());
+			coefJournaliersData.setcJohvS(cJohvSField.getText());
+			coefJournaliersData.setcSahvS(cSahvSField.getText());
+			coefJournaliersData.setcDihvS(cDihvSField.getText());
+			coefJournaliersData.setcJovS(cJovSField.getText());
+			coefJournaliersData.setcSavS(cSavSField.getText());
+			coefJournaliersData.setcDivS(cDivSField.getText());
 
 			okClicked = true;
 			coefJourEditDialogStage.close();

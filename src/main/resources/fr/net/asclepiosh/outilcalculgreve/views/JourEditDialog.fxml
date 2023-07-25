@@ -15,9 +15,9 @@
          <RowConstraints maxHeight="65.0" minHeight="20.0" prefHeight="63.0" />
 
 		</rowConstraints>
-		<Label text="Nom du jour de grève :" GridPane.rowIndex="0" />
+		<Label text="Nom du jourDeGreves de grève :" GridPane.rowIndex="0" />
 		<Label text="Transporteur en grève :" GridPane.rowIndex="1" />
-		<Label text="Date du jour de grève :" GridPane.rowIndex="2" />
+		<Label text="Date du jourDeGreves de grève :" GridPane.rowIndex="2" />
 		<TextField fx:id="nomJourField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
       <DatePicker fx:id="dateJourField" prefHeight="26.0" prefWidth="203.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <ComboBox fx:id="transportJourComboBox" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />

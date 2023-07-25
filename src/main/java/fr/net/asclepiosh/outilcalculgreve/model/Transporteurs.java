@@ -1,15 +1,15 @@
 package fr.net.asclepiosh.outilcalculgreve.model;
 
-public class Transporteur {
+public class Transporteurs {
 
 	public String code;
 	private String name;
 
-	public Transporteur() {
+	public Transporteurs() {
 
 	}
 
-	public Transporteur(String code, String name) {
+	public Transporteurs(String code, String name) {
 		this.code = code;
 		this.name = name;
 	}

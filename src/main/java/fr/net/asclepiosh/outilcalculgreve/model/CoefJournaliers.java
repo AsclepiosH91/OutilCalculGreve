@@ -1,15 +1,14 @@
 package fr.net.asclepiosh.outilcalculgreve.model;
 
-
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * Model class for Jour Coefs.
+ * Model class for Coefs journaliers.
  *
  * @author Nicolas Torres
  */
-public class CoefJour {
+public class CoefJournaliers {
 
 	// Coéf jour ouvré hors vacances scolaire RATP
 	private final StringProperty cJohvR;
@@ -66,18 +65,15 @@ public class CoefJour {
 	 *
 	 */
 
-
-
 	/**
 	 * Default constructor.
 	 */
-	public CoefJour() {
+	public CoefJournaliers() {
 		this(null, null, null, null, null, null, null, null, null, null, null, null);
 	}
 
 
-
-	public CoefJour(String cJohvR, String cSahvR, String cDihvR, String cJovR, String cSavR, String cDivR, String cJohvS, String cSahvS, String cDihvS, String cJovS, String cSavS, String cDivS) {
+	public CoefJournaliers(String cJohvR, String cSahvR, String cDihvR, String cJovR, String cSavR, String cDivR, String cJohvS, String cSahvS, String cDihvS, String cJovS, String cSavS, String cDivS) {
 		this.cJohvR = new SimpleStringProperty(cJohvR);
 		this.cSahvR = new SimpleStringProperty(cSahvR);
 		this.cDihvR = new SimpleStringProperty(cDihvR);
@@ -95,15 +91,16 @@ public class CoefJour {
 
 	/**
 	 * Copy constructor
-	 * @param orig instance of CoefJour we want to copy
+	 * @param orig instance of CoefJournaliers we want to copy
 	 */
-	public CoefJour(final CoefJour orig) {
+	public CoefJournaliers(final CoefJournaliers orig) {
 		this.cJohvR = orig.cJohvR;
 		this.cSahvR = orig.cSahvR;
 		this.cDihvR = orig.cDihvR;
 		this.cJovR = orig.cJovR;
 		this.cSavR = orig.cSavR;
 		this.cDivR = orig.cDivR;
+
 		this.cJohvS = orig.cJohvS;
 		this.cSahvS = orig.cSahvS;
 		this.cDihvS = orig.cDihvS;
@@ -116,20 +113,12 @@ public class CoefJour {
 		return cJohvR.get();
 	}
 
-	public StringProperty cJohvRProperty() {
-		return cJohvR;
-	}
-
 	public void setcJohvR(String cJohvR) {
 		this.cJohvR.set(cJohvR);
 	}
 
 	public String getcSahvR() {
 		return cSahvR.get();
-	}
-
-	public StringProperty cSahvRProperty() {
-		return cSahvR;
 	}
 
 	public void setcSahvR(String cSahvR) {
@@ -140,20 +129,12 @@ public class CoefJour {
 		return cDihvR.get();
 	}
 
-	public StringProperty cDihvRProperty() {
-		return cDihvR;
-	}
-
 	public void setcDihvR(String cDihvR) {
 		this.cDihvR.set(cDihvR);
 	}
 
 	public String getcJovR() {
 		return cJovR.get();
-	}
-
-	public StringProperty cJovRProperty() {
-		return cJovR;
 	}
 
 	public void setcJovR(String cJovR) {
@@ -164,20 +145,12 @@ public class CoefJour {
 		return cSavR.get();
 	}
 
-	public StringProperty cSavRProperty() {
-		return cSavR;
-	}
-
 	public void setcSavR(String cSavR) {
 		this.cSavR.set(cSavR);
 	}
 
 	public String getcDivR() {
 		return cDivR.get();
-	}
-
-	public StringProperty cDivRProperty() {
-		return cDivR;
 	}
 
 	public void setcDivR(String cDivR) {
@@ -188,20 +161,12 @@ public class CoefJour {
 		return cJohvS.get();
 	}
 
-	public StringProperty cJohvSProperty() {
-		return cJohvS;
-	}
-
 	public void setcJohvS(String cJohvS) {
 		this.cJohvS.set(cJohvS);
 	}
 
 	public String getcSahvS() {
 		return cSahvS.get();
-	}
-
-	public StringProperty cSahvSProperty() {
-		return cSahvS;
 	}
 
 	public void setcSahvS(String cSahvS) {
@@ -212,20 +177,12 @@ public class CoefJour {
 		return cDihvS.get();
 	}
 
-	public StringProperty cDihvSProperty() {
-		return cDihvS;
-	}
-
 	public void setcDihvS(String cDihvS) {
 		this.cDihvS.set(cDihvS);
 	}
 
 	public String getcJovS() {
 		return cJovS.get();
-	}
-
-	public StringProperty cJovSProperty() {
-		return cJovS;
 	}
 
 	public void setcJovS(String cJovS) {
@@ -236,20 +193,12 @@ public class CoefJour {
 		return cSavS.get();
 	}
 
-	public StringProperty cSavSProperty() {
-		return cSavS;
-	}
-
 	public void setcSavS(String cSavS) {
 		this.cSavS.set(cSavS);
 	}
 
 	public String getcDivS() {
 		return cDivS.get();
-	}
-
-	public StringProperty cDivSProperty() {
-		return cDivS;
 	}
 
 	public void setcDivS(String cDivS) {

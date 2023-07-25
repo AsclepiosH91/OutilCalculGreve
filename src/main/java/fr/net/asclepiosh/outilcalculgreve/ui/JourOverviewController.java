@@ -1,7 +1,7 @@
 package fr.net.asclepiosh.outilcalculgreve.ui;
 
 import fr.net.asclepiosh.outilcalculgreve.MainApp;
-import fr.net.asclepiosh.outilcalculgreve.model.Jour;
+import fr.net.asclepiosh.outilcalculgreve.model.JourDeGreves;
 import fr.net.asclepiosh.outilcalculgreve.util.DateUtil;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -14,15 +14,15 @@ import java.time.LocalDate;
 public class JourOverviewController {
 
 	@FXML
-	public TableView<Jour> jourTable;
+	public TableView<JourDeGreves> jourTable;
 
 	@FXML
-	private TableColumn<Jour, String> nomJourColumn;
+	private TableColumn<JourDeGreves, String> nomJourColumn;
 	@FXML
-	public TableColumn<Jour,  String> dateJourColumn;
+	public TableColumn<JourDeGreves,  String> dateJourColumn;
 
 	@FXML
-	private TableColumn<Jour, String> transportJourColumn;
+	private TableColumn<JourDeGreves, String> transportJourColumn;
 
 	@FXML
 	private Label nomJourLabel;
@@ -84,22 +84,22 @@ public class JourOverviewController {
 
 
 	/**
-	 * Fills all text fields to show details about the jour.
-	 * If the specified jour is null, all text fields are cleared.
+	 * Fills all text fields to show details about the jourDeGreves.
+	 * If the specified jourDeGreves is null, all text fields are cleared.
 	 *
-	 * @param jour the jour or null
+	 * @param jourDeGreves the jourDeGreves or null
 	 */
-	private void showJourDetails(Jour jour) {
-		if (jour != null) {
-			// Fill the labels with info from the jour object.
-			transportJourLabel.setText(jour.getTransportJour());
-			nomJourLabel.setText(jour.getNomJour());
+	private void showJourDetails(JourDeGreves jourDeGreves) {
+		if (jourDeGreves != null) {
+			// Fill the labels with info from the jourDeGreves object.
+			transportJourLabel.setText(jourDeGreves.getTransportJour());
+			nomJourLabel.setText(jourDeGreves.getNomJour());
 
 			// We need to convert the date into a String!
-			dateJourLabel.setText(DateUtil.format(jour.getDateJour()));
+			dateJourLabel.setText(DateUtil.format(jourDeGreves.getDateJour()));
 
 		} else {
-			// Jour is null, remove all the text.
+			// JourDeGreves is null, remove all the text.
 			transportJourLabel.setText("");
 			nomJourLabel.setText("");
 			dateJourLabel.setText("");
@@ -117,17 +117,17 @@ public class JourOverviewController {
 	@FXML
 	public void handleNewJour() {
 
-		Jour tempJour = new Jour();
+		JourDeGreves tempJourDeGreves = new JourDeGreves();
 
-		tempJour.setNomJour("Jour XXX");
-		tempJour.setTransportJour("RATP");
+		tempJourDeGreves.setNomJour("JourDeGreves XXX");
+		tempJourDeGreves.setTransportJour("RATP");
 
 		// Set default value of the date to today
-		tempJour.setDateJour(LocalDate.now());
+		tempJourDeGreves.setDateJour(LocalDate.now());
 
-		boolean okClicked = mainApp.showJourEditDialog(tempJour);
+		boolean okClicked = mainApp.showJourEditDialog(tempJourDeGreves);
 		if (okClicked) {
-			mainApp.getJourData().add(tempJour);
+			mainApp.getJourData().add(tempJourDeGreves);
 		}
 
 	}
@@ -141,7 +141,7 @@ public class JourOverviewController {
 	 */
 	@FXML
 	public void handleEditJour() {
-		Jour selectedPerson = jourTable.getSelectionModel().getSelectedItem();
+		JourDeGreves selectedPerson = jourTable.getSelectionModel().getSelectedItem();
 		if (selectedPerson != null) {
 			boolean okClicked = mainApp.showJourEditDialog(selectedPerson);
 			if (okClicked) {

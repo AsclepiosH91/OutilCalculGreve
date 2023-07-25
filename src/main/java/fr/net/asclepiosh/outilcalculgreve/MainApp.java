@@ -1,14 +1,11 @@
 package fr.net.asclepiosh.outilcalculgreve;
 
-import fr.net.asclepiosh.outilcalculgreve.model.CoefJour;
-import fr.net.asclepiosh.outilcalculgreve.model.Jour;
-import fr.net.asclepiosh.outilcalculgreve.model.JourListWrapper;
-import fr.net.asclepiosh.outilcalculgreve.ui.CoefJourEditDialogController;
-import fr.net.asclepiosh.outilcalculgreve.ui.JourEditDialogController;
-import fr.net.asclepiosh.outilcalculgreve.ui.JourOverviewController;
-import fr.net.asclepiosh.outilcalculgreve.ui.RootLayoutController;
+import fr.net.asclepiosh.outilcalculgreve.model.CoefJournaliers;
+import fr.net.asclepiosh.outilcalculgreve.model.CoefTypeForfaitUsage;
+import fr.net.asclepiosh.outilcalculgreve.model.JourDeGreves;
+import fr.net.asclepiosh.outilcalculgreve.model.DataWrapper;
+import fr.net.asclepiosh.outilcalculgreve.ui.*;
 import javafx.application.Application;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -41,13 +38,15 @@ public class MainApp extends Application {
 	/**
 	 * The data as an observable list of Jours.
 	 */
-	private final ObservableList<Jour> jourData = FXCollections.observableArrayList();
+	private final ObservableList<JourDeGreves> jourDeGrevesData = FXCollections.observableArrayList();
 
 
 	/**
-	 * The data as an observable list of CoefJours.
+	 * The data of CoefJours.
 	 */
-	private CoefJour coefJourData;
+	private CoefJournaliers coefJournaliersData;
+
+	private CoefTypeForfaitUsage coefTypeForfaitUsageData;
 
 
 	/**
@@ -56,32 +55,36 @@ public class MainApp extends Application {
 	public MainApp() {
 
 		// Add some sample data
-		jourData.add(new Jour("Jour 1", "RATP"));
-		jourData.add(new Jour("Jour 2", "SNCF"));
+		jourDeGrevesData.add(new JourDeGreves("Jour De Greve 1", "RATP"));
+		jourDeGrevesData.add(new JourDeGreves("Jour De Greve 2", "SNCF"));
 
-		initCoef();
+		initCoefJournaliers();
 
 	}
 
 	/**
-	 * Returns the data as an observable list of Jour.
+	 * Returns the data as an observable list of JourDeGreves.
 	 * @return
 	 */
-	public ObservableList<Jour> getJourData() {
-		return jourData;
+	public ObservableList<JourDeGreves> getJourData() {
+		return jourDeGrevesData;
 	}
 
 
 	/**
-	 * Returns the data as an observable list of CoefJour.
+	 * Returns the data CoefJournaliers.
 	 * @return
 	 */
-	public CoefJour getCoefJourData() {
-		return coefJourData;
+	public CoefJournaliers getCoefJourData() {
+		return coefJournaliersData;
 	}
 
-	public void setCoefJourData(final CoefJour coefJourData) {
-		this.coefJourData = coefJourData;
+	public CoefTypeForfaitUsage getCoefTypeForfaitUsage() {
+		return coefTypeForfaitUsageData;
+	}
+
+	public void setCoefJourData(final CoefJournaliers coefJournaliersData) {
+		this.coefJournaliersData = coefJournaliersData;
 	}
 
 	// ... THE REST OF THE CLASS ...
@@ -177,14 +180,14 @@ public class MainApp extends Application {
 
 
 	/**
-	 * Opens a dialog to edit details for the specified jour. If the user
-	 * clicks OK, the changes are saved into the provided jour object and true
+	 * Opens a dialog to edit details for the specified jourDeGreves. If the user
+	 * clicks OK, the changes are saved into the provided jourDeGreves object and true
 	 * is returned.
 	 *
-	 * @param jour the jour object to be edited
+	 * @param jourDeGreves the jourDeGreves object to be edited
 	 * @return true if the user clicked OK, false otherwise.
 	 */
-	public boolean showJourEditDialog(Jour jour) {
+	public boolean showJourEditDialog(JourDeGreves jourDeGreves) {
 
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.
@@ -194,14 +197,14 @@ public class MainApp extends Application {
 
 			// Create the dialog Stage.
 			Stage dialogStage = new Stage();
-			dialogStage.setTitle("Editer un jour de grève");
+			dialogStage.setTitle("Editer un jourDeGreves de grève");
 
 			SetStage(page, dialogStage, false);
 
 			// Set the person into the controller.
 			JourEditDialogController controller = loader.getController();
 			controller.setJourEditDialogStage(dialogStage);
-			controller.setJour(jour);
+			controller.setJour(jourDeGreves);
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
@@ -216,7 +219,7 @@ public class MainApp extends Application {
 
 
 
-	public boolean showCoefJourEditDialog(CoefJour coefJour) {
+	public boolean showCoefJourEditDialog(CoefJournaliers coefJournaliers) {
 
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.
@@ -230,10 +233,42 @@ public class MainApp extends Application {
 
 			SetStage(page, dialogStage, false);
 
-			// Set the coefJour into the controller.
+			// Set the coefJournaliers into the controller.
 			CoefJourEditDialogController controller = loader.getController();
 			controller.setCoefJourEditDialogStage(dialogStage);
-			controller.setJour(coefJour);
+			controller.setCoefJournaliers(coefJournaliers);
+
+			// Show the dialog and wait until the user closes it
+			dialogStage.showAndWait();
+
+			return controller.isOkClicked();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+
+	}
+
+
+	public boolean showCoefTypeForfaitUsageDialog(CoefTypeForfaitUsage coefTypeForfaitUsage) {
+
+		try {
+			// Load the fxml file and create a new stage for the popup dialog.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("views/CoefTypeForfaitUsageDialog.fxml"));
+			AnchorPane page = loader.load();
+
+			// Create the dialog Stage.
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Editer les coefficients des types de forfait d'usage RATP et SNCF");
+
+			SetStage(page, dialogStage, false);
+
+			// Set the coefTypeForfaitUsage into the controller.
+			CoefTypeForfaitUsageEditDialogController controller = loader.getController();
+			controller.setCoefJourEditDialogStage(dialogStage);
+			controller.setJour(coefJournaliers);
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
@@ -313,18 +348,18 @@ public class MainApp extends Application {
 		}
 
 		try {
-			JAXBContext context = JAXBContext.newInstance(JourListWrapper.class);
+			JAXBContext context = JAXBContext.newInstance(DataWrapper.class);
 			Unmarshaller um = context.createUnmarshaller();
 
 			// Reading XML from the file and unmarshalling.
-			JourListWrapper myWrapper = (JourListWrapper) um.unmarshal(file);
+			DataWrapper myWrapper = (DataWrapper) um.unmarshal(file);
 
-			jourData.clear();
-			jourData.addAll(myWrapper.getJours());
+			jourDeGrevesData.clear();
+			jourDeGrevesData.addAll(myWrapper.getJours());
 
-			initCoef();
+			initCoefJournaliers();
 			if(myWrapper.getCoefJours() != null) {
-				coefJourData = myWrapper.getCoefJours();
+				coefJournaliersData = myWrapper.getCoefJours();
 			}
 
 			// Save the file path to the registry.
@@ -333,34 +368,15 @@ public class MainApp extends Application {
 		} catch (Exception e) { // catches ANY exception
 			e.printStackTrace();
 
-			Alert alert = new Alert(Alert.AlertType.ERROR);
-			alert.setTitle("Erreur");
-			alert.setHeaderText("Impossible de charger les données");
-			alert.setContentText("Impossible de charger les données du fichier :\n" + file.getPath());
+			Alert fileAlert = new Alert(Alert.AlertType.ERROR);
+			fileAlert.setTitle("Erreur");
+			fileAlert.setHeaderText("Impossible de charger les données");
+			fileAlert.setContentText("Impossible de charger les données du fichier :\n" + file.getPath());
 
-			alert.showAndWait();
+			fileAlert.showAndWait();
 		}
 	}
 
-	public void initCoef()
-	{
-		// init default values
-		coefJourData = new CoefJour();
-
-		coefJourData.setcJohvR("1.000");
-		coefJourData.setcSahvR("0.850");
-		coefJourData.setcDihvR("0.600");
-		coefJourData.setcJovR("0.910");
-		coefJourData.setcSavR("0.740");
-		coefJourData.setcDivR("0.550");
-
-		coefJourData.setcJohvS("1.000");
-		coefJourData.setcSahvS("0.960");
-		coefJourData.setcDihvS("0.740");
-		coefJourData.setcJovS("0.940");
-		coefJourData.setcSavS("0.840");
-		coefJourData.setcDivS("0.670");
-	}
 
 
 	/**
@@ -370,14 +386,14 @@ public class MainApp extends Application {
 	 */
 	public void saveJourDataToFile(File file) {
 		try {
-			JAXBContext context = JAXBContext.newInstance(JourListWrapper.class);
+			JAXBContext context = JAXBContext.newInstance(DataWrapper.class);
 			Marshaller myMarshaller = context.createMarshaller();
 			myMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
 			// Wrapping our jour data.
-			JourListWrapper myWrapper = new JourListWrapper();
-			myWrapper.setJours(jourData);
-			myWrapper.setCoefJours(coefJourData);
+			DataWrapper myWrapper = new DataWrapper();
+			myWrapper.setJours(jourDeGrevesData);
+			myWrapper.setCoefJours(coefJournaliersData);
 
 
 			// Marshalling and saving XML to the file.
@@ -389,14 +405,36 @@ public class MainApp extends Application {
 		} catch (Exception e) { // catches ANY exception
 			e.printStackTrace();
 
-			Alert alert = new Alert(Alert.AlertType.ERROR);
-			alert.setTitle("Erreur");
-			alert.setHeaderText("Impossible d'enregistrer les données");
-			alert.setContentText("Impossible d'enregistrer les données dans le fichier :\n" + file.getPath());
+			Alert fileAlert = new Alert(Alert.AlertType.ERROR);
+			fileAlert.setTitle("Erreur");
+			fileAlert.setHeaderText("Impossible d'enregistrer les données");
+			fileAlert.setContentText("Impossible d'enregistrer les données dans le fichier :\n" + file.getPath());
 
-			alert.showAndWait();
+			fileAlert.showAndWait();
 		}
 	}
+
+
+	public void initCoefJournaliers()
+	{
+		// init default values
+		coefJournaliersData = new CoefJournaliers();
+
+		coefJournaliersData.setcJohvR("1.000");
+		coefJournaliersData.setcSahvR("0.850");
+		coefJournaliersData.setcDihvR("0.600");
+		coefJournaliersData.setcJovR("0.910");
+		coefJournaliersData.setcSavR("0.740");
+		coefJournaliersData.setcDivR("0.550");
+
+		coefJournaliersData.setcJohvS("1.000");
+		coefJournaliersData.setcSahvS("0.960");
+		coefJournaliersData.setcDihvS("0.740");
+		coefJournaliersData.setcJovS("0.940");
+		coefJournaliersData.setcSavS("0.840");
+		coefJournaliersData.setcDivS("0.670");
+	}
+
 
 
 }

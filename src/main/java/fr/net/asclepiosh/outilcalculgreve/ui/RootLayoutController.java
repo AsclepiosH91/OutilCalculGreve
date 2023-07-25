@@ -1,8 +1,8 @@
 package fr.net.asclepiosh.outilcalculgreve.ui;
 
 import fr.net.asclepiosh.outilcalculgreve.MainApp;
-import fr.net.asclepiosh.outilcalculgreve.model.CoefJour;
-import fr.net.asclepiosh.outilcalculgreve.model.Jour;
+import fr.net.asclepiosh.outilcalculgreve.model.CoefJournaliers;
+import fr.net.asclepiosh.outilcalculgreve.model.CoefTypeForfaitUsage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Properties;
 
@@ -41,20 +40,20 @@ public class RootLayoutController {
 
 
 	/**
-	 * Creates an empty Jour set.
+	 * Creates an empty JourDeGreves set.
 	 */
 	@FXML
     private void handleMniNew() {
 
 	    mainApp.getJourData().clear();
-		mainApp.initCoef();
+		mainApp.initCoefJournaliers();
 	    mainApp.setJourFilePath(null);
 
     }
 
 
 	/**
-	 * Opens a File Chooser to let the user select a Jour set to load.
+	 * Opens a File Chooser to let the user select a JourDeGreves set to load.
 	 */
     @FXML
     private void handleMniOpen() {
@@ -146,15 +145,25 @@ public class RootLayoutController {
 		alert.showAndWait();
 	}
 
-	public void handleMniCoefJour(ActionEvent ignored) {
+	public void handleMniCoefJournaliers(ActionEvent ignore) {
 
-		final CoefJour currentCoef = mainApp.getCoefJourData();
-		final CoefJour tmpCoef = new CoefJour(currentCoef);
+		final CoefJournaliers currentCoefs = mainApp.getCoefJourData();
+		final CoefJournaliers tmpCoefs = new CoefJournaliers(currentCoefs);
 
-		boolean okClicked = mainApp.showCoefJourEditDialog(tmpCoef);
+		boolean okClicked = mainApp.showCoefJourEditDialog(tmpCoefs);
 		if (okClicked) {
-			mainApp.setCoefJourData(tmpCoef);
+			mainApp.setCoefJourData(tmpCoefs);
 		}
 	}
 
+	public void handleMniCoefTypeForfatiUsage(ActionEvent ignore) {
+
+		final CoefTypeForfaitUsage currentCoefs = mainApp.getCoefTypeForfaitUsage();
+		final CoefTypeForfaitUsage tmpCoefs = new CoefTypeForfaitUsage(currentCoefs);
+
+		boolean okClicked = mainApp.showCoefTypeForfaitUsageDialog(tmpCoefs);
+		if (okClicked) {
+			mainApp.setCoefTypeForfaitUsage(tmpCoefs);
+		}
+	}
 }

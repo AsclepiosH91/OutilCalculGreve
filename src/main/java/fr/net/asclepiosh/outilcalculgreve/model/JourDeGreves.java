@@ -3,16 +3,15 @@ package fr.net.asclepiosh.outilcalculgreve.model;
 
 import fr.net.asclepiosh.outilcalculgreve.util.LocalDateAdapter;
 import javafx.beans.property.*;
-
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 
 /**
- * Model class for a Jour.
+ * Model class for a JourDeGreves.
  *
  * @author Nicolas Torres
  */
-public class Jour {
+public class JourDeGreves {
 	private final StringProperty transportJour;
 	private final StringProperty nomJour;
 	private final ObjectProperty<LocalDate> dateJour;
@@ -20,7 +19,7 @@ public class Jour {
 	/**
 	 * Default constructor.
 	 */
-	public Jour() {
+	public JourDeGreves() {
 		this(null, null);
 	}
 
@@ -30,7 +29,7 @@ public class Jour {
 	 * @param nomJour
 	 * @param transportJour
 	 */
-	public Jour(String nomJour, String transportJour) {
+	public JourDeGreves(String nomJour, String transportJour) {
 		this.nomJour = new SimpleStringProperty(nomJour);
 		this.transportJour = new SimpleStringProperty(transportJour);
 

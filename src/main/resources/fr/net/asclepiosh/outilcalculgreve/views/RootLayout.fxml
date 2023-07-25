@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import org.kordamp.ikonli.javafx.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.net.asclepiosh.outilcalculgreve.ui.RootLayoutController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.net.asclepiosh.outilcalculgreve.ui.RootLayoutController">
 
     <top>
 
@@ -32,10 +32,10 @@
 					<FontIcon iconLiteral="mdi2t-table-settings" selectionEnd="0" />
 				</graphic>
               	<items>
-                	<MenuItem mnemonicParsing="false" onAction="#handleMniCoefJour" text="Coefficients Journalier RATP et SNCF" />
+                	<MenuItem mnemonicParsing="false" onAction="#handleMniCoefJournaliers" text="Coefficients Journalier RATP et SNCF" />
               	</items>
 				<items>
-                  <MenuItem mnemonicParsing="false" text="Coefficients RATP &amp; SNCF" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleMniCoefTypeForfatiUsage" text="Coefficients RATP et SNCF pour les type de forfait d'usage" />
 				</items>
 				<items>
 					<MenuItem mnemonicParsing="false" text="Coefficients de redressement" />
