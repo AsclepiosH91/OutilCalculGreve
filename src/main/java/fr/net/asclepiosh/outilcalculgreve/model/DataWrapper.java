@@ -20,7 +20,7 @@ public class DataWrapper {
 
 	private CoefTypeForfaitUsage coefTypeForfaitUsageData;
 
-	@XmlElement(name = "joursdegreves")
+	@XmlElement(name = "joursdegreves", required = true)
 	public List<JourDeGreves> getJours() {
 			return jourDeGreves;
 		}
