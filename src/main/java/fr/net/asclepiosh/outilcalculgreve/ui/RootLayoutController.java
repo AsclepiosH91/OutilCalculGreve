@@ -45,9 +45,11 @@ public class RootLayoutController {
 	@FXML
     private void handleMniNew() {
 
-	    mainApp.getJourData().clear();
+	    mainApp.getJourDeGrevesData().clear();
 		mainApp.initCoefJournaliers();
-	    mainApp.setJourFilePath(null);
+		mainApp.initCoefTypeForfaitUsage();
+
+		mainApp.setJourFilePath(null);
 
     }
 
@@ -147,18 +149,18 @@ public class RootLayoutController {
 
 	public void handleMniCoefJournaliers(ActionEvent ignore) {
 
-		final CoefJournaliers currentCoefs = mainApp.getCoefJourData();
+		final CoefJournaliers currentCoefs = mainApp.getCoefJournaliersData();
 		final CoefJournaliers tmpCoefs = new CoefJournaliers(currentCoefs);
 
 		boolean okClicked = mainApp.showCoefJourEditDialog(tmpCoefs);
 		if (okClicked) {
-			mainApp.setCoefJourData(tmpCoefs);
+			mainApp.setCoefJour(tmpCoefs);
 		}
 	}
 
 	public void handleMniCoefTypeForfatiUsage(ActionEvent ignore) {
 
-		final CoefTypeForfaitUsage currentCoefs = mainApp.getCoefTypeForfaitUsage();
+		final CoefTypeForfaitUsage currentCoefs = mainApp.getCoefTypeForfaitUsageData();
 		final CoefTypeForfaitUsage tmpCoefs = new CoefTypeForfaitUsage(currentCoefs);
 
 		boolean okClicked = mainApp.showCoefTypeForfaitUsageDialog(tmpCoefs);

@@ -79,7 +79,7 @@ public class JourOverviewController {
 		this.mainApp = mainApp;
 
 		// Add observable list data to the table
-		jourTable.setItems(mainApp.getJourData());
+		jourTable.setItems(mainApp.getJourDeGrevesData());
 	}
 
 
@@ -127,7 +127,7 @@ public class JourOverviewController {
 
 		boolean okClicked = mainApp.showJourEditDialog(tempJourDeGreves);
 		if (okClicked) {
-			mainApp.getJourData().add(tempJourDeGreves);
+			mainApp.getJourDeGrevesData().add(tempJourDeGreves);
 		}
 
 	}

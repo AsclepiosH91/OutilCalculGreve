@@ -1,6 +1,5 @@
 package fr.net.asclepiosh.outilcalculgreve.ui;
 
-import fr.net.asclepiosh.outilcalculgreve.model.CoefJournaliers;
 import fr.net.asclepiosh.outilcalculgreve.model.CoefTypeForfaitUsage;
 import fr.net.asclepiosh.outilcalculgreve.util.StringUtil;
 import javafx.fxml.FXML;
@@ -14,7 +13,6 @@ import javafx.stage.Stage;
  * @author Nicolas Torres
  **/
 public class CoefTypeForfaitUsageEditDialogController {
-
 
 	@FXML
 	private TextField cForfaitODRATPField;
@@ -36,8 +34,6 @@ public class CoefTypeForfaitUsageEditDialogController {
 	private TextField cForfait0SNCFField;
 
 
-
-
 	private Stage coefTypeForfaitUsageEditDialogStage;
 	private CoefTypeForfaitUsage coefTypeForfaitUsage;
 	private boolean okClicked = false;
@@ -54,17 +50,17 @@ public class CoefTypeForfaitUsageEditDialogController {
 	/**
 	 * Sets the stage of this dialog.
 	 *
-	 * @param coefTypeForfaitUsageEditDialogStage
 	 */
-	public void setCoefJourEditDialogStage(Stage coefTypeForfaitUsageEditDialogStage) {
+	public void setCoefTypeForfaitUsageEditDialogStage(Stage coefTypeForfaitUsageEditDialogStage) {
 		this.coefTypeForfaitUsageEditDialogStage = coefTypeForfaitUsageEditDialogStage;
 	}
+
+
 
 
 	/**
 	 * Sets the jour to be edited in the dialog.
 	 *
-	 * @param coefTypeForfaitUsage
 	 */
 	public void setCoefTypeForfaitUsage(CoefTypeForfaitUsage coefTypeForfaitUsage) {
 
@@ -127,22 +123,22 @@ public class CoefTypeForfaitUsageEditDialogController {
 		String errorMessage = "";
 
 		if (cForfaitODRATPField.getText() == null || cForfaitODRATPField.getText().length() == 0 || !StringUtil.isFloat(cForfaitODRATPField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cJohv RATP !\n";
-		if (cSahvRField.getText() == null || cSahvRField.getText().length() == 0 || !StringUtil.isFloat(cSahvRField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cSahv RATP !\n";
-		if (cDihvRField.getText() == null || cDihvRField.getText().length() == 0 || !StringUtil.isFloat(cDihvRField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cDihv RATP !\n";
-		if (cJovRField.getText() == null || cJovRField.getText().length() == 0 || !StringUtil.isFloat(cJovRField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cJov RATP !\n";
+			errorMessage += "Ce n'est pas une valeur valide pour le coefficient d'usage des Forfait OD RATP !\n";
+		if (cForfaitTNLRATPField.getText() == null || cForfaitTNLRATPField.getText().length() == 0 || !StringUtil.isFloat(cForfaitTNLRATPField.getText()))
+			errorMessage += "Ce n'est pas une valeur valide pour le coefficient d'usage des Forfait T+ NL+ RATP !\n";
+		if (cForfaitCourtsRATPField.getText() == null || cForfaitCourtsRATPField.getText().length() == 0 || !StringUtil.isFloat(cForfaitCourtsRATPField.getText()))
+			errorMessage += "Ce n'est pas une valeur valide pour le coefficient d'usage des Forfait courts RATP !\n";
+		if (cForfait100RATPField.getText() == null || cForfait100RATPField.getText().length() == 0 || !StringUtil.isFloat(cForfait100RATPField.getText()))
+			errorMessage += "Ce n'est pas une valeur valide pour le coefficient d'usage des Forfait 100% RATP !\n";
 
-		if (cJohvSField.getText() == null || cJohvSField.getText().length() == 0 || !StringUtil.isFloat(cJohvSField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cJohv SNCF !\n";
-		if (cSahvSField.getText() == null || cSahvSField.getText().length() == 0 || !StringUtil.isFloat(cSahvSField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cSahv SNCF !\n";
-		if (cDihvSField.getText() == null || cDihvSField.getText().length() == 0 || !StringUtil.isFloat(cDihvSField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cDihv SNCF !\n";
-		if (cJovSField.getText() == null || cJovSField.getText().length() == 0 || !StringUtil.isFloat(cJovSField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cJov SNCF !\n";
+		if (cForfaitODSNCFField.getText() == null || cForfaitODSNCFField.getText().length() == 0 || !StringUtil.isFloat(cForfaitODSNCFField.getText()))
+			errorMessage += "Ce n'est pas une valeur valide pour le coefficient d'usage des Forfait OD SNCF !\n";
+		if (cForfaitTNLSNCFField.getText() == null || cForfaitTNLSNCFField.getText().length() == 0 || !StringUtil.isFloat(cForfaitTNLSNCFField.getText()))
+			errorMessage += "Ce n'est pas une valeur valide pour le coefficient d'usage des Forfait T+ NL+ SNCF !\n";
+		if (cForfaitCourtsSNCFField.getText() == null || cForfaitCourtsSNCFField.getText().length() == 0 || !StringUtil.isFloat(cForfaitCourtsSNCFField.getText()))
+			errorMessage += "Ce n'est pas une valeur valide pour le coefficient d'usage des Forfait courts SNCF !\n";
+		if (cForfait0SNCFField.getText() == null || cForfait0SNCFField.getText().length() == 0 || !StringUtil.isFloat(cForfait0SNCFField.getText()))
+			errorMessage += "Ce n'est pas une valeur valide pour le coefficient d'usage des Forfait 0% SNCF !\n";
 
 
 		if (errorMessage.length() == 0) {
@@ -150,7 +146,7 @@ public class CoefTypeForfaitUsageEditDialogController {
 		} else {
 			// Show the error message.
 			Alert alert = new Alert(Alert.AlertType.ERROR);
-			alert.initOwner(coefJourEditDialogStage);
+			alert.initOwner(coefTypeForfaitUsageEditDialogStage);
 			alert.setTitle("Champs non valides");
 			alert.setHeaderText("Corrigez les champs non valides !");
 			alert.setContentText(errorMessage);
@@ -160,5 +156,7 @@ public class CoefTypeForfaitUsageEditDialogController {
 			return false;
 		}
 	}
+
+
 
 }

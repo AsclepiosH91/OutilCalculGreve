@@ -54,38 +54,42 @@ public class MainApp extends Application {
 	 */
 	public MainApp() {
 
-		// Add some sample data
-		jourDeGrevesData.add(new JourDeGreves("Jour De Greve 1", "RATP"));
-		jourDeGrevesData.add(new JourDeGreves("Jour De Greve 2", "SNCF"));
-
+		initJourDeGreves();
 		initCoefJournaliers();
+		initCoefTypeForfaitUsage();
 
 	}
+
 
 	/**
 	 * Returns the data as an observable list of JourDeGreves.
 	 * @return
 	 */
-	public ObservableList<JourDeGreves> getJourData() {
+	public ObservableList<JourDeGreves> getJourDeGrevesData() {
 		return jourDeGrevesData;
 	}
-
 
 	/**
 	 * Returns the data CoefJournaliers.
 	 * @return
 	 */
-	public CoefJournaliers getCoefJourData() {
+	public CoefJournaliers getCoefJournaliersData() {
 		return coefJournaliersData;
 	}
 
-	public CoefTypeForfaitUsage getCoefTypeForfaitUsage() {
+	public CoefTypeForfaitUsage getCoefTypeForfaitUsageData() {
 		return coefTypeForfaitUsageData;
 	}
 
-	public void setCoefJourData(final CoefJournaliers coefJournaliersData) {
+	public void setCoefJour(final CoefJournaliers coefJournaliersData) {
 		this.coefJournaliersData = coefJournaliersData;
 	}
+
+	public void setCoefTypeForfaitUsage(final CoefTypeForfaitUsage coefTypeForfaitUsageData) {
+		this.coefTypeForfaitUsageData = coefTypeForfaitUsageData;
+	}
+
+
 
 	// ... THE REST OF THE CLASS ...
 
@@ -266,14 +270,14 @@ public class MainApp extends Application {
 			SetStage(page, dialogStage, false);
 
 			// Set the coefTypeForfaitUsage into the controller.
-			CoefTypeForfaitUsageEditDialogController controller = loader.getController();
-			controller.setCoefJourEditDialogStage(dialogStage);
-			controller.setJour(coefJournaliers);
+			CoefTypeForfaitUsageEditDialogController myController = loader.getController();
+			myController.setCoefTypeForfaitUsageEditDialogStage(dialogStage);
+			myController.setCoefTypeForfaitUsage(coefTypeForfaitUsage);
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
 
-			return controller.isOkClicked();
+			return myController.isOkClicked();
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -414,6 +418,11 @@ public class MainApp extends Application {
 		}
 	}
 
+	private void initJourDeGreves() {
+		// init default values
+		jourDeGrevesData.add(new JourDeGreves("Jour De Greve 1", "RATP"));
+		jourDeGrevesData.add(new JourDeGreves("Jour De Greve 2", "SNCF"));
+	}
 
 	public void initCoefJournaliers()
 	{
@@ -436,5 +445,19 @@ public class MainApp extends Application {
 	}
 
 
+	public void initCoefTypeForfaitUsage() {
+		// init default values
+		coefTypeForfaitUsageData = new CoefTypeForfaitUsage();
 
+		coefTypeForfaitUsageData.setcForfaitODRATP("1.000");
+		coefTypeForfaitUsageData.setcForfaitTNLRATP("1.000");
+		coefTypeForfaitUsageData.setcForfaitCourtsRATP("1.000");
+		coefTypeForfaitUsageData.setcForfait100RATP("1.000");
+
+		coefTypeForfaitUsageData.setcForfaitODSNCF("1.000");
+		coefTypeForfaitUsageData.setcForfaitTNLSNCF("1.000");
+		coefTypeForfaitUsageData.setcForfaitCourtsSNCF("1.000");
+		coefTypeForfaitUsageData.setcForfait0SNCF("0.000");
+
+	}
 }
