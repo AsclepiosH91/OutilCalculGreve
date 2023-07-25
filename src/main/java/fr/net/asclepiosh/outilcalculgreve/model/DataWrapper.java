@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Nicolas Torres
  */
-@XmlRootElement(name = "jourDeGreves")
+@XmlRootElement(name = "jours")
 public class DataWrapper {
 
 

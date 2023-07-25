@@ -422,6 +422,7 @@ public class MainApp extends Application {
 		// init default values
 		jourDeGrevesData.add(new JourDeGreves("Jour De Greve 1", "RATP"));
 		jourDeGrevesData.add(new JourDeGreves("Jour De Greve 2", "SNCF"));
+		jourDeGrevesData.add(new JourDeGreves("Jour De Greve 3", "RATP-SNCF"));
 	}
 
 	public void initCoefJournaliers()
