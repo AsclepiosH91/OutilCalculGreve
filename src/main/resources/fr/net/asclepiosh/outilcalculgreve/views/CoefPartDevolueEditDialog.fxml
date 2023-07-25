@@ -27,7 +27,7 @@
 				<Font size="18.0" />
 			</font></Label>
 
-		<Label text="Part d'evolue :" GridPane.rowIndex="1" />
+		<Label text="Part d'évolue :" GridPane.rowIndex="1" />
 
 		<TextField fx:id="cPartDevolueRATPField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 		<TextField fx:id="cPartDevolueSNCFField" prefHeight="25.0" prefWidth="95.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
