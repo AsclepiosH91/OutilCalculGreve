@@ -362,8 +362,14 @@ public class MainApp extends Application {
 			jourDeGrevesData.addAll(myWrapper.getJours());
 
 			initCoefJournaliers();
-			if(myWrapper.getCoefJours() != null) {
-				coefJournaliersData = myWrapper.getCoefJours();
+			initCoefTypeForfaitUsage();
+
+			if(myWrapper.getCoefJoursData() != null) {
+				coefJournaliersData = myWrapper.getCoefJoursData();
+			}
+
+			if(myWrapper.getCoefTypeForfaitUsageData() != null) {
+				coefTypeForfaitUsageData = myWrapper.getCoefTypeForfaitUsageData();
 			}
 
 			// Save the file path to the registry.
@@ -397,7 +403,8 @@ public class MainApp extends Application {
 			// Wrapping our jour data.
 			DataWrapper myWrapper = new DataWrapper();
 			myWrapper.setJours(jourDeGrevesData);
-			myWrapper.setCoefJours(coefJournaliersData);
+			myWrapper.setCoefJoursData(coefJournaliersData);
+			myWrapper.setCoefTypeForfaitUsageData(coefTypeForfaitUsageData);
 
 
 			// Marshalling and saving XML to the file.

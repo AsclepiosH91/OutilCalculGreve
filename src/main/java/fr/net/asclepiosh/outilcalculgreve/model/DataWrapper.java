@@ -10,13 +10,15 @@ import java.util.List;
  *
  * @author Nicolas Torres
  */
-@XmlRootElement(name = "jours")
+@XmlRootElement(name = "donneescalculgreve")
 public class DataWrapper {
 
 
 	private List<JourDeGreves> jourDeGreves;
 
-	private CoefJournaliers coefJours;
+	private CoefJournaliers coefJoursData;
+
+	private CoefTypeForfaitUsage coefTypeForfaitUsageData;
 
 	@XmlElement(name = "joursdegreves")
 	public List<JourDeGreves> getJours() {
@@ -27,12 +29,23 @@ public class DataWrapper {
 		}
 
 	@XmlElement(name = "coefjournalier", required = true)
-	public CoefJournaliers getCoefJours() {
-		return coefJours;
+	public CoefJournaliers getCoefJoursData() {
+		return coefJoursData;
 	}
 
-	public void setCoefJours(CoefJournaliers coefJours) {
-		this.coefJours = coefJours;
+	public void setCoefJoursData(CoefJournaliers coefJoursData) {
+		this.coefJoursData = coefJoursData;
 	}
+
+	@XmlElement(name = "coeftypeforfaitusage", required = true)
+	public CoefTypeForfaitUsage getCoefTypeForfaitUsageData() {
+		return coefTypeForfaitUsageData;
+	}
+
+	public void setCoefTypeForfaitUsageData(CoefTypeForfaitUsage coefTypeForfaitUsageData) {
+		this.coefTypeForfaitUsageData = coefTypeForfaitUsageData;
+	}
+
+
 }
 
