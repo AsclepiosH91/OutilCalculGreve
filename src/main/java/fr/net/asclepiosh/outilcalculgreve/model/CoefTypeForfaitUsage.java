@@ -96,20 +96,12 @@ public class CoefTypeForfaitUsage {
 		return cForfaitODRATP.get();
 	}
 
-	public StringProperty cForfaitODRATPProperty() {
-		return cForfaitODRATP;
-	}
-
 	public void setcForfaitODRATP(String cForfaitODRATP) {
 		this.cForfaitODRATP.set(cForfaitODRATP);
 	}
 
 	public String getcForfaitTNLRATP() {
 		return cForfaitTNLRATP.get();
-	}
-
-	public StringProperty cForfaitTNLRATPProperty() {
-		return cForfaitTNLRATP;
 	}
 
 	public void setcForfaitTNLRATP(String cForfaitTNLRATP) {
@@ -120,20 +112,12 @@ public class CoefTypeForfaitUsage {
 		return cForfaitCourtsRATP.get();
 	}
 
-	public StringProperty cForfaitCourtsRATPProperty() {
-		return cForfaitCourtsRATP;
-	}
-
 	public void setcForfaitCourtsRATP(String cForfaitCourtsRATP) {
 		this.cForfaitCourtsRATP.set(cForfaitCourtsRATP);
 	}
 
 	public String getcForfait100RATP() {
 		return cForfait100RATP.get();
-	}
-
-	public StringProperty cForfait100RATPProperty() {
-		return cForfait100RATP;
 	}
 
 	public void setcForfait100RATP(String cForfait100RATP) {
@@ -144,20 +128,12 @@ public class CoefTypeForfaitUsage {
 		return cForfaitODSNCF.get();
 	}
 
-	public StringProperty cForfaitODSNCFProperty() {
-		return cForfaitODSNCF;
-	}
-
 	public void setcForfaitODSNCF(String cForfaitODSNCF) {
 		this.cForfaitODSNCF.set(cForfaitODSNCF);
 	}
 
 	public String getcForfaitTNLSNCF() {
 		return cForfaitTNLSNCF.get();
-	}
-
-	public StringProperty cForfaitTNLSNCFProperty() {
-		return cForfaitTNLSNCF;
 	}
 
 	public void setcForfaitTNLSNCF(String cForfaitTNLSNCF) {
@@ -168,20 +144,12 @@ public class CoefTypeForfaitUsage {
 		return cForfaitCourtsSNCF.get();
 	}
 
-	public StringProperty cForfaitCourtsSNCFProperty() {
-		return cForfaitCourtsSNCF;
-	}
-
 	public void setcForfaitCourtsSNCF(String cForfaitCourtsSNCF) {
 		this.cForfaitCourtsSNCF.set(cForfaitCourtsSNCF);
 	}
 
 	public String getcForfait0SNCF() {
 		return cForfait0SNCF.get();
-	}
-
-	public StringProperty cForfait0SNCFProperty() {
-		return cForfait0SNCF;
 	}
 
 	public void setcForfait0SNCF(String cForfait0SNCF) {

@@ -31,9 +31,7 @@ public class MainApp extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
 
-	final Properties appProperties = new Properties();
-
-    // ... AFTER THE OTHER VARIABLES ...
+	// ... AFTER THE OTHER VARIABLES ...
 
 	/**
 	 * The data as an observable list of Jours.

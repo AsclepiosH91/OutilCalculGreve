@@ -13,12 +13,13 @@ import java.util.List;
 @XmlRootElement(name = "donneescalculgreve")
 public class DataWrapper {
 
-
 	private List<JourDeGreves> jourDeGreves;
 
 	private CoefJournaliers coefJoursData;
 
 	private CoefTypeForfaitUsage coefTypeForfaitUsageData;
+
+	private CoefPartDevolue coefPartDevolueData;
 
 	@XmlElement(name = "joursdegreves", required = true)
 	public List<JourDeGreves> getJours() {
@@ -46,6 +47,14 @@ public class DataWrapper {
 		this.coefTypeForfaitUsageData = coefTypeForfaitUsageData;
 	}
 
+	@XmlElement(name = "coefPartDevolue", required = true)
+	public CoefPartDevolue getCoefPartDevolueData() {
+		return coefPartDevolueData;
+	}
+
+	public void setCoefPartDevolueData(CoefPartDevolue coefPartDevolueData) {
+		this.coefPartDevolueData = coefPartDevolueData;
+	}
 
 }
 
