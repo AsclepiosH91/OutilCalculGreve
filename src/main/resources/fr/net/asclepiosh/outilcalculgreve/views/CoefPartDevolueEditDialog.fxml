@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="326.0" prefWidth="302.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.net.asclepiosh.outilcalculgreve.ui.CoefPartDevolueController">
+	<GridPane alignment="TOP_CENTER" hgap="10.0" layoutX="15.0" layoutY="14.0" prefHeight="68.0" prefWidth="274.0" AnchorPane.bottomAnchor="244.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="14.0">
+		<columnConstraints>
+			<ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="113.0" />
+			<ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="72.0" />
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="69.0" />
+		</columnConstraints>
+
+		<rowConstraints>
+         <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="31.0" />
+         <RowConstraints maxHeight="37.0" minHeight="30.0" prefHeight="37.0" />
+		</rowConstraints>
+
+		<Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="90.0" text="RATP" GridPane.columnIndex="1" GridPane.rowIndex="0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+
+		<Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="90.0" text="SNCF" GridPane.columnIndex="2" GridPane.rowIndex="0">
+			<font>
+				<Font size="18.0" />
+			</font></Label>
+
+		<Label text="Part d'evolue :" GridPane.rowIndex="1" />
+
+		<TextField fx:id="cPartDevolueRATPField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+		<TextField fx:id="cPartDevolueSNCFField" prefHeight="25.0" prefWidth="95.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+	</GridPane>
+	<ButtonBar layoutX="89.0" layoutY="267.0" prefHeight="45.0" prefWidth="200.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="13.0">
+		<buttons>
+			<Button mnemonicParsing="false" onAction="#handleOk" text="Ok" />
+			<Button mnemonicParsing="false" onAction="#handleCancel" text="Annuler" />
+		</buttons>
+	</ButtonBar>
+</AnchorPane>

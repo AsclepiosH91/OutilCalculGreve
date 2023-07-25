@@ -2,6 +2,7 @@ package fr.net.asclepiosh.outilcalculgreve.ui;
 
 import fr.net.asclepiosh.outilcalculgreve.MainApp;
 import fr.net.asclepiosh.outilcalculgreve.model.CoefJournaliers;
+import fr.net.asclepiosh.outilcalculgreve.model.CoefPartDevolue;
 import fr.net.asclepiosh.outilcalculgreve.model.CoefTypeForfaitUsage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,6 +49,7 @@ public class RootLayoutController {
 	    mainApp.getJourDeGrevesData().clear();
 		mainApp.initCoefJournaliers();
 		mainApp.initCoefTypeForfaitUsage();
+		mainApp.initCoefPartDevolue();
 
 		mainApp.setJourFilePath(null);
 
@@ -163,9 +165,20 @@ public class RootLayoutController {
 		final CoefTypeForfaitUsage currentCoefs = mainApp.getCoefTypeForfaitUsageData();
 		final CoefTypeForfaitUsage tmpCoefs = new CoefTypeForfaitUsage(currentCoefs);
 
-		boolean okClicked = mainApp.showCoefTypeForfaitUsageDialog(tmpCoefs);
+		boolean okClicked = mainApp.showCoefTypeForfaitUsageEditDialog(tmpCoefs);
 		if (okClicked) {
 			mainApp.setCoefTypeForfaitUsage(tmpCoefs);
+		}
+	}
+
+	public void handleMniCoefPartDevolue(ActionEvent ignore) {
+
+		final CoefPartDevolue currentCoefs = mainApp.getCoefPartDevolueData();
+		final CoefPartDevolue tmpCoefs = new CoefPartDevolue(currentCoefs);
+
+		boolean okClicked = mainApp.showCoefPartDevolueEditDialog(tmpCoefs);
+		if (okClicked) {
+			mainApp.setCoefPartDevolue(tmpCoefs);
 		}
 	}
 }

@@ -1,9 +1,6 @@
 package fr.net.asclepiosh.outilcalculgreve;
 
-import fr.net.asclepiosh.outilcalculgreve.model.CoefJournaliers;
-import fr.net.asclepiosh.outilcalculgreve.model.CoefTypeForfaitUsage;
-import fr.net.asclepiosh.outilcalculgreve.model.JourDeGreves;
-import fr.net.asclepiosh.outilcalculgreve.model.DataWrapper;
+import fr.net.asclepiosh.outilcalculgreve.model.*;
 import fr.net.asclepiosh.outilcalculgreve.ui.*;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -23,7 +20,6 @@ import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
-import java.util.Properties;
 import java.util.prefs.Preferences;
 
 public class MainApp extends Application {
@@ -46,6 +42,8 @@ public class MainApp extends Application {
 
 	private CoefTypeForfaitUsage coefTypeForfaitUsageData;
 
+	private CoefPartDevolue coefPartDevolueData;
+
 
 	/**
 	 * Constructor
@@ -55,6 +53,7 @@ public class MainApp extends Application {
 		initJourDeGreves();
 		initCoefJournaliers();
 		initCoefTypeForfaitUsage();
+		initCoefPartDevolue();
 
 	}
 
@@ -79,6 +78,10 @@ public class MainApp extends Application {
 		return coefTypeForfaitUsageData;
 	}
 
+	public CoefPartDevolue getCoefPartDevolueData() {
+		return coefPartDevolueData;
+	}
+
 	public void setCoefJour(final CoefJournaliers coefJournaliersData) {
 		this.coefJournaliersData = coefJournaliersData;
 	}
@@ -87,6 +90,9 @@ public class MainApp extends Application {
 		this.coefTypeForfaitUsageData = coefTypeForfaitUsageData;
 	}
 
+	public void setCoefPartDevolue(final CoefPartDevolue coefPartDevolueData) {
+		this.coefPartDevolueData = coefPartDevolueData;
+	}
 
 
 	// ... THE REST OF THE CLASS ...
@@ -253,12 +259,12 @@ public class MainApp extends Application {
 	}
 
 
-	public boolean showCoefTypeForfaitUsageDialog(CoefTypeForfaitUsage coefTypeForfaitUsage) {
+	public boolean showCoefTypeForfaitUsageEditDialog(CoefTypeForfaitUsage coefTypeForfaitUsage) {
 
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("views/CoefTypeForfaitUsageDialog.fxml"));
+			loader.setLocation(MainApp.class.getResource("views/CoefTypeForfaitUsageEditDialog.fxml"));
 			AnchorPane page = loader.load();
 
 			// Create the dialog Stage.
@@ -283,6 +289,43 @@ public class MainApp extends Application {
 		}
 
 	}
+
+
+
+
+	public boolean showCoefPartDevolueEditDialog(CoefPartDevolue coefPartDevolue) {
+		try {
+			// Load the fxml file and create a new stage for the popup dialog.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("views/CoefPartDevolueEditDialog.fxml"));
+			AnchorPane page = loader.load();
+
+			// Create the dialog Stage.
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Editer la part d'évolue à la RATP et la SNCF");
+
+			SetStage(page, dialogStage, false);
+
+			// Set the coefTypeForfaitUsage into the controller.
+			CoefPartDevolueController myController = loader.getController();
+			myController.setPartDevolueEditDialogStage(dialogStage);
+			myController.setPartDevolue(coefPartDevolue);
+
+			// Show the dialog and wait until the user closes it
+			dialogStage.showAndWait();
+
+			return myController.isOkClicked();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+
+
+
+
 
 	private void SetStage(AnchorPane page, Stage dialogStage, Boolean isResizable) {
 
@@ -361,6 +404,7 @@ public class MainApp extends Application {
 
 			initCoefJournaliers();
 			initCoefTypeForfaitUsage();
+			initCoefPartDevolue();
 
 			if(myWrapper.getCoefJoursData() != null) {
 				coefJournaliersData = myWrapper.getCoefJoursData();
@@ -369,6 +413,12 @@ public class MainApp extends Application {
 			if(myWrapper.getCoefTypeForfaitUsageData() != null) {
 				coefTypeForfaitUsageData = myWrapper.getCoefTypeForfaitUsageData();
 			}
+
+			if(myWrapper.getCoefPartDevolueData() != null) {
+				coefPartDevolueData = myWrapper.getCoefPartDevolueData();
+			}
+
+
 
 			// Save the file path to the registry.
 			setJourFilePath(file);
@@ -400,10 +450,11 @@ public class MainApp extends Application {
 
 			// Wrapping our jour data.
 			DataWrapper myWrapper = new DataWrapper();
+
 			myWrapper.setJours(jourDeGrevesData);
 			myWrapper.setCoefJoursData(coefJournaliersData);
 			myWrapper.setCoefTypeForfaitUsageData(coefTypeForfaitUsageData);
-
+			myWrapper.setCoefPartDevolueData(coefPartDevolueData);
 
 			// Marshalling and saving XML to the file.
 			myMarshaller.marshal(myWrapper, file);
@@ -466,4 +517,15 @@ public class MainApp extends Application {
 		coefTypeForfaitUsageData.setcForfait0SNCF("0.0000");
 
 	}
+
+	public void initCoefPartDevolue() {
+		// init default values
+		coefPartDevolueData = new CoefPartDevolue();
+
+		coefPartDevolueData.setcPartDevolueRATP("0.6920");
+		coefPartDevolueData.setcPartDevolueSNCF("0.2550");
+
+	}
+
+
 }

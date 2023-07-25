@@ -38,6 +38,9 @@
                   <MenuItem mnemonicParsing="false" onAction="#handleMniCoefTypeForfatiUsage" text="Coefficients RATP et SNCF pour les type de forfait d'usage" />
 				</items>
 				<items>
+					<MenuItem mnemonicParsing="false" onAction="#handleMniCoefPartDevolue" text="Part d'évolue à la RATP et la SNCF" />
+				</items>
+				<items>
 					<MenuItem mnemonicParsing="false" text="Coefficients de redressement" />
 				</items>
 				<items>

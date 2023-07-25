@@ -55,20 +55,12 @@ public class CoefPartDevolue {
 		return cPartDevolueRATP.get();
 	}
 
-	public StringProperty cPartDevolueRATPProperty() {
-		return cPartDevolueRATP;
-	}
-
 	public void setcPartDevolueRATP(String cPartDevolueRATP) {
 		this.cPartDevolueRATP.set(cPartDevolueRATP);
 	}
 
 	public String getcPartDevolueSNCF() {
 		return cPartDevolueSNCF.get();
-	}
-
-	public StringProperty cPartDevolueSNCFProperty() {
-		return cPartDevolueSNCF;
 	}
 
 	public void setcPartDevolueSNCF(String cPartDevolueSNCF) {
