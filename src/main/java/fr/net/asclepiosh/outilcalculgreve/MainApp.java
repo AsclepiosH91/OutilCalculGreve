@@ -419,7 +419,6 @@ public class MainApp extends Application {
 			}
 
 
-
 			// Save the file path to the registry.
 			setJourFilePath(file);
 
