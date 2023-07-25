@@ -437,19 +437,19 @@ public class MainApp extends Application {
 		// init default values
 		coefJournaliersData = new CoefJournaliers();
 
-		coefJournaliersData.setcJohvR("1.000");
-		coefJournaliersData.setcSahvR("0.850");
-		coefJournaliersData.setcDihvR("0.600");
-		coefJournaliersData.setcJovR("0.910");
-		coefJournaliersData.setcSavR("0.740");
-		coefJournaliersData.setcDivR("0.550");
+		coefJournaliersData.setcJohvR("1.0000");
+		coefJournaliersData.setcSahvR("0.8500");
+		coefJournaliersData.setcDihvR("0.6000");
+		coefJournaliersData.setcJovR("0.9100");
+		coefJournaliersData.setcSavR("0.7400");
+		coefJournaliersData.setcDivR("0.5500");
 
-		coefJournaliersData.setcJohvS("1.000");
-		coefJournaliersData.setcSahvS("0.960");
-		coefJournaliersData.setcDihvS("0.740");
-		coefJournaliersData.setcJovS("0.940");
-		coefJournaliersData.setcSavS("0.840");
-		coefJournaliersData.setcDivS("0.670");
+		coefJournaliersData.setcJohvS("1.0000");
+		coefJournaliersData.setcSahvS("0.9600");
+		coefJournaliersData.setcDihvS("0.7400");
+		coefJournaliersData.setcJovS("0.9400");
+		coefJournaliersData.setcSavS("0.8400");
+		coefJournaliersData.setcDivS("0.6700");
 	}
 
 
@@ -457,15 +457,15 @@ public class MainApp extends Application {
 		// init default values
 		coefTypeForfaitUsageData = new CoefTypeForfaitUsage();
 
-		coefTypeForfaitUsageData.setcForfaitODRATP("1.000");
-		coefTypeForfaitUsageData.setcForfaitTNLRATP("1.000");
-		coefTypeForfaitUsageData.setcForfaitCourtsRATP("1.000");
-		coefTypeForfaitUsageData.setcForfait100RATP("1.000");
+		coefTypeForfaitUsageData.setcForfaitODRATP("0.3900");
+		coefTypeForfaitUsageData.setcForfaitTNLRATP("0.9860");
+		coefTypeForfaitUsageData.setcForfaitCourtsRATP("0.7307");
+		coefTypeForfaitUsageData.setcForfait100RATP("1.0000");
 
-		coefTypeForfaitUsageData.setcForfaitODSNCF("1.000");
-		coefTypeForfaitUsageData.setcForfaitTNLSNCF("1.000");
-		coefTypeForfaitUsageData.setcForfaitCourtsSNCF("1.000");
-		coefTypeForfaitUsageData.setcForfait0SNCF("0.000");
+		coefTypeForfaitUsageData.setcForfaitODSNCF("0.6100");
+		coefTypeForfaitUsageData.setcForfaitTNLSNCF("0.0140");
+		coefTypeForfaitUsageData.setcForfaitCourtsSNCF("0.2693");
+		coefTypeForfaitUsageData.setcForfait0SNCF("0.0000");
 
 	}
 }
