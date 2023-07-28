@@ -205,7 +205,7 @@ public class MainApp extends Application {
 
 			// Create the dialog Stage.
 			Stage dialogStage = new Stage();
-			dialogStage.setTitle("Editer un jourDeGreves de grève");
+			dialogStage.setTitle("Editer un jour de grève");
 
 			SetStage(page, dialogStage, false);
 
