@@ -5,7 +5,7 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="219.0" prefWidth="302.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.net.asclepiosh.outilcalculgreve.ui.CoefPartDevolueController">
-	<GridPane alignment="TOP_CENTER" hgap="10.0" layoutX="33.0" layoutY="45.0" prefHeight="69.0" prefWidth="274.0" AnchorPane.bottomAnchor="136.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+	<GridPane alignment="TOP_CENTER" hgap="10.0" layoutX="33.0" layoutY="45.0" prefHeight="69.0" prefWidth="274.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
 		<columnConstraints>
 			<ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="113.0" />
 			<ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="70.0" />

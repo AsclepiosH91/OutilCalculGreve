@@ -8,7 +8,7 @@
       <center>
       	<SplitPane dividerPositions="0.48" prefHeight="300.0" prefWidth="500.0" BorderPane.alignment="CENTER">
       		<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-      			<TableView fx:id="jourTable" layoutX="-25.0" layoutY="29.0" prefHeight="551.0" prefWidth="249.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+      			<TableView fx:id="jourTable" layoutX="-25.0" layoutY="29.0" prefHeight="598.0" prefWidth="306.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0">
       				<columns>
       					<TableColumn fx:id="nomJourColumn" prefWidth="75.0" text="Nom" />
       					<TableColumn fx:id="dateJourColumn" prefWidth="75.0" text="Date" />
@@ -39,7 +39,7 @@
 					<Label fx:id="dateJourLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 					<Label fx:id="transportJourLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       			</GridPane>
-      			<ButtonBar layoutX="204.0" layoutY="244.0" prefHeight="40.0" prefWidth="490.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0">
+      			<ButtonBar layoutX="204.0" layoutY="244.0" prefHeight="40.0" prefWidth="301.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
       				<buttons>
       					<Button mnemonicParsing="false" onAction="#handleNewJour" text="Créer" />
       					<Button mnemonicParsing="false" onAction="#handleEditJour" text="Modifier" />
