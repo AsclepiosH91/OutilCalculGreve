@@ -33,7 +33,7 @@
 		<TextField fx:id="cPartDevolueSNCFField" prefHeight="25.0" prefWidth="95.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
 
 	</GridPane>
-	<ButtonBar layoutX="88.0" layoutY="239.0" prefHeight="45.0" prefWidth="200.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+	<ButtonBar layoutX="88.0" layoutY="160.0" prefHeight="45.0" prefWidth="200.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
 		<buttons>
 			<Button mnemonicParsing="false" onAction="#handleOk" text="Ok" />
 			<Button mnemonicParsing="false" onAction="#handleCancel" text="Annuler" />
