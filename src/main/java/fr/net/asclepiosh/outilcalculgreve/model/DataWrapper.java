@@ -13,7 +13,7 @@ import java.util.List;
 @XmlRootElement(name = "donneescalculgreve")
 public class DataWrapper {
 
-	private List<JourDeGreves> jourDeGreves;
+	private List<JoursDeGreve> joursDeGreveData;
 
 	private CoefJournaliers coefJoursData;
 
@@ -21,12 +21,15 @@ public class DataWrapper {
 
 	private CoefPartDevolue coefPartDevolueData;
 
+	private CoefAjust coefAjustData;
+
+
 	@XmlElement(name = "joursdegreves", required = true)
-	public List<JourDeGreves> getJours() {
-			return jourDeGreves;
+	public List<JoursDeGreve> getJours() {
+			return joursDeGreveData;
 		}
-	public void setJours(List<JourDeGreves> jourDeGreves) {
-			this.jourDeGreves = jourDeGreves;
+	public void setJours(List<JoursDeGreve> joursDeGreves) {
+			this.joursDeGreveData = joursDeGreves;
 		}
 
 	@XmlElement(name = "coefjournalier", required = true)
@@ -55,6 +58,17 @@ public class DataWrapper {
 	public void setCoefPartDevolueData(CoefPartDevolue coefPartDevolueData) {
 		this.coefPartDevolueData = coefPartDevolueData;
 	}
+
+
+	@XmlElement(name = "coefAjustements", required = true)
+	public CoefAjust getCoefAjustData() {
+		return coefAjustData;
+	}
+
+	public void setCoefAjustData(CoefAjust coefAjustData) {
+		this.coefAjustData = coefAjustData;
+	}
+
 
 }
 

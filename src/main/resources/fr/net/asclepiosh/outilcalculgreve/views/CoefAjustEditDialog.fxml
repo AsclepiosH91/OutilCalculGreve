@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="255.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.net.asclepiosh.outilcalculgreve.ui.CoefAjustEditDialogController">
+	<GridPane alignment="TOP_CENTER" hgap="10.0" layoutX="15.0" layoutY="110.0" prefHeight="314.0" prefWidth="446.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+		<columnConstraints>
+			<ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="390.0" />
+			<ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="125.0" />
+		</columnConstraints>
+
+		<rowConstraints>
+		 <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="35.0" />
+		 <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="35.0" />
+         <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="35.0" />
+
+		</rowConstraints>
+
+		<Label text="Article 1-1, Ajustement à réaliser dans le volet « Autres rémunérations » :" />
+		<Label text="Correctif RD HT Ajusté :" GridPane.rowIndex="1" />
+		<Label text="Article 47-5, « Autres rémunérations » Ajusté :" GridPane.rowIndex="2" />
+
+
+		<TextField fx:id="cArt11AjustField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" />
+		<TextField fx:id="cCorrRDHTAjustField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+		<TextField fx:id="cArtAutrRemunAjustField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+
+	</GridPane>
+	<ButtonBar layoutX="380.0" layoutY="350.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+		<buttons>
+			<Button mnemonicParsing="false" onAction="#handleOk" text="Ok" />
+			<Button mnemonicParsing="false" onAction="#handleCancel" text="Annuler" />
+		</buttons>
+	</ButtonBar>
+</AnchorPane>

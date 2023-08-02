@@ -1,6 +1,7 @@
 package fr.net.asclepiosh.outilcalculgreve.ui;
 
 import fr.net.asclepiosh.outilcalculgreve.MainApp;
+import fr.net.asclepiosh.outilcalculgreve.model.CoefAjust;
 import fr.net.asclepiosh.outilcalculgreve.model.CoefJournaliers;
 import fr.net.asclepiosh.outilcalculgreve.model.CoefPartDevolue;
 import fr.net.asclepiosh.outilcalculgreve.model.CoefTypeForfaitUsage;
@@ -41,7 +42,7 @@ public class RootLayoutController {
 
 
 	/**
-	 * Creates an empty JourDeGreves set.
+	 * Creates an empty JoursDeGreve set.
 	 */
 	@FXML
     private void handleMniNew() {
@@ -57,7 +58,7 @@ public class RootLayoutController {
 
 
 	/**
-	 * Opens a File Chooser to let the user select a JourDeGreves set to load.
+	 * Opens a File Chooser to let the user select a JoursDeGreve set to load.
 	 */
     @FXML
     private void handleMniOpen() {
@@ -181,4 +182,17 @@ public class RootLayoutController {
 			mainApp.setCoefPartDevolue(tmpCoefs);
 		}
 	}
+
+    public void handleMniCoefAjust(ActionEvent ignore) {
+
+	    final CoefAjust currentCoefs = mainApp.getCoefAjustData();
+	    final CoefAjust tmpCoefs = new CoefAjust(currentCoefs);
+
+	    boolean okClicked = mainApp.showCoefAjustEditDialog(tmpCoefs);
+	    if (okClicked) {
+		    mainApp.setCoefAjust(tmpCoefs);
+	    }
+
+
+    }
 }

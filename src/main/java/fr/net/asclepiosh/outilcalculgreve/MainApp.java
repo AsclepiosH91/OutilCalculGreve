@@ -32,7 +32,7 @@ public class MainApp extends Application {
 	/**
 	 * The data as an observable list of Jours.
 	 */
-	private final ObservableList<JourDeGreves> jourDeGrevesData = FXCollections.observableArrayList();
+	private final ObservableList<JoursDeGreve> joursDeGreveData = FXCollections.observableArrayList();
 
 
 	/**
@@ -44,6 +44,8 @@ public class MainApp extends Application {
 
 	private CoefPartDevolue coefPartDevolueData;
 
+	private CoefAjust coefAjustData;
+
 
 	/**
 	 * Constructor
@@ -54,16 +56,17 @@ public class MainApp extends Application {
 		initCoefJournaliers();
 		initCoefTypeForfaitUsage();
 		initCoefPartDevolue();
+		initCoefAjust();
 
 	}
 
 
 	/**
-	 * Returns the data as an observable list of JourDeGreves.
+	 * Returns the data as an observable list of JoursDeGreve.
 	 * @return
 	 */
-	public ObservableList<JourDeGreves> getJourDeGrevesData() {
-		return jourDeGrevesData;
+	public ObservableList<JoursDeGreve> getJourDeGrevesData() {
+		return joursDeGreveData;
 	}
 
 	/**
@@ -82,6 +85,12 @@ public class MainApp extends Application {
 		return coefPartDevolueData;
 	}
 
+	public CoefAjust getCoefAjustData() {
+		return coefAjustData;
+	}
+
+
+
 	public void setCoefJour(final CoefJournaliers coefJournaliersData) {
 		this.coefJournaliersData = coefJournaliersData;
 	}
@@ -93,6 +102,15 @@ public class MainApp extends Application {
 	public void setCoefPartDevolue(final CoefPartDevolue coefPartDevolueData) {
 		this.coefPartDevolueData = coefPartDevolueData;
 	}
+
+	public void setCoefAjust(final CoefAjust coefAjustData) {
+		this.coefAjustData = coefAjustData;
+	}
+
+
+
+
+
 
 
 	// ... THE REST OF THE CLASS ...
@@ -188,14 +206,14 @@ public class MainApp extends Application {
 
 
 	/**
-	 * Opens a dialog to edit details for the specified jourDeGreves. If the user
-	 * clicks OK, the changes are saved into the provided jourDeGreves object and true
+	 * Opens a dialog to edit details for the specified joursDeGreve. If the user
+	 * clicks OK, the changes are saved into the provided joursDeGreve object and true
 	 * is returned.
 	 *
-	 * @param jourDeGreves the jourDeGreves object to be edited
+	 * @param joursDeGreve the joursDeGreve object to be edited
 	 * @return true if the user clicked OK, false otherwise.
 	 */
-	public boolean showJourEditDialog(JourDeGreves jourDeGreves) {
+	public boolean showJourEditDialog(JoursDeGreve joursDeGreve) {
 
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.
@@ -212,7 +230,7 @@ public class MainApp extends Application {
 			// Set the person into the controller.
 			JourEditDialogController controller = loader.getController();
 			controller.setJourEditDialogStage(dialogStage);
-			controller.setJour(jourDeGreves);
+			controller.setJour(joursDeGreve);
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
@@ -308,7 +326,7 @@ public class MainApp extends Application {
 
 			// Set the coefTypeForfaitUsage into the controller.
 			CoefPartDevolueController myController = loader.getController();
-			myController.setPartDevolueEditDialogStage(dialogStage);
+			myController.setCoefPartDevolueEditDialogStage(dialogStage);
 			myController.setPartDevolue(coefPartDevolue);
 
 			// Show the dialog and wait until the user closes it
@@ -321,6 +339,40 @@ public class MainApp extends Application {
 			return false;
 		}
 	}
+
+
+
+
+	public boolean showCoefAjustEditDialog(CoefAjust coefAjust) {
+		try {
+			// Load the fxml file and create a new stage for the popup dialog.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("views/CoefAjustEditDialog.fxml"));
+			AnchorPane page = loader.load();
+
+			// Create the dialog Stage.
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Editer les coefficients d'ajustement");
+
+			SetStage(page, dialogStage, false);
+
+			// Set the coefTypeForfaitUsage into the controller.
+			CoefAjustEditDialogController myController = loader.getController();
+			myController.setCoefAjustEditDialogStage(dialogStage);
+			myController.setCoefAjust(coefAjust);
+
+			// Show the dialog and wait until the user closes it
+			dialogStage.showAndWait();
+
+			return myController.isOkClicked();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+
 
 
 
@@ -399,12 +451,13 @@ public class MainApp extends Application {
 			// Reading XML from the file and unmarshalling.
 			DataWrapper myWrapper = (DataWrapper) um.unmarshal(file);
 
-			jourDeGrevesData.clear();
-			jourDeGrevesData.addAll(myWrapper.getJours());
+			joursDeGreveData.clear();
+			joursDeGreveData.addAll(myWrapper.getJours());
 
 			initCoefJournaliers();
 			initCoefTypeForfaitUsage();
 			initCoefPartDevolue();
+			initCoefAjust();
 
 			if(myWrapper.getCoefJoursData() != null) {
 				coefJournaliersData = myWrapper.getCoefJoursData();
@@ -416,6 +469,10 @@ public class MainApp extends Application {
 
 			if(myWrapper.getCoefPartDevolueData() != null) {
 				coefPartDevolueData = myWrapper.getCoefPartDevolueData();
+			}
+
+			if(myWrapper.getCoefAjustData() != null) {
+				coefAjustData = myWrapper.getCoefAjustData();
 			}
 
 
@@ -450,10 +507,11 @@ public class MainApp extends Application {
 			// Wrapping our jour data.
 			DataWrapper myWrapper = new DataWrapper();
 
-			myWrapper.setJours(jourDeGrevesData);
+			myWrapper.setJours(joursDeGreveData);
 			myWrapper.setCoefJoursData(coefJournaliersData);
 			myWrapper.setCoefTypeForfaitUsageData(coefTypeForfaitUsageData);
 			myWrapper.setCoefPartDevolueData(coefPartDevolueData);
+			myWrapper.setCoefAjustData(coefAjustData);
 
 			// Marshalling and saving XML to the file.
 			myMarshaller.marshal(myWrapper, file);
@@ -475,9 +533,9 @@ public class MainApp extends Application {
 
 	private void initJourDeGreves() {
 		// init default values
-		jourDeGrevesData.add(new JourDeGreves("Jour De Greve 1", "RATP"));
-		jourDeGrevesData.add(new JourDeGreves("Jour De Greve 2", "SNCF"));
-		jourDeGrevesData.add(new JourDeGreves("Jour De Greve 3", "RATP-SNCF"));
+		joursDeGreveData.add(new JoursDeGreve("Jour De Greve 1", "RATP"));
+		joursDeGreveData.add(new JoursDeGreve("Jour De Greve 2", "SNCF"));
+		joursDeGreveData.add(new JoursDeGreve("Jour De Greve 3", "RATP-SNCF"));
 	}
 
 	public void initCoefJournaliers()
@@ -523,6 +581,17 @@ public class MainApp extends Application {
 
 		coefPartDevolueData.setcPartDevolueRATP("0.6920");
 		coefPartDevolueData.setcPartDevolueSNCF("0.2550");
+
+	}
+
+
+	public void initCoefAjust() {
+		// init default values
+		coefAjustData = new CoefAjust();
+
+		coefAjustData.setcArt11Ajust("0.7400");
+		coefAjustData.setcCorrRDHTAjust("1.0420");
+		coefAjustData.setcArtAutrRemunAjust("1.0420");
 
 	}
 

@@ -1,6 +1,5 @@
 package fr.net.asclepiosh.outilcalculgreve.ui;
 
-import fr.net.asclepiosh.outilcalculgreve.model.CoefJournaliers;
 import fr.net.asclepiosh.outilcalculgreve.model.CoefPartDevolue;
 import fr.net.asclepiosh.outilcalculgreve.util.StringUtil;
 import javafx.fxml.FXML;
@@ -40,7 +39,7 @@ public class CoefPartDevolueController {
 	 *
 	 * @param coefPartDevolueEditDialogStage
 	 */
-	public void setPartDevolueEditDialogStage(Stage coefPartDevolueEditDialogStage) {
+	public void setCoefPartDevolueEditDialogStage(Stage coefPartDevolueEditDialogStage) {
 		this.coefPartDevolueEditDialogStage = coefPartDevolueEditDialogStage;
 	}
 

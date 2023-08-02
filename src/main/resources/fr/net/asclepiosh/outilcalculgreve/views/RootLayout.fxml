@@ -41,7 +41,7 @@
 					<MenuItem mnemonicParsing="false" onAction="#handleMniCoefPartDevolue" text="Part d'évolue à la RATP et la SNCF" />
 				</items>
 				<items>
-					<MenuItem mnemonicParsing="false" text="Coefficients de redressement" />
+					<MenuItem mnemonicParsing="false" onAction="#handleMniCoefAjust" text="Coefficients d'ajustement" />
 				</items>
 				<items>
 					<MenuItem mnemonicParsing="false" text="Tarif Contrat" />
