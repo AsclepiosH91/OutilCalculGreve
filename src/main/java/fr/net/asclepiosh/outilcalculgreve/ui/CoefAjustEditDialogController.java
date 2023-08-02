@@ -111,11 +111,11 @@ public class CoefAjustEditDialogController {
 		String errorMessage = "";
 
 		if (cArt11AjustField.getText() == null || cArt11AjustField.getText().isEmpty() || !StringUtil.isFloat(cArt11AjustField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour l'ajustement à réaliser dans le volet « Autres rémunérations », Article 1-1 !\n";
+			errorMessage += "Ce n'est pas une valeur valide pour l'ajustement du volet « Autres rémunérations », Article 1-1 !\n";
 		if (cCorrRDHTAjustField.getText() == null || cCorrRDHTAjustField.getText().isEmpty() || !StringUtil.isFloat(cCorrRDHTAjustField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour la part dévolue SNCF !\n";
+			errorMessage += "Ce n'est pas une valeur valide pour le correctif de RD HT Ajusté !\n";
 		if (cArtAutrRemunAjustField.getText() == null || cArtAutrRemunAjustField.getText().isEmpty() || !StringUtil.isFloat(cArtAutrRemunAjustField.getText()))
-			errorMessage += "Ce n'est pas une valeur valide pour la part dévolue SNCF !\n";
+			errorMessage += "Ce n'est pas une valeur valide pour l'ajustement de l'article 47-5, « Autres rémunérations » !\n";
 
 
 
