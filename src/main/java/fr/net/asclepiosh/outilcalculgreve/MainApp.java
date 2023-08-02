@@ -325,7 +325,7 @@ public class MainApp extends Application {
 			SetStage(page, dialogStage, false);
 
 			// Set the coefTypeForfaitUsage into the controller.
-			CoefPartDevolueController myController = loader.getController();
+			CoefPartDevolueEditController myController = loader.getController();
 			myController.setCoefPartDevolueEditDialogStage(dialogStage);
 			myController.setPartDevolue(coefPartDevolue);
 

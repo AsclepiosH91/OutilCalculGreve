@@ -12,7 +12,7 @@ import javafx.stage.Stage;
  *
  * @author Nicolas Torres
  **/
-public class CoefPartDevolueController {
+public class CoefPartDevolueEditController {
 
 	@FXML
 	private TextField cPartDevolueRATPField;
