@@ -47,8 +47,7 @@ public class JourEditDialogController {
 	/**
 	 * Sets the stage of this dialog.
 	 *
-	 * @param jourEditDialogStage
-	 */
+     */
 	public void setJourEditDialogStage(Stage jourEditDialogStage) {
 		this.jourEditDialogStage = jourEditDialogStage;
 	}
@@ -121,18 +120,18 @@ public class JourEditDialogController {
 	private boolean isInputValid() {
 		String errorMessage = "";
 
-		if (transportJourComboBox.getValue().getName() == null || transportJourComboBox.getValue().getName().length() == 0) {
+		if (transportJourComboBox.getValue().getName() == null || transportJourComboBox.getValue().getName().isEmpty()) {
 			errorMessage += "Ce n'est pas un transporteur valide !\n";
 		}
 
 
-		if (nomJourField.getText() == null || nomJourField.getText().length() == 0) {
+		if (nomJourField.getText() == null || nomJourField.getText().isEmpty()) {
 			errorMessage += "Ce n'est pas un nom de joursDeGreve valide !\n";
 		}
 
 
 		dateJourField.getValue();
-		if (dateJourField.getValue().toString().length() == 0) {
+		if (dateJourField.getValue().toString().isEmpty()) {
 			errorMessage += "Date non valide !\n";
 		} else {
 			if (
@@ -143,7 +142,7 @@ public class JourEditDialogController {
 			}
 		}
 
-		if (errorMessage.length() == 0) {
+		if (errorMessage.isEmpty()) {
 			return true;
 		} else {
 			// Show the error message.

@@ -14,11 +14,10 @@ public class CoefAjustEditDialogController {
 	public TextField cArt11AjustField;
 	public TextField cCorrRDHTAjustField;
 	public TextField cArtAutrRemunAjustField;
+    public TextField cTCBBField;
 
 
-
-
-	private Stage coefAjustEditDialogStage;
+    private Stage coefAjustEditDialogStage;
 	private CoefAjust coefAjustData;
 	private boolean okClicked = false;
 

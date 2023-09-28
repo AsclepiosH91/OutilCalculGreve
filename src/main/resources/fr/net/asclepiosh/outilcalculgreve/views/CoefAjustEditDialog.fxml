@@ -14,17 +14,20 @@
 		 <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="35.0" />
 		 <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="35.0" />
          <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="35.0" />
+		 <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="35.0" />
 
 		</rowConstraints>
 
 		<Label text="Article 1-1, Ajustement à réaliser dans le volet « Autres rémunérations » :" />
 		<Label text="Correctif RD HT Ajusté :" GridPane.rowIndex="1" />
 		<Label text="Article 47-5, « Autres rémunérations » Ajusté :" GridPane.rowIndex="2" />
+		<Label text="Coef Tarif contrat pour billets banlieue :" GridPane.rowIndex="3" />
 
 
 		<TextField fx:id="cArt11AjustField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" />
 		<TextField fx:id="cCorrRDHTAjustField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 		<TextField fx:id="cArtAutrRemunAjustField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+		<TextField fx:id="cTCBBField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
 
 	</GridPane>
