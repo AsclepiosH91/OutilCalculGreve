@@ -107,7 +107,7 @@ public class CoefAjustEditDialogController {
 	 * @return true if the input is valid
 	 */
 	private boolean isInputValid() {
-		String errorMessage = "";
+		var errorMessage = "";
 
 		if (cArt11AjustField.getText() == null || cArt11AjustField.getText().isEmpty() || !StringUtil.isFloat(cArt11AjustField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour l'ajustement du volet « Autres rémunérations », Article 1-1 !\n";
@@ -118,7 +118,7 @@ public class CoefAjustEditDialogController {
 
 
 
-		if (errorMessage.length() == 0) {
+		if (errorMessage.isEmpty()) {
 			return true;
 		} else {
 			// Show the error message.
