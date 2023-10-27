@@ -225,7 +225,7 @@ public class MainApp extends Application {
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Editer un jour de grève");
 
-			SetStage(page, dialogStage, true);
+			SetStage(page, dialogStage);
 
 			// Set the person into the controller.
 			JourEditDialogController controller = loader.getController();
@@ -257,7 +257,7 @@ public class MainApp extends Application {
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Editer les coefficients Journalier RATP et SNCF");
 
-			SetStage(page, dialogStage, true);
+			SetStage(page, dialogStage);
 
 			// Set the coefJournaliers into the controller.
 			CoefJourEditDialogController controller = loader.getController();
@@ -289,7 +289,7 @@ public class MainApp extends Application {
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Editer les coefficients des types de forfait d'usage RATP et SNCF");
 
-			SetStage(page, dialogStage, true);
+			SetStage(page, dialogStage);
 
 			// Set the coefTypeForfaitUsage into the controller.
 			CoefTypeForfaitUsageEditDialogController myController = loader.getController();
@@ -322,7 +322,7 @@ public class MainApp extends Application {
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Editer la part d'évolue à la RATP et la SNCF");
 
-			SetStage(page, dialogStage, true);
+			SetStage(page, dialogStage);
 
 			// Set the coefTypeForfaitUsage into the controller.
 			CoefPartDevolueEditController myController = loader.getController();
@@ -354,7 +354,7 @@ public class MainApp extends Application {
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Editer les coefficients d'ajustement");
 
-			SetStage(page, dialogStage, true);
+			SetStage(page, dialogStage);
 
 			// Set the coefTypeForfaitUsage into the controller.
 			CoefAjustEditDialogController myController = loader.getController();
@@ -379,12 +379,12 @@ public class MainApp extends Application {
 
 
 
-	private void SetStage(AnchorPane page, Stage dialogStage, Boolean isResizable) {
+	private void SetStage(AnchorPane page, Stage dialogStage) {
 
 		Image appIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("icons/RATP.svg.png")));
 		dialogStage.getIcons().add(appIcon);
 
-		dialogStage.setResizable(isResizable);
+		dialogStage.setResizable(false);
 
 		dialogStage.initModality(Modality.WINDOW_MODAL);
 		dialogStage.initOwner(primaryStage);
