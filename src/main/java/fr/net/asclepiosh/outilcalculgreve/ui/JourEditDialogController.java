@@ -1,8 +1,8 @@
 package fr.net.asclepiosh.outilcalculgreve.ui;
 
 import fr.net.asclepiosh.outilcalculgreve.model.JoursDeGreve;
-import fr.net.asclepiosh.outilcalculgreve.model.Transporteurs;
-import fr.net.asclepiosh.outilcalculgreve.model.TransporteursData;
+import fr.net.asclepiosh.outilcalculgreve.model.TransportsOuPollution;
+import fr.net.asclepiosh.outilcalculgreve.model.TransportsOuPollutionData;
 import fr.net.asclepiosh.outilcalculgreve.util.DateUtil;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -22,7 +22,7 @@ public class JourEditDialogController {
 	private TextField nomJourField;
 
 	@FXML
-	private ComboBox<Transporteurs> transportJourComboBox;
+	private ComboBox<TransportsOuPollution> transportJourComboBox;
 
 	@FXML
 	private DatePicker dateJourField;
@@ -33,7 +33,7 @@ public class JourEditDialogController {
 
 
 
-	private final ObservableList<Transporteurs> list = TransporteursData.getTransportList();
+	private final ObservableList<TransportsOuPollution> list = TransportsOuPollutionData.getTransportOuPollutionList();
 
 
 	/**
@@ -62,7 +62,7 @@ public class JourEditDialogController {
 
 		this.joursDeGreve = joursDeGreve;
 
-		// Add Transporteurs data
+		// Add TransportsOuPollution data
 		transportJourComboBox.setItems(list);
 
 		int index = switch (joursDeGreve.getTransportJour()) {
