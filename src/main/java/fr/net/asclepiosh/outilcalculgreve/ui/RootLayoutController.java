@@ -42,7 +42,7 @@ public class RootLayoutController {
 
 
 	/**
-	 * Creates an empty JoursDeGreve set.
+	 * Creates an empty JoursDeGreveOuPollution set.
 	 */
 	@FXML
     private void handleMniNew() {
@@ -58,7 +58,7 @@ public class RootLayoutController {
 
 
 	/**
-	 * Opens a File Chooser to let the user select a JoursDeGreve set to load.
+	 * Opens a File Chooser to let the user select a JoursDeGreveOuPollution set to load.
 	 */
     @FXML
     private void handleMniOpen() {

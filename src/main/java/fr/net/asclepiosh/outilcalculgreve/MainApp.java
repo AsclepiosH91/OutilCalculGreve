@@ -32,7 +32,7 @@ public class MainApp extends Application {
 	/**
 	 * The data as an observable list of Jours.
 	 */
-	private final ObservableList<JoursDeGreve> joursDeGreveData = FXCollections.observableArrayList();
+	private final ObservableList<JoursDeGreveOuPollution> joursDeGreveOuPollutionData = FXCollections.observableArrayList();
 
 
 	/**
@@ -62,11 +62,11 @@ public class MainApp extends Application {
 
 
 	/**
-	 * Returns the data as an observable list of JoursDeGreve.
+	 * Returns the data as an observable list of JoursDeGreveOuPollution.
 	 * @return
 	 */
-	public ObservableList<JoursDeGreve> getJourDeGrevesData() {
-		return joursDeGreveData;
+	public ObservableList<JoursDeGreveOuPollution> getJourDeGrevesData() {
+		return joursDeGreveOuPollutionData;
 	}
 
 	/**
@@ -206,14 +206,14 @@ public class MainApp extends Application {
 
 
 	/**
-	 * Opens a dialog to edit details for the specified joursDeGreve. If the user
-	 * clicks OK, the changes are saved into the provided joursDeGreve object and true
+	 * Opens a dialog to edit details for the specified joursDeGreveOuPollution. If the user
+	 * clicks OK, the changes are saved into the provided joursDeGreveOuPollution object and true
 	 * is returned.
 	 *
-	 * @param joursDeGreve the joursDeGreve object to be edited
+	 * @param joursDeGreveOuPollution the joursDeGreveOuPollution object to be edited
 	 * @return true if the user clicked OK, false otherwise.
 	 */
-	public boolean showJourEditDialog(JoursDeGreve joursDeGreve) {
+	public boolean showJourEditDialog(JoursDeGreveOuPollution joursDeGreveOuPollution) {
 
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.
@@ -227,10 +227,10 @@ public class MainApp extends Application {
 
 			SetStage(page, dialogStage);
 
-			// Set the person into the controller.
+			// Set the jour into the controller.
 			JourEditDialogController controller = loader.getController();
 			controller.setJourEditDialogStage(dialogStage);
-			controller.setJour(joursDeGreve);
+			controller.setJour(joursDeGreveOuPollution);
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
@@ -451,8 +451,8 @@ public class MainApp extends Application {
 			// Reading XML from the file and unmarshalling.
 			DataWrapper myWrapper = (DataWrapper) um.unmarshal(file);
 
-			joursDeGreveData.clear();
-			joursDeGreveData.addAll(myWrapper.getJours());
+			joursDeGreveOuPollutionData.clear();
+			joursDeGreveOuPollutionData.addAll(myWrapper.getJours());
 
 			initCoefJournaliers();
 			initCoefTypeForfaitUsage();
@@ -507,7 +507,7 @@ public class MainApp extends Application {
 			// Wrapping our jour data.
 			DataWrapper myWrapper = new DataWrapper();
 
-			myWrapper.setJours(joursDeGreveData);
+			myWrapper.setJours(joursDeGreveOuPollutionData);
 			myWrapper.setCoefJoursData(coefJournaliersData);
 			myWrapper.setCoefTypeForfaitUsageData(coefTypeForfaitUsageData);
 			myWrapper.setCoefPartDevolueData(coefPartDevolueData);
@@ -533,9 +533,9 @@ public class MainApp extends Application {
 
 	private void initJourDeGreves() {
 		// init default values
-		joursDeGreveData.add(new JoursDeGreve("Jour De Greve 1", "RATP"));
-		joursDeGreveData.add(new JoursDeGreve("Jour De Greve 2", "SNCF"));
-		joursDeGreveData.add(new JoursDeGreve("Jour De Greve 3", "RATP-SNCF"));
+		joursDeGreveOuPollutionData.add(new JoursDeGreveOuPollution("Jour De Greve 1", "RATP"));
+		joursDeGreveOuPollutionData.add(new JoursDeGreveOuPollution("Jour De Greve 2", "SNCF"));
+		joursDeGreveOuPollutionData.add(new JoursDeGreveOuPollution("Jour De Greve 3", "RATP-SNCF"));
 	}
 
 	public void initCoefJournaliers()

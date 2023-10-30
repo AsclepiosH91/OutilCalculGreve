@@ -13,7 +13,7 @@ import java.util.List;
 @XmlRootElement(name = "donneescalculgreve")
 public class DataWrapper {
 
-	private List<JoursDeGreve> joursDeGreveData;
+	private List<JoursDeGreveOuPollution> joursDeGreveOuPollutionData;
 
 	private CoefJournaliers coefJoursData;
 
@@ -25,11 +25,11 @@ public class DataWrapper {
 
 
 	@XmlElement(name = "joursdegreves", required = true)
-	public List<JoursDeGreve> getJours() {
-			return joursDeGreveData;
+	public List<JoursDeGreveOuPollution> getJours() {
+			return joursDeGreveOuPollutionData;
 		}
-	public void setJours(List<JoursDeGreve> joursDeGreves) {
-			this.joursDeGreveData = joursDeGreves;
+	public void setJours(List<JoursDeGreveOuPollution> joursDeGreveOuPollutions) {
+			this.joursDeGreveOuPollutionData = joursDeGreveOuPollutions;
 		}
 
 	@XmlElement(name = "coefjournalier", required = true)
