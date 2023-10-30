@@ -34,12 +34,12 @@
 				<Font size="18.0" />
 			</font></Label>
 
-		<Label text="Jour ouvré hors vacances scolaire (cJohv) :" GridPane.rowIndex="1" />
-		<Label text="Samedi hors vacances scolaire (cSahv):" GridPane.rowIndex="2" />
-		<Label text="Dimanche hors vacances scolaire (cDihv) :" GridPane.rowIndex="3" />
-		<Label text="Jour ouvré vacances scolaire (cJov) :" GridPane.rowIndex="4" />
-		<Label text="Samedi vacances scolaire (cSav) :" GridPane.rowIndex="5" />
-		<Label text="Dimanche vacances scolaire (cDiv) :" GridPane.rowIndex="6" />
+		<Label text="Jour ouvré hors vacances scolaire (C johv) :" GridPane.rowIndex="1" />
+		<Label text="Samedi hors vacances scolaire (C sahv):" GridPane.rowIndex="2" />
+		<Label text="Dimanche hors vacances scolaire (C dihv) :" GridPane.rowIndex="3" />
+		<Label text="Jour ouvré vacances scolaire (C jov) :" GridPane.rowIndex="4" />
+		<Label text="Samedi vacances scolaire (C sav) :" GridPane.rowIndex="5" />
+		<Label text="Dimanche vacances scolaire (C div) :" GridPane.rowIndex="6" />
 
 		<TextField fx:id="cJohvRField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 		<TextField fx:id="cSahvRField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />

@@ -543,19 +543,19 @@ public class MainApp extends Application {
 		// init default values
 		coefJournaliersData = new CoefJournaliers();
 
-		coefJournaliersData.setcJohvR("1.0000");
-		coefJournaliersData.setcSahvR("0.8500");
-		coefJournaliersData.setcDihvR("0.6000");
-		coefJournaliersData.setcJovR("0.9100");
-		coefJournaliersData.setcSavR("0.7400");
-		coefJournaliersData.setcDivR("0.5500");
+		coefJournaliersData.setCjohvR("1.0000");
+		coefJournaliersData.setCsahvR("0.8500");
+		coefJournaliersData.setCdihvR("0.6000");
+		coefJournaliersData.setCjovR("0.9100");
+		coefJournaliersData.setCsavR("0.7400");
+		coefJournaliersData.setCdivR("0.5500");
 
-		coefJournaliersData.setcJohvS("1.0000");
-		coefJournaliersData.setcSahvS("0.9600");
-		coefJournaliersData.setcDihvS("0.7400");
-		coefJournaliersData.setcJovS("0.9400");
-		coefJournaliersData.setcSavS("0.8400");
-		coefJournaliersData.setcDivS("0.6700");
+		coefJournaliersData.setCjohvS("1.0000");
+		coefJournaliersData.setCsahvS("0.9600");
+		coefJournaliersData.setCdihvS("0.7400");
+		coefJournaliersData.setCjovS("0.9400");
+		coefJournaliersData.setCsavS("0.8400");
+		coefJournaliersData.setCdivS("0.6700");
 	}
 
 

@@ -11,40 +11,40 @@ import javafx.beans.property.StringProperty;
 public class CoefJournaliers {
 
 	// Coéf jour ouvré hors vacances scolaire RATP
-	private final StringProperty cJohvR;
+	private final StringProperty CjohvR;
 
 	// Coéf samedi hors vacances scolaire RATP
-	private final StringProperty cSahvR;
+	private final StringProperty CsahvR;
 
 	// Coéf dimanche hors vacances scolaire RATP
-	private final StringProperty cDihvR;
+	private final StringProperty CdihvR;
 
 	// Coéf jour ouvré vacances scolaire RATP
-	private final StringProperty cJovR;
+	private final StringProperty CjovR;
 
 	// Coéf samedi vacances scolaire RATP
-	private final StringProperty cSavR;
+	private final StringProperty CsavR;
 
 	// Coéf dimanche vacances scolaire RATP
-	private final StringProperty cDivR;
+	private final StringProperty CdivR;
 
 	// Coéf jour ouvré hors vacances scolaire SNCF
-	private final StringProperty cJohvS;
+	private final StringProperty CjohvS;
 
 	// Coéf samedi hors vacances scolaire SNCF
-	private final StringProperty cSahvS;
+	private final StringProperty CsahvS;
 
 	// Coéf dimanche hors vacances scolaire SNCF
-	private final StringProperty cDihvS;
+	private final StringProperty CdihvS;
 
 	// Coéf jour ouvré vacances scolaire SNCF
-	private final StringProperty cJovS;
+	private final StringProperty CjovS;
 
 	// Coéf samedi vacances scolaire SNCF
-	private final StringProperty cSavS;
+	private final StringProperty CsavS;
 
 	// Coéf dimanche vacances scolaire SNCF
-	private final StringProperty cDivS;
+	private final StringProperty CdivS;
 
 
 	/**
@@ -74,19 +74,19 @@ public class CoefJournaliers {
 
 
 	public CoefJournaliers(String cJohvR, String cSahvR, String cDihvR, String cJovR, String cSavR, String cDivR, String cJohvS, String cSahvS, String cDihvS, String cJovS, String cSavS, String cDivS) {
-		this.cJohvR = new SimpleStringProperty(cJohvR);
-		this.cSahvR = new SimpleStringProperty(cSahvR);
-		this.cDihvR = new SimpleStringProperty(cDihvR);
-		this.cJovR = new SimpleStringProperty(cJovR);
-		this.cSavR = new SimpleStringProperty(cSavR);
-		this.cDivR = new SimpleStringProperty(cDivR);
+		this.CjohvR = new SimpleStringProperty(cJohvR);
+		this.CsahvR = new SimpleStringProperty(cSahvR);
+		this.CdihvR = new SimpleStringProperty(cDihvR);
+		this.CjovR = new SimpleStringProperty(cJovR);
+		this.CsavR = new SimpleStringProperty(cSavR);
+		this.CdivR = new SimpleStringProperty(cDivR);
 
-		this.cJohvS = new SimpleStringProperty(cJohvS);
-		this.cSahvS = new SimpleStringProperty(cSahvS);
-		this.cDihvS = new SimpleStringProperty(cDihvS);
-		this.cJovS = new SimpleStringProperty(cJovS);
-		this.cSavS = new SimpleStringProperty(cSavS);
-		this.cDivS = new SimpleStringProperty(cDivS);
+		this.CjohvS = new SimpleStringProperty(cJohvS);
+		this.CsahvS = new SimpleStringProperty(cSahvS);
+		this.CdihvS = new SimpleStringProperty(cDihvS);
+		this.CjovS = new SimpleStringProperty(cJovS);
+		this.CsavS = new SimpleStringProperty(cSavS);
+		this.CdivS = new SimpleStringProperty(cDivS);
 	}
 
 	/**
@@ -94,114 +94,114 @@ public class CoefJournaliers {
 	 * @param orig instance of CoefJournaliers we want to copy
 	 */
 	public CoefJournaliers(final CoefJournaliers orig) {
-		this.cJohvR = orig.cJohvR;
-		this.cSahvR = orig.cSahvR;
-		this.cDihvR = orig.cDihvR;
-		this.cJovR = orig.cJovR;
-		this.cSavR = orig.cSavR;
-		this.cDivR = orig.cDivR;
+		this.CjohvR = orig.CjohvR;
+		this.CsahvR = orig.CsahvR;
+		this.CdihvR = orig.CdihvR;
+		this.CjovR = orig.CjovR;
+		this.CsavR = orig.CsavR;
+		this.CdivR = orig.CdivR;
 
-		this.cJohvS = orig.cJohvS;
-		this.cSahvS = orig.cSahvS;
-		this.cDihvS = orig.cDihvS;
-		this.cJovS = orig.cJovS;
-		this.cSavS = orig.cSavS;
-		this.cDivS = orig.cDivS;
+		this.CjohvS = orig.CjohvS;
+		this.CsahvS = orig.CsahvS;
+		this.CdihvS = orig.CdihvS;
+		this.CjovS = orig.CjovS;
+		this.CsavS = orig.CsavS;
+		this.CdivS = orig.CdivS;
 	}
 
-	public String getcJohvR() {
-		return cJohvR.get();
+	public String getCjohvR() {
+		return CjohvR.get();
 	}
 
-	public void setcJohvR(String cJohvR) {
-		this.cJohvR.set(cJohvR);
+	public void setCjohvR(String cjohvR) {
+		this.CjohvR.set(cjohvR);
 	}
 
-	public String getcSahvR() {
-		return cSahvR.get();
+	public String getCsahvR() {
+		return CsahvR.get();
 	}
 
-	public void setcSahvR(String cSahvR) {
-		this.cSahvR.set(cSahvR);
+	public void setCsahvR(String csahvR) {
+		this.CsahvR.set(csahvR);
 	}
 
-	public String getcDihvR() {
-		return cDihvR.get();
+	public String getCdihvR() {
+		return CdihvR.get();
 	}
 
-	public void setcDihvR(String cDihvR) {
-		this.cDihvR.set(cDihvR);
+	public void setCdihvR(String cdihvR) {
+		this.CdihvR.set(cdihvR);
 	}
 
-	public String getcJovR() {
-		return cJovR.get();
+	public String getCjovR() {
+		return CjovR.get();
 	}
 
-	public void setcJovR(String cJovR) {
-		this.cJovR.set(cJovR);
+	public void setCjovR(String cjovR) {
+		this.CjovR.set(cjovR);
 	}
 
-	public String getcSavR() {
-		return cSavR.get();
+	public String getCsavR() {
+		return CsavR.get();
 	}
 
-	public void setcSavR(String cSavR) {
-		this.cSavR.set(cSavR);
+	public void setCsavR(String csavR) {
+		this.CsavR.set(csavR);
 	}
 
-	public String getcDivR() {
-		return cDivR.get();
+	public String getCdivR() {
+		return CdivR.get();
 	}
 
-	public void setcDivR(String cDivR) {
-		this.cDivR.set(cDivR);
+	public void setCdivR(String cdivR) {
+		this.CdivR.set(cdivR);
 	}
 
-	public String getcJohvS() {
-		return cJohvS.get();
+	public String getCjohvS() {
+		return CjohvS.get();
 	}
 
-	public void setcJohvS(String cJohvS) {
-		this.cJohvS.set(cJohvS);
+	public void setCjohvS(String cjohvS) {
+		this.CjohvS.set(cjohvS);
 	}
 
-	public String getcSahvS() {
-		return cSahvS.get();
+	public String getCsahvS() {
+		return CsahvS.get();
 	}
 
-	public void setcSahvS(String cSahvS) {
-		this.cSahvS.set(cSahvS);
+	public void setCsahvS(String csahvS) {
+		this.CsahvS.set(csahvS);
 	}
 
-	public String getcDihvS() {
-		return cDihvS.get();
+	public String getCdihvS() {
+		return CdihvS.get();
 	}
 
-	public void setcDihvS(String cDihvS) {
-		this.cDihvS.set(cDihvS);
+	public void setCdihvS(String cdihvS) {
+		this.CdihvS.set(cdihvS);
 	}
 
-	public String getcJovS() {
-		return cJovS.get();
+	public String getCjovS() {
+		return CjovS.get();
 	}
 
-	public void setcJovS(String cJovS) {
-		this.cJovS.set(cJovS);
+	public void setCjovS(String cjovS) {
+		this.CjovS.set(cjovS);
 	}
 
-	public String getcSavS() {
-		return cSavS.get();
+	public String getCsavS() {
+		return CsavS.get();
 	}
 
-	public void setcSavS(String cSavS) {
-		this.cSavS.set(cSavS);
+	public void setCsavS(String csavS) {
+		this.CsavS.set(csavS);
 	}
 
-	public String getcDivS() {
-		return cDivS.get();
+	public String getCdivS() {
+		return CdivS.get();
 	}
 
-	public void setcDivS(String cDivS) {
-		this.cDivS.set(cDivS);
+	public void setCdivS(String cdivS) {
+		this.CdivS.set(cdivS);
 	}
 }

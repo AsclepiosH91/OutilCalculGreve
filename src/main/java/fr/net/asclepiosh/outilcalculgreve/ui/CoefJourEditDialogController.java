@@ -75,19 +75,19 @@ public class CoefJourEditDialogController {
 
 		this.coefJournaliersData = coefJournaliers;
 
-		cJohvRField.setText(coefJournaliers.getcJohvR());
-		cSahvRField.setText(coefJournaliers.getcSahvR());
-		cDihvRField.setText(coefJournaliers.getcDihvR());
-		cJovRField.setText(coefJournaliers.getcJovR());
-		cSavRField.setText(coefJournaliers.getcSavR());
-		cDivRField.setText(coefJournaliers.getcDivR());
+		cJohvRField.setText(coefJournaliers.getCjohvR());
+		cSahvRField.setText(coefJournaliers.getCsahvR());
+		cDihvRField.setText(coefJournaliers.getCdihvR());
+		cJovRField.setText(coefJournaliers.getCjovR());
+		cSavRField.setText(coefJournaliers.getCsavR());
+		cDivRField.setText(coefJournaliers.getCdivR());
 
-		cJohvSField.setText(coefJournaliers.getcJohvS());
-		cSahvSField.setText(coefJournaliers.getcSahvS());
-		cDihvSField.setText(coefJournaliers.getcDihvS());
-		cJovSField.setText(coefJournaliers.getcJovS());
-		cSavSField.setText(coefJournaliers.getcSavS());
-		cDivSField.setText(coefJournaliers.getcDivS());
+		cJohvSField.setText(coefJournaliers.getCjohvS());
+		cSahvSField.setText(coefJournaliers.getCsahvS());
+		cDihvSField.setText(coefJournaliers.getCdihvS());
+		cJovSField.setText(coefJournaliers.getCjovS());
+		cSavSField.setText(coefJournaliers.getCsavS());
+		cDivSField.setText(coefJournaliers.getCdivS());
 
 	}
 
@@ -103,19 +103,19 @@ public class CoefJourEditDialogController {
 
 		if (isInputValid()) {
 
-			coefJournaliersData.setcJohvR(cJohvRField.getText());
-			coefJournaliersData.setcSahvR(cSahvRField.getText());
-			coefJournaliersData.setcDihvR(cDihvRField.getText());
-			coefJournaliersData.setcJovR(cJovRField.getText());
-			coefJournaliersData.setcSavR(cSavRField.getText());
-			coefJournaliersData.setcDivR(cDivRField.getText());
+			coefJournaliersData.setCjohvR(cJohvRField.getText());
+			coefJournaliersData.setCsahvR(cSahvRField.getText());
+			coefJournaliersData.setCdihvR(cDihvRField.getText());
+			coefJournaliersData.setCjovR(cJovRField.getText());
+			coefJournaliersData.setCsavR(cSavRField.getText());
+			coefJournaliersData.setCdivR(cDivRField.getText());
 
-			coefJournaliersData.setcJohvS(cJohvSField.getText());
-			coefJournaliersData.setcSahvS(cSahvSField.getText());
-			coefJournaliersData.setcDihvS(cDihvSField.getText());
-			coefJournaliersData.setcJovS(cJovSField.getText());
-			coefJournaliersData.setcSavS(cSavSField.getText());
-			coefJournaliersData.setcDivS(cDivSField.getText());
+			coefJournaliersData.setCjohvS(cJohvSField.getText());
+			coefJournaliersData.setCsahvS(cSahvSField.getText());
+			coefJournaliersData.setCdihvS(cDihvSField.getText());
+			coefJournaliersData.setCjovS(cJovSField.getText());
+			coefJournaliersData.setCsavS(cSavSField.getText());
+			coefJournaliersData.setCdivS(cDivSField.getText());
 
 			okClicked = true;
 			coefJourEditDialogStage.close();
