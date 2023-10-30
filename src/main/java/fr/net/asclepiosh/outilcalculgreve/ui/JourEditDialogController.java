@@ -56,8 +56,7 @@ public class JourEditDialogController {
 	/**
 	 * Sets the joursDeGreve to be edited in the dialog.
 	 *
-	 * @param joursDeGreve
-	 */
+     */
 	public void setJour(JoursDeGreve joursDeGreve) {
 
 		this.joursDeGreve = joursDeGreve;
