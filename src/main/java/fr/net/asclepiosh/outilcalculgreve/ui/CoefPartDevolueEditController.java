@@ -95,9 +95,9 @@ public class CoefPartDevolueEditController {
 	private boolean isInputValid() {
 		String errorMessage = "";
 
-		if (cPartDevolueRATPField.getText() == null || cPartDevolueRATPField.getText().length() == 0 || !StringUtil.isFloat(cPartDevolueRATPField.getText()))
+		if (cPartDevolueRATPField.getText().isBlank() || cPartDevolueRATPField.getText().isEmpty() || !StringUtil.isFloat(cPartDevolueRATPField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour la part dévolue RATP !\n";
-		if (cPartDevolueSNCFField.getText() == null || cPartDevolueSNCFField.getText().length() == 0 || !StringUtil.isFloat(cPartDevolueSNCFField.getText()))
+		if (cPartDevolueSNCFField.getText().isBlank() || cPartDevolueSNCFField.getText().isEmpty() || !StringUtil.isFloat(cPartDevolueSNCFField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour la part dévolue SNCF !\n";
 
 

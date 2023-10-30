@@ -139,34 +139,34 @@ public class CoefJourEditDialogController {
 	private boolean isInputValid() {
 		String errorMessage = "";
 
-		if (cJohvRField.getText() == null || cJohvRField.getText().length() == 0 || !StringUtil.isFloat(cJohvRField.getText()))
+		if (cJohvRField.getText().isBlank() || cJohvRField.getText().isEmpty() || !StringUtil.isFloat(cJohvRField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cJohv RATP !\n";
-		if (cSahvRField.getText() == null || cSahvRField.getText().length() == 0 || !StringUtil.isFloat(cSahvRField.getText()))
+		if (cSahvRField.getText().isBlank() || cSahvRField.getText().isEmpty() || !StringUtil.isFloat(cSahvRField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cSahv RATP !\n";
-		if (cDihvRField.getText() == null || cDihvRField.getText().length() == 0 || !StringUtil.isFloat(cDihvRField.getText()))
+		if (cDihvRField.getText().isBlank() || cDihvRField.getText().isEmpty() || !StringUtil.isFloat(cDihvRField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cDihv RATP !\n";
-		if (cJovRField.getText() == null || cJovRField.getText().length() == 0 || !StringUtil.isFloat(cJovRField.getText()))
+		if (cJovRField.getText().isBlank() || cJovRField.getText().isEmpty() || !StringUtil.isFloat(cJovRField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cJov RATP !\n";
-		if (cSavRField.getText() == null || cSavRField.getText().length() == 0 || !StringUtil.isFloat(cSavRField.getText()))
+		if (cSavRField.getText().isBlank() || cSavRField.getText().isEmpty() || !StringUtil.isFloat(cSavRField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cSav RATP !\n";
-		if (cDivRField.getText() == null || cDivRField.getText().length() == 0 || !StringUtil.isFloat(cDivRField.getText()))
+		if (cDivRField.getText().isBlank() || cDivRField.getText().isEmpty() || !StringUtil.isFloat(cDivRField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cDiv RATP !\n";
 
-		if (cJohvSField.getText() == null || cJohvSField.getText().length() == 0 || !StringUtil.isFloat(cJohvSField.getText()))
+		if (cJohvSField.getText().isBlank() || cJohvSField.getText().isEmpty() || !StringUtil.isFloat(cJohvSField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cJohv SNCF !\n";
-		if (cSahvSField.getText() == null || cSahvSField.getText().length() == 0 || !StringUtil.isFloat(cSahvSField.getText()))
+		if (cSahvSField.getText().isBlank() || cSahvSField.getText().isEmpty() || !StringUtil.isFloat(cSahvSField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cSahv SNCF !\n";
-		if (cDihvSField.getText() == null || cDihvSField.getText().length() == 0 || !StringUtil.isFloat(cDihvSField.getText()))
+		if (cDihvSField.getText().isBlank() || cDihvSField.getText().isEmpty() || !StringUtil.isFloat(cDihvSField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cDihv SNCF !\n";
-		if (cJovSField.getText() == null || cJovSField.getText().length() == 0 || !StringUtil.isFloat(cJovSField.getText()))
+		if (cJovSField.getText().isBlank() || cJovSField.getText().isEmpty() || !StringUtil.isFloat(cJovSField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cJov SNCF !\n";
-		if (cSavSField.getText() == null || cSavSField.getText().length() == 0 || !StringUtil.isFloat(cSavSField.getText()))
+		if (cSavSField.getText().isBlank() || cSavSField.getText().isEmpty() || !StringUtil.isFloat(cSavSField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cSav SNCF !\n";
-		if (cDivSField.getText() == null || cDivSField.getText().length() == 0 || !StringUtil.isFloat(cDivSField.getText()))
+		if (cDivSField.getText().isBlank() || cDivSField.getText().isEmpty() || !StringUtil.isFloat(cDivSField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le paramètre cDiv SNCF !\n";
 
 
-		if (errorMessage.length() == 0) {
+		if (errorMessage.isEmpty()) {
 			return true;
 		} else {
 			// Show the error message.

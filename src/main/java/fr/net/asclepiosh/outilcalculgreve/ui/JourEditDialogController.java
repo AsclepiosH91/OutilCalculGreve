@@ -120,13 +120,13 @@ public class JourEditDialogController {
 	private boolean isInputValid() {
 		String errorMessage = "";
 
-		if (transportJourComboBox.getValue().getName() == null || transportJourComboBox.getValue().getName().isEmpty()) {
+		if (transportJourComboBox.getValue().getName().isBlank() || transportJourComboBox.getValue().getName().isEmpty()) {
 			errorMessage += "Ce n'est pas un transporteur valide !\n";
 		}
 
 
-		if (nomJourField.getText() == null || nomJourField.getText().isEmpty()) {
-			errorMessage += "Ce n'est pas un nom de joursDeGreve valide !\n";
+		if (nomJourField.getText().isBlank() || nomJourField.getText().isEmpty()) {
+			errorMessage += "Ce n'est pas un nom de jour de Greve ou de Pollution valide !\n";
 		}
 
 

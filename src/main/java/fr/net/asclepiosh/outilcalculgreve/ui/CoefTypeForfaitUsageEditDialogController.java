@@ -122,22 +122,22 @@ public class CoefTypeForfaitUsageEditDialogController {
 	private boolean isInputValid() {
 		String errorMessage = "";
 
-		if (cForfaitODRATPField.getText() == null || cForfaitODRATPField.getText().isEmpty() || !StringUtil.isFloat(cForfaitODRATPField.getText()))
+		if (cForfaitODRATPField.getText().isBlank() || cForfaitODRATPField.getText().isEmpty() || !StringUtil.isFloat(cForfaitODRATPField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le coefficient d'usage des Forfait OD RATP !\n";
-		if (cForfaitTNLRATPField.getText() == null || cForfaitTNLRATPField.getText().isEmpty() || !StringUtil.isFloat(cForfaitTNLRATPField.getText()))
+		if (cForfaitTNLRATPField.getText().isBlank() || cForfaitTNLRATPField.getText().isEmpty() || !StringUtil.isFloat(cForfaitTNLRATPField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le coefficient d'usage des Forfait T+ NL+ RATP !\n";
-		if (cForfaitCourtsRATPField.getText() == null || cForfaitCourtsRATPField.getText().isEmpty() || !StringUtil.isFloat(cForfaitCourtsRATPField.getText()))
+		if (cForfaitCourtsRATPField.getText().isBlank() || cForfaitCourtsRATPField.getText().isEmpty() || !StringUtil.isFloat(cForfaitCourtsRATPField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le coefficient d'usage des Forfait courts RATP !\n";
-		if (cForfait100RATPField.getText() == null || cForfait100RATPField.getText().isEmpty() || !StringUtil.isFloat(cForfait100RATPField.getText()))
+		if (cForfait100RATPField.getText().isBlank() || cForfait100RATPField.getText().isEmpty() || !StringUtil.isFloat(cForfait100RATPField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le coefficient d'usage des Forfait 100% RATP !\n";
 
-		if (cForfaitODSNCFField.getText() == null || cForfaitODSNCFField.getText().isEmpty() || !StringUtil.isFloat(cForfaitODSNCFField.getText()))
+		if (cForfaitODSNCFField.getText().isBlank() || cForfaitODSNCFField.getText().isEmpty() || !StringUtil.isFloat(cForfaitODSNCFField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le coefficient d'usage des Forfait OD SNCF !\n";
-		if (cForfaitTNLSNCFField.getText() == null || cForfaitTNLSNCFField.getText().isEmpty() || !StringUtil.isFloat(cForfaitTNLSNCFField.getText()))
+		if (cForfaitTNLSNCFField.getText().isBlank() || cForfaitTNLSNCFField.getText().isEmpty() || !StringUtil.isFloat(cForfaitTNLSNCFField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le coefficient d'usage des Forfait T+ NL+ SNCF !\n";
-		if (cForfaitCourtsSNCFField.getText() == null || cForfaitCourtsSNCFField.getText().isEmpty() || !StringUtil.isFloat(cForfaitCourtsSNCFField.getText()))
+		if (cForfaitCourtsSNCFField.getText().isBlank() || cForfaitCourtsSNCFField.getText().isEmpty() || !StringUtil.isFloat(cForfaitCourtsSNCFField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le coefficient d'usage des Forfait courts SNCF !\n";
-		if (cForfait0SNCFField.getText() == null || cForfait0SNCFField.getText().isEmpty() || !StringUtil.isFloat(cForfait0SNCFField.getText()))
+		if (cForfait0SNCFField.getText().isBlank() || cForfait0SNCFField.getText().isEmpty() || !StringUtil.isFloat(cForfait0SNCFField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le coefficient d'usage des Forfait 0% SNCF !\n";
 
 
