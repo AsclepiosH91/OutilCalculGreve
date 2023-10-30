@@ -1,9 +1,7 @@
 package fr.net.asclepiosh.outilcalculgreve.ui;
 
 import fr.net.asclepiosh.outilcalculgreve.model.CoefAjust;
-import fr.net.asclepiosh.outilcalculgreve.model.CoefPartDevolue;
 import fr.net.asclepiosh.outilcalculgreve.util.StringUtil;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
@@ -36,8 +34,7 @@ public class CoefAjustEditDialogController {
 	/**
 	 * Sets the stage of this dialog.
 	 *
-	 * @param coefAjustEditDialogStage
-	 */
+     */
 	public void setCoefAjustEditDialogStage(Stage coefAjustEditDialogStage) {
 		this.coefAjustEditDialogStage = coefAjustEditDialogStage;
 	}
@@ -49,8 +46,7 @@ public class CoefAjustEditDialogController {
 	/**
 	 * Sets the Coef to be edited in the dialog.
 	 *
-	 * @param coefAjust
-	 */
+     */
 	public void setCoefAjust(CoefAjust coefAjust) {
 
 		this.coefAjustData = coefAjust;

@@ -37,8 +37,7 @@ public class CoefPartDevolueEditController {
 	/**
 	 * Sets the stage of this dialog.
 	 *
-	 * @param coefPartDevolueEditDialogStage
-	 */
+     */
 	public void setCoefPartDevolueEditDialogStage(Stage coefPartDevolueEditDialogStage) {
 		this.coefPartDevolueEditDialogStage = coefPartDevolueEditDialogStage;
 	}
@@ -47,8 +46,7 @@ public class CoefPartDevolueEditController {
 	/**
 	 * Sets the jour to be edited in the dialog.
 	 *
-	 * @param coefPartDevolue
-	 */
+     */
 	public void setPartDevolue(CoefPartDevolue coefPartDevolue) {
 
 		this.coefPartDevolueData = coefPartDevolue;
@@ -101,7 +99,7 @@ public class CoefPartDevolueEditController {
 			errorMessage += "Ce n'est pas une valeur valide pour la part dévolue SNCF !\n";
 
 
-		if (errorMessage.length() == 0) {
+		if (errorMessage.isEmpty()) {
 			return true;
 		} else {
 			// Show the error message.

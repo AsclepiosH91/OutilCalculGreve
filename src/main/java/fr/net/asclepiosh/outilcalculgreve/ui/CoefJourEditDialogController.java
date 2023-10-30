@@ -59,8 +59,7 @@ public class CoefJourEditDialogController {
 	/**
 	 * Sets the stage of this dialog.
 	 *
-	 * @param coefJourEditDialogStage
-	 */
+     */
 	public void setCoefJourEditDialogStage(Stage coefJourEditDialogStage) {
 		this.coefJourEditDialogStage = coefJourEditDialogStage;
 	}
@@ -69,8 +68,7 @@ public class CoefJourEditDialogController {
 	/**
 	 * Sets the jour to be edited in the dialog.
 	 *
-	 * @param coefJournaliers
-	 */
+     */
 	public void setCoefJournaliers(CoefJournaliers coefJournaliers) {
 
 		this.coefJournaliersData = coefJournaliers;
