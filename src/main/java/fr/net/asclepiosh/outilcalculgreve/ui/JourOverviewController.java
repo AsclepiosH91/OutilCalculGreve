@@ -27,7 +27,7 @@ public class JourOverviewController {
 	@FXML
 	private Label nomJourLabel;
 	@FXML
-	private Label transportJourLabel;
+	private Label transportOuPollutionJourLabel;
 
 	@FXML
 	private Label dateJourLabel;
@@ -92,7 +92,7 @@ public class JourOverviewController {
 	private void showJourDetails(JoursDeGreve joursDeGreve) {
 		if (joursDeGreve != null) {
 			// Fill the labels with info from the joursDeGreve object.
-			transportJourLabel.setText(joursDeGreve.getTransportJour());
+			transportOuPollutionJourLabel.setText(joursDeGreve.getTransportJour());
 			nomJourLabel.setText(joursDeGreve.getNomJour());
 
 			// We need to convert the date into a String!
@@ -100,7 +100,7 @@ public class JourOverviewController {
 
 		} else {
 			// JoursDeGreve is null, remove all the text.
-			transportJourLabel.setText("");
+			transportOuPollutionJourLabel.setText("");
 			nomJourLabel.setText("");
 			dateJourLabel.setText("");
 
