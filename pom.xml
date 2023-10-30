@@ -137,10 +137,6 @@
   </dependencies>
 
 
-
-
-
-
   <build>
     <finalName>${project.name}</finalName>
 
@@ -162,6 +158,16 @@
         </configuration>
       </plugin>
 
+      <!-- JavaFX Maven Plugin for proper module handling -->
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>0.0.8</version>
+        <configuration>
+          <mainClass>${mainClass}</mainClass>
+        </configuration>
+      </plugin>
+
       <!-- Création archive executable autonome -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -175,7 +181,8 @@
           </descriptorRefs>
           <archive>
             <manifest>
-              <mainClass>${mainClass}</mainClass>
+				<addClasspath>true</addClasspath>
+				<mainClass>${mainClass}</mainClass>
             </manifest>
           </archive>
           <outputDirectory>${staging.dir}</outputDirectory>
@@ -191,8 +198,6 @@
       </plugin>
     </plugins>
   </build>
-
-
 
 
 

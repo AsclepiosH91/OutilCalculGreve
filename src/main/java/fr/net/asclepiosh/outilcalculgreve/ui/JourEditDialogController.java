@@ -1,6 +1,6 @@
 package fr.net.asclepiosh.outilcalculgreve.ui;
 
-import fr.net.asclepiosh.outilcalculgreve.model.JoursDeGreve;
+import fr.net.asclepiosh.outilcalculgreve.model.JoursDeGreveOuPollution;
 import fr.net.asclepiosh.outilcalculgreve.model.TransportsOuPollution;
 import fr.net.asclepiosh.outilcalculgreve.model.TransportsOuPollutionData;
 import fr.net.asclepiosh.outilcalculgreve.util.DateUtil;
@@ -13,7 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
- * Dialog to edit details of a joursDeGreve.
+ * Dialog to edit details of a joursDeGreveOuPollution.
  *
  * @author Nicolas Torres
  **/
@@ -28,7 +28,7 @@ public class JourEditDialogController {
 	private DatePicker dateJourField;
 
 	private Stage jourEditDialogStage;
-	private JoursDeGreve joursDeGreve;
+	private JoursDeGreveOuPollution joursDeGreveOuPollution;
 	private boolean okClicked = false;
 
 
@@ -54,28 +54,29 @@ public class JourEditDialogController {
 
 
 	/**
-	 * Sets the joursDeGreve to be edited in the dialog.
+	 * Sets the joursDeGreveOuPollution to be edited in the dialog.
 	 *
      */
-	public void setJour(JoursDeGreve joursDeGreve) {
+	public void setJour(JoursDeGreveOuPollution joursDeGreveOuPollution) {
 
-		this.joursDeGreve = joursDeGreve;
+		this.joursDeGreveOuPollution = joursDeGreveOuPollution;
 
 		// Add TransportsOuPollution data
 		transportJourComboBox.setItems(list);
 
-		int index = switch (joursDeGreve.getTransportJour()) {
+		int index = switch (joursDeGreveOuPollution.getTransportJour()) {
 			case "RATP" -> 0;
 			case "SNCF" -> 1;
 			case "RATP-SNCF" -> 2;
+			case "Journée Pollution" -> 3;
 			default -> 0;
 		};
 
 		transportJourComboBox.getSelectionModel().select(index);
 
-		nomJourField.setText(joursDeGreve.getNomJour());
+		nomJourField.setText(joursDeGreveOuPollution.getNomJour());
 
-		dateJourField.setValue(joursDeGreve.getDateJour());
+		dateJourField.setValue(joursDeGreveOuPollution.getDateJour());
 
 
 	}
@@ -92,10 +93,10 @@ public class JourEditDialogController {
 
 		if (isInputValid()) {
 
-			joursDeGreve.setNomJour(nomJourField.getText());
-			joursDeGreve.setTransportJour(transportJourComboBox.getValue().getName());
+			joursDeGreveOuPollution.setNomJour(nomJourField.getText());
+			joursDeGreveOuPollution.setTransportJour(transportJourComboBox.getValue().getName());
 
-			joursDeGreve.setDateJour(DateUtil.parse(DateUtil.format(dateJourField.getValue())));
+			joursDeGreveOuPollution.setDateJour(DateUtil.parse(DateUtil.format(dateJourField.getValue())));
 
 			okClicked = true;
 			jourEditDialogStage.close();

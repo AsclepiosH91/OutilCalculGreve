@@ -1,7 +1,7 @@
 package fr.net.asclepiosh.outilcalculgreve.ui;
 
 import fr.net.asclepiosh.outilcalculgreve.MainApp;
-import fr.net.asclepiosh.outilcalculgreve.model.JoursDeGreve;
+import fr.net.asclepiosh.outilcalculgreve.model.JoursDeGreveOuPollution;
 import fr.net.asclepiosh.outilcalculgreve.util.DateUtil;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -14,15 +14,15 @@ import java.time.LocalDate;
 public class JourOverviewController {
 
 	@FXML
-	public TableView<JoursDeGreve> jourTable;
+	public TableView<JoursDeGreveOuPollution> jourTable;
 
 	@FXML
-	private TableColumn<JoursDeGreve, String> nomJourColumn;
+	private TableColumn<JoursDeGreveOuPollution, String> nomJourColumn;
 	@FXML
-	public TableColumn<JoursDeGreve,  String> dateJourColumn;
+	public TableColumn<JoursDeGreveOuPollution,  String> dateJourColumn;
 
 	@FXML
-	private TableColumn<JoursDeGreve, String> transportJourColumn;
+	private TableColumn<JoursDeGreveOuPollution, String> transportJourColumn;
 
 	@FXML
 	private Label nomJourLabel;
@@ -84,22 +84,22 @@ public class JourOverviewController {
 
 
 	/**
-	 * Fills all text fields to show details about the joursDeGreve.
-	 * If the specified joursDeGreve is null, all text fields are cleared.
+	 * Fills all text fields to show details about the joursDeGreveOuPollution.
+	 * If the specified joursDeGreveOuPollution is null, all text fields are cleared.
 	 *
-	 * @param joursDeGreve the joursDeGreve or null
+	 * @param joursDeGreveOuPollution the joursDeGreveOuPollution or null
 	 */
-	private void showJourDetails(JoursDeGreve joursDeGreve) {
-		if (joursDeGreve != null) {
-			// Fill the labels with info from the joursDeGreve object.
-			transportOuPollutionJourLabel.setText(joursDeGreve.getTransportJour());
-			nomJourLabel.setText(joursDeGreve.getNomJour());
+	private void showJourDetails(JoursDeGreveOuPollution joursDeGreveOuPollution) {
+		if (joursDeGreveOuPollution != null) {
+			// Fill the labels with info from the joursDeGreveOuPollution object.
+			transportOuPollutionJourLabel.setText(joursDeGreveOuPollution.getTransportJour());
+			nomJourLabel.setText(joursDeGreveOuPollution.getNomJour());
 
 			// We need to convert the date into a String!
-			dateJourLabel.setText(DateUtil.format(joursDeGreve.getDateJour()));
+			dateJourLabel.setText(DateUtil.format(joursDeGreveOuPollution.getDateJour()));
 
 		} else {
-			// JoursDeGreve is null, remove all the text.
+			// JoursDeGreveOuPollution is null, remove all the text.
 			transportOuPollutionJourLabel.setText("");
 			nomJourLabel.setText("");
 			dateJourLabel.setText("");
@@ -117,17 +117,17 @@ public class JourOverviewController {
 	@FXML
 	public void handleNewJour() {
 
-		JoursDeGreve tempJoursDeGreve = new JoursDeGreve();
+		JoursDeGreveOuPollution tempJoursDeGreveOuPollution = new JoursDeGreveOuPollution();
 
-		tempJoursDeGreve.setNomJour("JoursDeGreve XXX");
-		tempJoursDeGreve.setTransportJour("RATP");
+		tempJoursDeGreveOuPollution.setNomJour("Jour de Greve ou Pollution XXX");
+		tempJoursDeGreveOuPollution.setTransportJour("RATP");
 
 		// Set default value of the date to today
-		tempJoursDeGreve.setDateJour(LocalDate.now());
+		tempJoursDeGreveOuPollution.setDateJour(LocalDate.now());
 
-		boolean okClicked = mainApp.showJourEditDialog(tempJoursDeGreve);
+		boolean okClicked = mainApp.showJourEditDialog(tempJoursDeGreveOuPollution);
 		if (okClicked) {
-			mainApp.getJourDeGrevesData().add(tempJoursDeGreve);
+			mainApp.getJourDeGrevesData().add(tempJoursDeGreveOuPollution);
 		}
 
 	}
@@ -141,11 +141,11 @@ public class JourOverviewController {
 	 */
 	@FXML
 	public void handleEditJour() {
-		JoursDeGreve selectedPerson = jourTable.getSelectionModel().getSelectedItem();
-		if (selectedPerson != null) {
-			boolean okClicked = mainApp.showJourEditDialog(selectedPerson);
+		JoursDeGreveOuPollution selectedJour = jourTable.getSelectionModel().getSelectedItem();
+		if (selectedJour != null) {
+			boolean okClicked = mainApp.showJourEditDialog(selectedJour);
 			if (okClicked) {
-				showJourDetails(selectedPerson);
+				showJourDetails(selectedJour);
 			}
 
 		} else {

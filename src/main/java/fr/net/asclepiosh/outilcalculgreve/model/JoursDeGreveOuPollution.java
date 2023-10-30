@@ -7,11 +7,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 
 /**
- * Model class for a JoursDeGreve.
+ * Model class for a JoursDeGreveOuPollution.
  *
  * @author Nicolas Torres
  */
-public class JoursDeGreve {
+public class JoursDeGreveOuPollution {
 	private final StringProperty transportJour;
 	private final StringProperty nomJour;
 	private final ObjectProperty<LocalDate> dateJour;
@@ -19,7 +19,7 @@ public class JoursDeGreve {
 	/**
 	 * Default constructor.
 	 */
-	public JoursDeGreve() {
+	public JoursDeGreveOuPollution() {
 		this(null, null);
 	}
 
@@ -29,7 +29,7 @@ public class JoursDeGreve {
 	 * @param nomJour
 	 * @param transportJour
 	 */
-	public JoursDeGreve(String nomJour, String transportJour) {
+	public JoursDeGreveOuPollution(String nomJour, String transportJour) {
 		this.nomJour = new SimpleStringProperty(nomJour);
 		this.transportJour = new SimpleStringProperty(transportJour);
 
