@@ -9,14 +9,14 @@ import javafx.stage.Stage;
 
 public class CoefAjustEditDialogController {
 
-	public TextField cArt11AjustField;
-	public TextField cCorrRDHTAjustField;
-	public TextField cArtAutrRemunAjustField;
+	public TextField cArt11AdjustField;
+	public TextField cCorrRDHTAdjustField;
+	public TextField cArtAutrRemunAdjustField;
     public TextField cTCBBField;
 
 
     private Stage coefAjustEditDialogStage;
-	private CoefAjust coefAjustData;
+	private CoefAjust coefAdjustData;
 	private boolean okClicked = false;
 
 
@@ -35,7 +35,7 @@ public class CoefAjustEditDialogController {
 	 * Sets the stage of this dialog.
 	 *
      */
-	public void setCoefAjustEditDialogStage(Stage coefAjustEditDialogStage) {
+	public void setCoefAdjustEditDialogStage(Stage coefAjustEditDialogStage) {
 		this.coefAjustEditDialogStage = coefAjustEditDialogStage;
 	}
 
@@ -49,11 +49,11 @@ public class CoefAjustEditDialogController {
      */
 	public void setCoefAjust(CoefAjust coefAjust) {
 
-		this.coefAjustData = coefAjust;
+		this.coefAdjustData = coefAjust;
 
-		cArt11AjustField.setText(coefAjust.getcArt11Ajust());
-		cCorrRDHTAjustField.setText(coefAjust.getcCorrRDHTAjust());
-		cArtAutrRemunAjustField.setText(coefAjust.getcArtAutrRemunAjust());
+		cArt11AdjustField.setText(coefAjust.getcArt11Ajust());
+		cCorrRDHTAdjustField.setText(coefAjust.getcCorrRDHTAjust());
+		cArtAutrRemunAdjustField.setText(coefAjust.getcArtAutrRemunAjust());
 
 	}
 
@@ -74,9 +74,9 @@ public class CoefAjustEditDialogController {
 
 		if (isInputValid()) {
 
-			coefAjustData.setcArt11Ajust(cArt11AjustField.getText());
-			coefAjustData.setcCorrRDHTAjust(cCorrRDHTAjustField.getText());
-			coefAjustData.setcArtAutrRemunAjust(cArtAutrRemunAjustField.getText());
+			coefAdjustData.setcArt11Ajust(cArt11AdjustField.getText());
+			coefAdjustData.setcCorrRDHTAjust(cCorrRDHTAdjustField.getText());
+			coefAdjustData.setcArtAutrRemunAjust(cArtAutrRemunAdjustField.getText());
 
 			okClicked = true;
 			coefAjustEditDialogStage.close();
@@ -105,11 +105,11 @@ public class CoefAjustEditDialogController {
 	private boolean isInputValid() {
 		var errorMessage = "";
 
-		if (cArt11AjustField.getText().isBlank() || cArt11AjustField.getText().isEmpty() || !StringUtil.isFloat(cArt11AjustField.getText()))
+		if (cArt11AdjustField.getText().isBlank() || cArt11AdjustField.getText().isEmpty() || !StringUtil.isFloat(cArt11AdjustField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour l'ajustement du volet « Autres rémunérations », Article 1-1 !\n";
-		if (cCorrRDHTAjustField.getText().isBlank() || cCorrRDHTAjustField.getText().isEmpty() || !StringUtil.isFloat(cCorrRDHTAjustField.getText()))
+		if (cCorrRDHTAdjustField.getText().isBlank() || cCorrRDHTAdjustField.getText().isEmpty() || !StringUtil.isFloat(cCorrRDHTAdjustField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour le correctif de RD HT Ajusté !\n";
-		if (cArtAutrRemunAjustField.getText().isBlank() || cArtAutrRemunAjustField.getText().isEmpty() || !StringUtil.isFloat(cArtAutrRemunAjustField.getText()))
+		if (cArtAutrRemunAdjustField.getText().isBlank() || cArtAutrRemunAdjustField.getText().isEmpty() || !StringUtil.isFloat(cArtAutrRemunAdjustField.getText()))
 			errorMessage += "Ce n'est pas une valeur valide pour l'ajustement de l'article 47-5, « Autres rémunérations » !\n";
 
 

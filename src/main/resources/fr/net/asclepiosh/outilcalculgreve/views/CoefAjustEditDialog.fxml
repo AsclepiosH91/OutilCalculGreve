@@ -24,9 +24,9 @@
 		<Label text="Coef Tarif contrat pour billets banlieue :" GridPane.rowIndex="3" />
 
 
-		<TextField fx:id="cArt11AjustField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" />
-		<TextField fx:id="cCorrRDHTAjustField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-		<TextField fx:id="cArtAutrRemunAjustField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+		<TextField fx:id="cArt11AdjustField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" />
+		<TextField fx:id="cCorrRDHTAdjustField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+		<TextField fx:id="cArtAutrRemunAdjustField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 		<TextField fx:id="cTCBBField" prefHeight="25.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
 

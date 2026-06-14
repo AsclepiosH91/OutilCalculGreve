@@ -360,7 +360,7 @@ public class MainApp extends Application {
 
 			// Set the coefTypeForfaitUsage into the controller.
 			CoefAjustEditDialogController myController = loader.getController();
-			myController.setCoefAjustEditDialogStage(dialogStage);
+			myController.setCoefAdjustEditDialogStage(dialogStage);
 			myController.setCoefAjust(coefAjust);
 
 			// Show the dialog and wait until the user closes it
